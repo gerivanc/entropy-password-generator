@@ -26,7 +26,7 @@ python password_generator.py --length 20
 ```
 
 ### CLI Options
-- `--length <length>`: Set password length (15 to 128, default: 66).
+- `--length <length>`: Set password length (15 to 128, default: 42).
 - `--no-uppercase`: Exclude uppercase letters.
 - `--no-lowercase`: Exclude lowercase letters.
 - `--no-digits`: Exclude digits.
