@@ -8,9 +8,9 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ## [Unreleased]
 - No unreleased changes at the moment.
 
-## [0.2.1] - 2025-04-26
+## [0.3.0] - 2025-04-26
 ### Added
-- Version number (0.2.1) to the authorship comment and output header in password_generator.py.
+- Version number (0.3.0) to the authorship comment and output header in password_generator.py.
 - Authorship comment with project information at the beginning of password_generator.py.
 - Header with project information (Copyright, Author, GitHub, License, Changelog) in the output of generated passwords.
 
