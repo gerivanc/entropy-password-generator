@@ -56,7 +56,7 @@ The project includes 20 predefined password generation modes, divided into two b
 19. 75 characters, all character types, no ambiguous characters.
 20. 128 characters, all character types, no ambiguous characters (811.50 bits entropy).
 
-These modes produce passwords with entropies exceeding the NIST recommendation of 75 bits, ensuring high security.
+These modes produce passwords with entropies exceeding both the Proton© recommendation of 75 bits, ensuring high security.
 
 ## CLI Options - Usage Block I
 - `--length <length>`: Set password length (fixed to 24 for Block I modes).
