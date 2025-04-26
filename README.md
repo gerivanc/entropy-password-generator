@@ -37,28 +37,28 @@ python password_generator.py --length 20
 The project includes 20 predefined password generation modes, divided into two blocks:
 
 #### Strong Passwords Block I (All with ambiguous characters, length 24):
-1. Lowercase + Special characters.
-2. Uppercase + Special characters.
-3. Uppercase + Lowercase.
-4. Uppercase + Digits.
-5. Lowercase + Digits.
-6. Digits + Special characters.
-7. Uppercase + Lowercase + Digits.
-8. Uppercase + Lowercase + Special characters.
-9. Uppercase + Digits + Special characters.
-10. Lowercase + Digits + Special characters.
+1.    Lowercase + Special characters.
+2.    Uppercase + Special characters.
+3.    Uppercase + Lowercase.
+4.    Uppercase + Digits.
+5.    Lowercase + Digits.
+6.    Digits + Special characters.
+7.    Uppercase + Lowercase + Digits.
+8.    Uppercase + Lowercase + Special characters.
+9.    Uppercase + Digits + Special characters.
+10.    Lowercase + Digits + Special characters.
 
 #### Strong Passwords Block II (Mixed configurations):
-11. 15 characters, all character types, no ambiguous characters (95.10 bits entropy).
-12. 18 characters, all character types, with ambiguous characters.
-13. 20 characters, only lowercase letters and digits, no ambiguous characters.
-14. 20 characters, only uppercase letters and digits, no ambiguous characters.
-15. 24 characters, all character types, no ambiguous characters.
-16. 32 characters, all character types, no ambiguous characters.
-17. 42 characters, all character types, no ambiguous characters.
-18. 60 characters, all character types, no ambiguous characters.
-19. 75 characters, all character types, no ambiguous characters.
-20. 128 characters, all character types, no ambiguous characters (811.50 bits entropy).
+11.    15 characters, all character types, no ambiguous characters (95.10 bits entropy).
+12.    18 characters, all character types, with ambiguous characters.
+13.    20 characters, only lowercase letters and digits, no ambiguous characters.
+14.    20 characters, only uppercase letters and digits, no ambiguous characters.
+15.    24 characters, all character types, no ambiguous characters.
+16.    32 characters, all character types, no ambiguous characters.
+17.    42 characters, all character types, no ambiguous characters.
+18.    60 characters, all character types, no ambiguous characters.
+19.    75 characters, all character types, no ambiguous characters.
+20.    128 characters, all character types, no ambiguous characters (811.50 bits entropy).
 
 These modes produce passwords with entropies exceeding the NIST recommendation of 75 bits, ensuring high security.
 
@@ -84,11 +84,7 @@ Entropy: 85.75 bits
 ```
 
 ## Entropy Calculation
-The generator calculates password entropy using the formula:
-\[
-\text{Entropy} = \log_2(N) \times L
-\]
-where \(N\) is the size of the character set, and \(L\) is the password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.10 bits (15 characters) to 811.50 bits (128 characters), surpassing the NIST minimum of 75 bits.
+The generator calculates password entropy using the formula:E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.10 bits (15 characters) to 811.50 bits (128 characters), surpassing the NIST minimum of 75 bits.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
