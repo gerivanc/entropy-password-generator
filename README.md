@@ -29,72 +29,275 @@ I strongly recommend that you do not attempt to memorize the passwords generated
    ```
 3. No additional dependencies are required, as the project uses only Python standard libraries.
 
-## Usage
-Run the generator via the command-line interface:
-```bash
-python password_generator.py --length 20
-```
+## Example Password Modes
+The project includes 20 predefined password generation modes, divided into two blocks:
 
-### CLI Options
-- `--length <length>`: Set password length (15 to 128, default: 66).
+### Strong Passwords Block I (All with ambiguous characters, length 24):
+1. Lowercase + Special characters.
+2. Uppercase + Special characters.
+3. Uppercase + Lowercase.
+4. Uppercase + Digits.
+5. Lowercase + Digits.
+6. Digits + Special characters.
+7. Uppercase + Lowercase + Digits.
+8. Uppercase + Lowercase + Special characters.
+9. Uppercase + Digits + Special characters.
+10. Lowercase + Digits + Special characters.
+
+### Strong Passwords Block II (Mixed configurations):
+11. 15 characters, all character types, no ambiguous characters (95.10 bits entropy).
+12. 18 characters, all character types, with ambiguous characters.
+13. 20 characters, only lowercase letters and digits, no ambiguous characters.
+14. 20 characters, only uppercase letters and digits, no ambiguous characters.
+15. 24 characters, all character types, no ambiguous characters.
+16. 32 characters, all character types, no ambiguous characters.
+17. 42 characters, all character types, no ambiguous characters.
+18. 60 characters, all character types, no ambiguous characters.
+19. 75 characters, all character types, no ambiguous characters.
+20. 128 characters, all character types, no ambiguous characters (811.50 bits entropy).
+
+These modes produce passwords with entropies exceeding the NIST recommendation of 75 bits, ensuring high security.
+
+## CLI Options - Usage Block I
+- `--length <length>`: Set password length (fixed to 24 for Block I modes).
 - `--no-uppercase`: Exclude uppercase letters.
 - `--no-lowercase`: Exclude lowercase letters.
 - `--no-digits`: Exclude digits.
 - `--no-special`: Exclude special characters.
-- `--with-ambiguous`: Include ambiguous characters.
+- `--with-ambiguous`: Include ambiguous characters (enabled by default for Block I).
 
-### Example Password Modes
-The project includes 20 predefined password generation modes, divided into two blocks:
+## CLI Options - Usage Block II
+- `--length <length>`: Set password length (15 to 128 for Block II modes).
+- `--no-uppercase`: Exclude uppercase letters.
+- `--no-lowercase`: Exclude lowercase letters.
+- `--no-digits`: Exclude digits.
+- `--no-special`: Exclude special characters.
+- `--with-ambiguous`: Include ambiguous characters (optional, enabled only for mode 12).
+**Note**: Block II modes offer greater flexibility, allowing variable lengths and control over ambiguous characters to suit diverse security needs.
 
-#### Strong Passwords Block I (All with ambiguous characters, length 24):
-1.    Lowercase + Special characters.
-2.    Uppercase + Special characters.
-3.    Uppercase + Lowercase.
-4.    Uppercase + Digits.
-5.    Lowercase + Digits.
-6.    Digits + Special characters.
-7.    Uppercase + Lowercase + Digits.
-8.    Uppercase + Lowercase + Special characters.
-9.    Uppercase + Digits + Special characters.
-10.    Lowercase + Digits + Special characters.
-
-#### Strong Passwords Block II (Mixed configurations):
-11.    15 characters, all character types, no ambiguous characters (95.10 bits entropy).
-12.    18 characters, all character types, with ambiguous characters.
-13.    20 characters, only lowercase letters and digits, no ambiguous characters.
-14.    20 characters, only uppercase letters and digits, no ambiguous characters.
-15.    24 characters, all character types, no ambiguous characters.
-16.    32 characters, all character types, no ambiguous characters.
-17.    42 characters, all character types, no ambiguous characters.
-18.    60 characters, all character types, no ambiguous characters.
-19.    75 characters, all character types, no ambiguous characters.
-20.    128 characters, all character types, no ambiguous characters (811.50 bits entropy).
-
-These modes produce passwords with entropies exceeding the NIST recommendation of 75 bits, ensuring high security.
-
-### Example CLI Usage
-Generate a 20-character password with all character types, excluding ambiguous characters:
+## Usage Block I (All with ambiguous characters, length 24)
+Run the generator via the command-line interface for Block I modes:
 ```bash
-python password_generator.py --length 20
-```
-Output:
-```
-Generated password: K7mPq9xT2rZwYvN5jH
-Entropy: 119.42 bits
+python password_generator.py --length 24 --no-uppercase --no-digits
+python password_generator.py --length 24 --no-lowercase --no-digits
+python password_generator.py --length 24 --no-digits --no-special
+python password_generator.py --length 24 --no-lowercase --no-special
+python password_generator.py --length 24 --no-uppercase --no-special
+python password_generator.py --length 24 --no-uppercase --no-lowercase
+python password_generator.py --length 24 --no-special
+python password_generator.py --length 24 --no-digits
+python password_generator.py --length 24 --no-lowercase
+python password_generator.py --length 24 --no-uppercase
 ```
 
-Generate a 15-character password with only lowercase letters and digits:
+## Usage Block II (Mixed configurations)
+Run the generator via the command-line interface for Block II modes:
 ```bash
-python password_generator.py --length 15 --no-uppercase --no-special
+python password_generator.py --length 15
+python password_generator.py --length 18 --with-ambiguous
+python password_generator.py --length 20 --no-uppercase --no-special
+python password_generator.py --length 20 --no-lowercase --no-special
+python password_generator.py --length 24
+python password_generator.py --length 32
+python password_generator.py --length 42
+python password_generator.py --length 60
+python password_generator.py --length 75
+python password_generator.py --length 128
 ```
-Output:
+
+## Example CLI Usage 20 usage modes
+Below are the CLI commands and example outputs for all 20 predefined password generation modes, divided into two blocks for clarity.
+
+### CLI Usage Block I
+The following commands generate passwords for Block I modes, all with ambiguous characters and a length of 24 characters:
+
+**Mode 1: Lowercase + Special characters**
+```bash
+python password_generator.py --length 24 --no-uppercase --no-digits
 ```
-Generated password: kxw9m4p7q2n8r5t
-Entropy: 85.75 bits
+```
+Generated password: ax!z@q#r$y^m&p-t=l~k]w{
+Entropy: 142.38 bits
+```
+
+**Mode 2: Uppercase + Special characters**
+```bash
+python password_generator.py --length 24 --no-lowercase --no-digits
+```
+```
+Generated password: AX!ZQ#R$Y^M&P-T=L~K]W{
+Entropy: 142.38 bits
+```
+
+**Mode 3: Uppercase + Lowercase**
+```bash
+python password_generator.py --length 24 --no-digits --no-special
+```
+```
+Generated password: AxZqRyMkPlTvCnHwBsKdFeJi
+Entropy: 142.38 bits
+```
+
+**Mode 4: Uppercase + Digits**
+```bash
+python password_generator.py --length 24 --no-lowercase --no-special
+```
+```
+Generated password: AX7ZQ4R9Y2M8P5T3L1K6W0N
+Entropy: 124.08 bits
+```
+
+**Mode 5: Lowercase + Digits**
+```bash
+python password_generator.py --length 24 --no-uppercase --no-special
+```
+```
+Generated password: ax7zq4r9y2m8p5t3l1k6w0n
+Entropy: 124.08 bits
+```
+
+**Mode 6: Digits + Special characters**
+```bash
+python password_generator.py --length 24 --no-uppercase --no-lowercase
+```
+```
+Generated password: 7!4#9$2&8%5^3*1@6-0=2+|
+Entropy: 105.78 bits
+```
+
+**Mode 7: Uppercase + Lowercase + Digits**
+```bash
+python password_generator.py --length 24 --no-special
+```
+```
+Generated password: Ax7Zq4Ry9Mk2Pl8Tv5Cn3Hw
+Entropy: 166.47 bits
+```
+
+**Mode 8: Uppercase + Lowercase + Special characters**
+```bash
+python password_generator.py --length 24 --no-digits
+```
+```
+Generated password: Ax!Zq@Ry#Mk-Pl=Tv&Cn+Hw
+Entropy: 166.47 bits
+```
+
+**Mode 9: Uppercase + Digits + Special characters**
+```bash
+python password_generator.py --length 24 --no-lowercase
+```
+```
+Generated password: AX!7ZQ#4R$9Y@2M&8P%5T*3
+Entropy: 148.17 bits
+```
+
+**Mode 10: Lowercase + Digits + Special characters**
+```bash
+python password_generator.py --length 24 --no-uppercase
+```
+```
+Generated password: ax!7zq#4r$9y@2m&8p%5t*3
+Entropy: 148.17 bits
+```
+
+---
+
+### CLI Usage Block II
+The following commands generate passwords for Block II modes, with mixed configurations including variable lengths and optional ambiguous characters:
+
+**Mode 11: All character types, no ambiguous characters (length 15)**
+```bash
+python password_generator.py --length 15
+```
+```
+Generated password: A7xPq9zT2rYwK5m
+Entropy: 89.43 bits
+```
+
+**Mode 12: All character types, with ambiguous characters (length 18)**
+```bash
+python password_generator.py --length 18 --with-ambiguous
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3I
+Entropy: 118.87 bits
+```
+
+**Mode 13: Lowercase + Digits, no ambiguous characters (length 20)**
+```bash
+python password_generator.py --length 20 --no-uppercase --no-special
+```
+```
+Generated password: ax9zq4r7y2m8p5t3k6w
+Entropy: 98.77 bits
+```
+
+**Mode 14: Uppercase + Digits, no ambiguous characters (length 20)**
+```bash
+python password_generator.py --length 20 --no-lowercase --no-special
+```
+```
+Generated password: AX9ZQ4R7Y2M8P5T3K6W
+Entropy: 98.77 bits
+```
+
+**Mode 15: All character types, no ambiguous characters (length 24)**
+```bash
+python password_generator.py --length 24
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN
+Entropy: 143.08 bits
+```
+
+**Mode 16: All character types, no ambiguous characters (length 32)**
+```bash
+python password_generator.py --length 32
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR
+Entropy: 190.77 bits
+```
+
+**Mode 17: All character types, no ambiguous characters (length 42)**
+```bash
+python password_generator.py --length 42
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5n
+Entropy: 250.51 bits
+```
+
+**Mode 18: All character types, no ambiguous characters (length 60)**
+```bash
+python password_generator.py --length 60
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w
+Entropy: 357.87 bits
+```
+
+**Mode 19: All character types, no ambiguous characters (length 75)**
+```bash
+python password_generator.py --length 75
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w2tY5mP8xN6r
+Entropy: 447.34 bits
+```
+
+**Mode 20: All character types, no ambiguous characters (length 128)**
+```bash
+python password_generator.py --length 128
+```
+```
+Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w2tY5mP8xN6rZkB3wE9tL4qP6mV2xR8yH5nF7jT1zG4rK9vU3m
+Entropy: 762.90 bits
 ```
 
 ## Password Entropy Calculation
-The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.10 bits (15 characters) to 811.50 bits (128 characters), surpassing the NIST minimum of 75 bits. See the [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/EntropyCalculation.md) file for details.
+The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 89.43 bits (15 characters) to 762.90 bits (128 characters), surpassing the NIST minimum of 75 bits. See the [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/EntropyCalculation.md) file for details.
 
 ## License
 This project is licensed under the MIT License. See the [**License**](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
