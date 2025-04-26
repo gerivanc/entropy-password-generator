@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org)
 [![Maintained](https://img.shields.io/badge/Maintained?-yes-green.svg)](https://github.com/gerivanc/entropy-password-generator/graphs/commit-activity)
+[![Build Status](https://github.com/gerivanc/entropy-password-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/gerivanc/entropy-password-generator/actions/workflows/ci.yml)
 
 **EntroPy Password Generator** is a secure and customizable password generator written in Python. It creates strong passwords with configurable character sets and calculates their entropy to assess strength. The project provides 20 modes for generating strong passwords, ranging from 15 to 128 characters, with entropies from 95.10 bits to 811.50 bits, exceeding the NIST recommendation of at least 75 bits of entropy. With a command-line interface, it is ideal for developers, security enthusiasts, and anyone needing robust passwords.
 
