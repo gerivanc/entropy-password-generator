@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org)
+![Badge: Entropy Compliant](https://img.shields.io/badge/Entropy%20Compliant-Proton%C2%A9%20%26%20NIST-brightgreen)
 [![Maintained](https://img.shields.io/badge/Maintained?-yes-green.svg)](https://github.com/gerivanc/entropy-password-generator/graphs/commit-activity)
 [![Build Status](https://github.com/gerivanc/entropy-password-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/gerivanc/entropy-password-generator/actions/workflows/ci.yml)
 
@@ -92,8 +93,8 @@ Generated password: kxw9m4p7q2n8r5t
 Entropy: 85.75 bits
 ```
 
-## Entropy Calculation
-The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.10 bits (15 characters) to 811.50 bits (128 characters), surpassing the NIST minimum of 75 bits.
+## Password Entropy Calculation
+The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.10 bits (15 characters) to 811.50 bits (128 characters), surpassing the NIST minimum of 75 bits. See the [Password Entropy Calculation](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md)) file for details.
 
 ## License
 This project is licensed under the MIT License. See the [License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
