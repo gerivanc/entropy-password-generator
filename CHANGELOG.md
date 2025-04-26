@@ -1,4 +1,5 @@
 # Changelog
+[![keep a Changelog: ](https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://semver.org/&size=16](https://github.com/gerivanc/entropy-password-generator/edit/main/CHANGELOG.md)
 
 All notable changes to the EntroPy Password Generator project will be documented in this file.
 
