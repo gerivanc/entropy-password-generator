@@ -1,16 +1,26 @@
 """
-EntroPy Password Generator
+EntroPy Password Generator - A secure and customizable password generator written in Python.
+
+This script provides a command-line interface for generating strong, random passwords with customizable character sets
+and calculates their entropy to assess strength. It includes 20 predefined modes for password generation, ensuring high
+security standards.
+
 =========================
-A secure and customizable password generator written in Python.
 Features:
 - Generates passwords with lengths between 15 and 128 characters.
 - Supports uppercase letters, lowercase letters, digits, and special characters.
 - Option to exclude ambiguous characters for better readability.
 - Calculates password entropy to assess strength.
 - Command-line interface for flexible usage.
+----------------------------------------
 
-Author: Copyright © 2025 Gerivan Costa dos Santos
-License: MIT
+Copyright © 2025 Gerivan Costa dos Santos
+EntroPy Password Generator
+Author: gerivanc
+GitHub: https://github.com/gerivanc
+MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
+Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
+Version: 0.3.0
 """
 
 import secrets
@@ -29,6 +39,22 @@ AMBIG_UPPERCASE = 'ILO'  # I, L, O
 AMBIG_LOWERCASE = 'ilo'  # i, l, o
 AMBIG_DIGITS = '01'      # 0, 1
 AMBIG_SPECIAL = '|`'     # Vertical bar and backtick
+
+def print_header():
+    """
+    Prints the header with project information at the start of the script execution.
+    """
+    header = (
+        "Copyright © 2025 Gerivan Costa dos Santos\n"
+        "EntroPy Password Generator\n"
+        "Author: gerivanc\n"
+        "GitHub: https://github.com/gerivanc\n"
+        "MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md\n"
+        "Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md\n"
+        "Version: 0.2.0\n"
+        "----------------------------------------\n"
+    )
+    print(header)
 
 def generate_password(
     length=66,
@@ -174,6 +200,9 @@ def main():
         print(f"Error: {e}")
 
 if __name__ == "__main__":
+    # Print the header once at the start
+    print_header()
+
     try:
         # Strong Passwords Block I (fixed length 24, with ambiguous characters)
         print("\n=== Strong Passwords Block I ===")
