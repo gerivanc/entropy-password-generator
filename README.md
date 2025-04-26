@@ -101,7 +101,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
 
 ## Changelog
-See the [Changelog](CHANGELOG.m) for a detailed history of changes to this project.
+See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md) for a detailed history of changes to this project.
 
 ## Contact
 For questions or feedback, please contact: enc28ysi@protonmail.com.
