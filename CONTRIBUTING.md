@@ -67,3 +67,5 @@ If you have questions or need assistance:
 
 ## Acknowledgments
 Thank you for contributing to the **EntroPy Password Generator**! Your efforts help make this project a valuable tool for secure password generation.
+
+#### Copyright © 2025 Gerivan Costa dos Santos
