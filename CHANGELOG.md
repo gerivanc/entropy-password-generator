@@ -23,7 +23,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
-- Added `EntropyCalculation.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
+- Added `PASSWORDENTROPYCALCULATION.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of `password_generator.py`.
 - Added header with project information (Copyright, Author, GitHub, License, Changelog) in the output of generated passwords.
 
@@ -42,8 +42,8 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added CI workflow (`.github/workflows/python-app.yml`) for linting and basic script execution across multiple Python versions.
 - Adjusted the About section on the project page to fit the 350-character limit while maintaining key details.
 - Enhanced the About section on the project page with a more detailed and compelling description of features and benefits.
-- Updated entropy values in `README.md` to align with `EntropyCalculation.md` (95.70 bits to 816.64 bits).
-- Adjusted link to `EntropyCalculation.md` in `README.md` for clarity.
+- Updated entropy values in `README.md` to align with `PASSWORDENTROPYCALCULATION.md` (95.70 bits to 816.64 bits).
+- Adjusted link to `PASSWORDENTROPYCALCULATION.md` in `README.md` for clarity.
 - Reordered Project Capabilities table in `README.md` by increasing entropy (bits) for better clarity.
 - Updated Project Capabilities table in `README.md` with recalculated entropy values for all 20 password generation modes.
 - Adjusted separators in the authorship comment for better readability.
