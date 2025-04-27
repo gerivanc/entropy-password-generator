@@ -14,7 +14,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added version number (0.4.0) to the authorship comment and output header.
 - Added `EntropyCalculation.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of password_generator.py.
-- Added header with project information (Copyright, Author,所述: GitHub, License, Changelog) in the output of generated passwords.
+- Added header with project information (Copyright, Author, About: GitHub, License, Changelog) in the output of generated passwords.
 
 ### Changed
 - Updated entropy values in `README.md` to align with `EntropyCalculation.md` (95.70 bits to 816.64 bits).
