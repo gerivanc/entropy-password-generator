@@ -8,15 +8,30 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ## [Unreleased]
 - No unreleased changes at the moment.
 
+## [0.4.0] - 2025-04-27
+### Changed
+- Updated PyPI publish workflow (pypi-publish.yml) to use actions/checkout@v3 instead of v4 to resolve persistent checkout error.
+- Updated PyPI publish workflow (pypi-publish.yml) to fix checkout error by adding event context debugging and actions:read permission.
+- Updated PyPI publish workflow (pypi-publish.yml) with debugging steps to verify Python version, build output, and artifact downloads.
+- Updated CI workflow (python-app.yml) to use python -m for script execution and added debug step to verify working directory.
+- Updated CI workflow (python-app.yml) to fix script execution by invoking the script directly instead of using python -m.
+- Refactored password_generator.py to fix flake8 linting errors (line length, complexity, spacing).
+- Updated minimum Python requirement to 3.8 in README.md and pyproject.toml due to Python 3.6 EOL and lack of support in GitHub Actions.
+- Updated CI workflow (python-app.yml) to test with Python 3.8, 3.10, and 3.12, removing Python 3.6.
+- Adjusted CLI usage commands in README.md to use the package structure (python -m entropy_password_generator.password_generator).
+- Restructured project as a Python package for PyPI publication, including pyproject.toml and package directory.
+- Added PyPI publish workflow (.github/workflows/pypi-publish.yml) to automatically publish releases.
+- Added CI workflow (.github/workflows/python-app.yml) for linting and basic script execution across multiple Python versions.
+- Adjusted the About section on the project page to fit the 350-character limit while maintaining key details.
+- Enhanced the About section on the project page with a more detailed and compelling description of features and benefits.
+
 ## [0.4.0] - 2025-04-26
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
-- Adjusted the About section on the project page to fit the 350-character limit while maintaining key details.
-- Enhanced the About section on the project page with a more detailed and compelling description of features and benefits.
 - Added `EntropyCalculation.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of password_generator.py.
-- Added header with project information (Copyright, Author, About: GitHub, License, Changelog) in the output of generated passwords.
+- Added header with project information (Copyright, Author, GitHub, License, Changelog) in the output of generated passwords.
 
 ### Changed
 - Updated entropy values in `README.md` to align with `EntropyCalculation.md` (95.70 bits to 816.64 bits).
