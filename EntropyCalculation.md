@@ -84,7 +84,7 @@ High entropy **directly mitigates** the risks associated with:
 
 - [Proton© Blog - Password Entropy Explained](https://proton.me/blog/what-is-password-entropy)
 - [NIST SP 800-63B Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)
-- [NIST SP 800-132 Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-132.pdf)
+- [NIST SP 800-132 Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)
 
 ---
 
