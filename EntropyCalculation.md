@@ -41,10 +41,12 @@ This password generator offers **20 modes**, ensuring generated passwords achiev
 | Password Length | Character Set | Entropy (bits) | Security Level |
 |:----------------|:--------------|:---------------|:---------------|
 | 15 characters | Full (uppercase, lowercase, digits, symbols) | 95.10 bits | Strong |
-| 20 characters | Full (uppercase, lowercase, digits, symbols) | 126.80 bits | Very Strong |
-| 25 characters | Full (uppercase, lowercase, digits, symbols) | 158.50 bits | Extremely Strong |
-| 32 characters | Full (uppercase, lowercase, digits, symbols) | 203.84 bits | Cryptographic Grade |
-| 64 characters | Full (uppercase, lowercase, digits, symbols) | 407.68 bits | Ultra Secure |
+| 18 characters | Full (uppercase, lowercase, digits, symbols) | 117.14 bits | Very Strong |
+| 24 characters | Full (uppercase, lowercase, digits, symbols) | 152.16 bits | Extremely Strong |
+| 32 characters | Full (uppercase, lowercase, digits, symbols) | 202.88 bits | Cryptographic Grade |
+| 42 characters | Full (uppercase, lowercase, digits, symbols) | 266.27 bits | Ultra Secure |
+| 60 characters | Full (uppercase, lowercase, digits, symbols) | 380.39 bits | Ultra Secure |
+| 75 characters | Full (uppercase, lowercase, digits, symbols) | 475.49 bits | Ultra Secure |
 | 128 characters | Full (uppercase, lowercase, digits, symbols) | 811.50 bits | Ultra Secure (Theoretical Maximum) |
 
 **All generated passwords surpass the Proton© minimum of 75 bits and NIST recommendations.**
