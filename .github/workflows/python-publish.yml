@@ -63,6 +63,12 @@ jobs:
           # Check if dist/ directory contains the expected files
           ls -l dist/
 
+      - name: Test built package
+        run: |
+          # Install the built package locally and test it
+          pip install dist/*.whl
+          python -m entropy_password_generator.password_generator --length 15
+
       - name: Upload distributions
         uses: actions/upload-artifact@v4
         with:
@@ -96,4 +102,4 @@ jobs:
       - name: Publish release distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages_dir: dist/  # Corrected from packages-dir to packages_dir
+          packages_dir: dist/
