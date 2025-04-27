@@ -20,9 +20,8 @@ where:
 
 Simplified:
 
-\[ Entropy = \log_2(\text{possibilities per character}) \times \text{password length} \]
-
-A higher entropy value means exponentially more effort required to crack the password via brute-force methods.
+- Entropy=log2​(possibilities per character)×password length;
+- A higher entropy value means exponentially more effort required to crack the password via brute-force methods.
 
 ## Security Benchmarks
 
@@ -54,10 +53,10 @@ This password generator offers **20 modes**, ensuring generated passwords achiev
 
 ## Why High Entropy Matters
 
-- **< 50 bits**: Vulnerable \u2014 feasible for sophisticated attackers to crack.
-- **50\u201375 bits**: Moderately secure \u2014 risky for high-value targets.
-- **75\u2013100 bits**: Strong \u2014 adequate for personal and professional security.
-- **> 100 bits**: Very strong \u2014 recommended for administrative, financial, and cryptographic uses.
+- **< 50 bits**: Vulnerable — feasible for sophisticated attackers to crack.
+- **50–75 bits**: Moderately secure — risky for high-value targets.
+- **75–100 bits**: Strong — adequate for personal and professional security.
+- **> 100 bits**: Very strong — recommended for administrative, financial, and cryptographic uses.
 
 High entropy **directly mitigates** the risks associated with:
 
@@ -69,9 +68,9 @@ High entropy **directly mitigates** the risks associated with:
 
 ## References
 
-- [Proton\u00a9 Blog \u2013 Password Entropy Explained](https://proton.me/blog/what-is-password-entropy)
-- [NIST SP 800-63B \u2013 Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)
-- [NIST SP 800-132 \u2013 Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-132.pdf)
+- [Proton© Blog - Password Entropy Explained](https://proton.me/blog/what-is-password-entropy)
+- [NIST SP 800-63B Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)
+- [NIST SP 800-132 Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-132.pdf)
 
 ---
 
@@ -85,5 +84,3 @@ Additionally, combine the use of high-entropy passwords with advanced security l
 ---
 
 #### Copyright © 2025 Gerivan Costa dos Santos
-
-
