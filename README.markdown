@@ -298,7 +298,7 @@ Entropy: 762.90 bits
 ```
 
 ## Password Entropy Calculation
-The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 89.43 bits (15 characters) to 762.90 bits (128 characters), surpassing the NIST minimum of 75 bits. See the [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/EntropyCalculation.md) file for details.
+The generator calculates password entropy using the formula: E(R) = log₂(RL). Entropy = log₂(possibilities per character) × password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 89.43 bits (15 characters) to 762.90 bits (128 characters), surpassing the [**Proton©**](https://proton.me/blog/what-is-password-entropy) minimum of 75 bits. See the [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/EntropyCalculation.md) file for details.
 
 ## License
 This project is licensed under the MIT License. See the [**License**](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
