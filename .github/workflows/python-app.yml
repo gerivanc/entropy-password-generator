@@ -37,7 +37,13 @@ jobs:
         # Check for syntax errors, undefined names, and code style issues
         flake8 . --count --max-complexity=10 --max-line-length=127 --show-source --statistics
 
+    - name: Debug working directory
+      run: |
+        # Print current directory and list files for debugging
+        pwd
+        ls -R
+
     - name: Verify script execution
       run: |
         # Verify that the main script runs without errors
-        python entropy_password_generator/password_generator.py --length 15
+        python -m entropy_password_generator.password_generator --length 15
