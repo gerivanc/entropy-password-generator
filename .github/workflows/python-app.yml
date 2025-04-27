@@ -40,4 +40,4 @@ jobs:
     - name: Verify script execution
       run: |
         # Verify that the main script runs without errors
-        python -m entropy_password_generator.password_generator --length 15
+        python entropy_password_generator/password_generator.py --length 15
