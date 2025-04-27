@@ -28,8 +28,8 @@ A higher entropy value means exponentially more effort required to crack the pas
 
 | Source | Minimum Recommended Entropy | Context |
 |:------|:-----------------------------|:--------|
-| **Proton\u00a9** | 75 bits | General password strength recommendation for strong protection ([source](https://proton.me/blog/what-is-password-entropy)) |
-| **NIST (SP 800-132 / SP 800-63B)** | 80+ bits | For passwords protecting sensitive data ([source](https://pages.nist.gov/800-63-3/sp800-63b.html)) |
+| **Proton©** | 75 bits | General password strength recommendation for strong protection ([source](https://proton.me/blog/what-is-password-entropy)) |
+| **NIST (SP 800-132 / SP 800-63B)** | 80+ bits | For passwords protecting sensitive data ([**NIST SP 800-63B**](https://pages.nist.gov/800-63-3/sp800-63b.html) and [**NIST SP 800-132**](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)) |
 
 > **Note**: Modern threat models recommend passwords with at least **100 bits of entropy** for highly sensitive accounts.
 
@@ -42,13 +42,13 @@ This password generator offers **20 modes**, ensuring generated passwords achiev
 | Password Length | Character Set | Entropy (bits) | Security Level |
 |:----------------|:--------------|:---------------|:---------------|
 | 15 characters | Full (uppercase, lowercase, digits, symbols) | 95.10 bits | Strong |
-| 20 characters | Full | 126.80 bits | Very Strong |
-| 25 characters | Full | 158.50 bits | Extremely Strong |
-| 32 characters | Full | 203.84 bits | Cryptographic Grade |
-| 64 characters | Full | 407.68 bits | Ultra Secure |
-| 128 characters | Full | 811.50 bits | Ultra Secure (Theoretical Maximum) |
+| 20 characters | Full (uppercase, lowercase, digits, symbols) | 126.80 bits | Very Strong |
+| 25 characters | Full (uppercase, lowercase, digits, symbols) | 158.50 bits | Extremely Strong |
+| 32 characters | Full (uppercase, lowercase, digits, symbols) | 203.84 bits | Cryptographic Grade |
+| 64 characters | Full (uppercase, lowercase, digits, symbols) | 407.68 bits | Ultra Secure |
+| 128 characters | Full (uppercase, lowercase, digits, symbols) | 811.50 bits | Ultra Secure (Theoretical Maximum) |
 
-**All generated passwords surpass the Proton\u00a9 minimum of 75 bits and NIST recommendations.**
+**All generated passwords surpass the Proton© minimum of 75 bits and NIST recommendations.**
 
 ---
 
