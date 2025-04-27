@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.6", "3.8", "3.10", "3.12" ]
+        python-version: [ "3.8", "3.10", "3.12" ]
 
     steps:
     - uses: actions/checkout@v4
@@ -40,4 +40,4 @@ jobs:
     - name: Verify script execution
       run: |
         # Verify that the main script runs without errors
-        python password_generator.py --length 15
+        python -m entropy_password_generator.password_generator --length 15
