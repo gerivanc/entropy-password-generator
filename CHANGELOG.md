@@ -12,6 +12,8 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
+- Adjusted the About section on the project page to fit the 350-character limit while maintaining key details.
+- Enhanced the About section on the project page with a more detailed and compelling description of features and benefits.
 - Added `EntropyCalculation.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of password_generator.py.
 - Added header with project information (Copyright, Author, About: GitHub, License, Changelog) in the output of generated passwords.
