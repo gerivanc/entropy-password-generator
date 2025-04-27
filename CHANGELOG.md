@@ -5,11 +5,14 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
-## [Unreleased]
+## [0.4.1] - 2025-04-28
 ### Added
+- Added execution instruction in the script header of `password_generator.py`.
 - Added `__init__.py` to `entropy_password_generator/` to ensure proper package structure, with version defined.
 
 ### Changed
+- Updated version to `0.4.1` in `password_generator.py` to reflect recent changes.
+- Improved error handling in `password_generator.py` CLI with more descriptive messages and usage suggestion.
 - Updated CI workflow (`python-app.yml`) and PyPI publish workflow (`pypi-publish.yml`) to ensure package structure with `__init__.py`.
 - Updated `password_generator.py` to fix version inconsistency in header (from 0.2.0 to 0.3.0).
 - Updated CI workflow (`python-app.yml`) to add more test cases (no special characters, with ambiguous characters) and additional debugging.
@@ -54,7 +57,6 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ### Changed
 - Adjusted separators in the authorship comment for better readability.
-- No unreleased changes at the moment.
 
 ## [0.2.0] - 2025-04-24
 ### Added
