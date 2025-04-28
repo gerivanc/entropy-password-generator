@@ -14,6 +14,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a styled quote block in the `README.md` to emphasize compliance with Proton© (75 bits) and NIST (80+ bits) entropy standards, enhancing visual appeal and user trust.
 - Added an entropy minimum warning in `password_generator.py`. If the entropy of a generated password is below 75 bits (Proton© standard), a warning is displayed with contextual suggestions to improve security (e.g., increase length, include more character types).
 - Added badges for "Keep a Changelog" and "Semantic Versioning" at the beginning of `CHANGELOG.md`, with links to their respective websites, to highlight adherence to these standards.
+- Added a debug step in the CI workflow (`.github/workflows/python-app.yml`) to display the current commit and content of `password_generator.py`, aiding in diagnosing pipeline issues.
 
 ### Changed
 - Updated version to `0.4.1` in `password_generator.py` to reflect recent changes.
@@ -25,9 +26,11 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated PyPI publish workflow (`pypi-publish.yml`) to fix checkout and publish errors by using manual git clone and correcting `packages_dir` parameter.
 - Reorganized the `README.md` to separate "Strong Passwords Block I" and "Block II" into distinct sections for CLI usage and examples, improving clarity and usability.
 - Updated entropy values in `README.md` to align with recalculated values based on the `password_generator.py` code, ensuring consistency across documentation.
+- Modified the CI workflow (`.github/workflows/python-app.yml`) to temporarily adjust the Flake8 command to lint only `password_generator.py`, isolating the source of linting errors during debugging.
 
 ### Fixed
 - Fixed linting errors in `password_generator.py` (Flake8, rule W293) by removing whitespace in blank lines on lines 224, 277, and 293, ensuring the CI/CD pipeline build passes successfully.
+- Addressed intermittent CI pipeline failures by confirming the correct version of `password_generator.py` (without whitespace in blank lines) and providing steps to update the repository and clear pipeline cache.
 
 ### Removed
 - Removed the "Build Status" badge from `README.md` due to persistent linting failures in the CI/CD pipeline, as the issue was related to linting rules rather than functional errors.
