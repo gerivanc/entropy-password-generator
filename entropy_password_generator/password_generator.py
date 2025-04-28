@@ -20,7 +20,7 @@ Author: gerivanc
 GitHub: https://github.com/gerivanc
 MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
 Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
-Version: 0.4.0
+Version: 0.4.1
 """
 
 import secrets
@@ -52,7 +52,7 @@ def print_header():
         "GitHub: https://github.com/gerivanc\n"
         "MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md\n"
         "Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md\n"
-        "Version: 0.4.0\n"
+        "Version: 0.4.1\n"
         "----------------------------------------\n"
     )
     print(header)
