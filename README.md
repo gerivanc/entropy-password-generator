@@ -320,7 +320,7 @@ Entropy: 816.64 bits
 ## Password Entropy Calculation
 
 > **Secure by Design**  
-> <span style="color: #39FF14;">With Python's `secrets` module, the EntroPy Password Generator ensures cryptographically secure randomization, delivering passwords that exceed Proton© (75 bits) and NIST (80+ bits) entropy standards.</span>
+> With Python's `secrets` module, the EntroPy Password Generator ensures cryptographically secure randomization, delivering passwords that exceed Proton© (75 bits) and NIST (80+ bits) entropy standards.
 
 The generator calculates password entropy using the formula: \( E(R) = \log_2(R^L) \), where \( R \) is the character set size and \( L \) is the password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.70 bits (15 characters) to 816.64 bits (128 characters), surpassing the [Proton©](https://proton.me/blog/what-is-password-entropy) minimum of 75 bits. 
 
