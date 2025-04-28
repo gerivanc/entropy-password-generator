@@ -81,7 +81,7 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 | 20 | 128 | All types, no ambiguous | 816.64 | Ultra Secure (Theoretical Maximum) |
 
 ## CLI Options - Usage Block I
-- `--length <length>`: Set password length (fixed to 24 for Block I modes).
+- `--length <length>`: Set password length (fixed to 24 for Block I modes, default: 72).
 - `--no-uppercase`: Exclude uppercase letters.
 - `--no-lowercase`: Exclude lowercase letters.
 - `--no-digits`: Exclude digits.
@@ -89,7 +89,7 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 - `--with-ambiguous`: Include ambiguous characters (enabled by default for Block I).
 
 ## CLI Options - Usage Block II
-- `--length <length>`: Set password length (15 to 128 for Block II modes).
+- `--length <length>`: Set password length (15 to 128 for Block II modes, default: 72).
 - `--no-uppercase`: Exclude uppercase letters.
 - `--no-lowercase`: Exclude lowercase letters.
 - `--no-digits`: Exclude digits.
