@@ -59,7 +59,7 @@ def print_header():
 
 
 def generate_password(
-    length=66,
+    length=72,  # Changed from 66 to 72
     use_uppercase=True,
     use_lowercase=True,
     use_digits=True,
@@ -173,8 +173,8 @@ def main():
         description="EntroPy Password Generator: A secure and customizable password generator."
     )
     parser.add_argument(
-        "--length", type=int, default=66,
-        help="Password length (15 to 128 characters, default: 66)"
+        "--length", type=int, default=72,  # Changed from 66 to 72
+        help="Password length (15 to 128 characters, default: 72)"  # Updated help
     )
     parser.add_argument(
         "--no-uppercase", action="store_false", dest="use_uppercase",
