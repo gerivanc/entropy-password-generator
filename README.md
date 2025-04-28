@@ -219,7 +219,7 @@ python -m entropy_password_generator.password_generator --length 24 --no-upperca
 ```
 ```
 Generated password: ax!7zq#4r$9y@2m&8p%5t*3
-Entropy: 146.68 bits
+Entropy: 145.68 bits
 ```
 
 ---
@@ -318,7 +318,13 @@ Entropy: 816.64 bits
 ```
 
 ## Password Entropy Calculation
-The generator calculates password entropy using the formula: \( E(R) = \log_2(R^L) \), where \( R \) is the character set size and \( L \) is the password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.70 bits (15 characters) to 816.64 bits (128 characters), surpassing the [Proton©](https://proton.me/blog/what-is-password-entropy) minimum of 75 bits. See the [Password Entropy Calculation](https://github.com/gerivanc/entropy-password-generator/blob/main/PASSWORDENTROPYCALCULATION.md) file for details.
+
+> **Secure by Design**  
+> With Python's `secrets` module, the EntroPy Password Generator ensures cryptographically secure randomization, delivering passwords that exceed Proton© (75 bits) and NIST (80+ bits) entropy standards.
+
+The generator calculates password entropy using the formula: \( E(R) = \log_2(R^L) \), where \( R \) is the character set size and \( L \) is the password length. Higher entropy indicates a stronger password. The project's 20 modes ensure entropies from 95.70 bits (15 characters) to 816.64 bits (128 characters), surpassing the [Proton©](https://proton.me/blog/what-is-password-entropy) minimum of 75 bits. 
+
+**Note**: The entropy calculation assumes ideal randomness, achieved through the `secrets` module. However, in real-world scenarios, heuristic-based tools (e.g., [zxcvbn](https://github.com/dropbox/zxcvbn)) may detect predictable patterns, potentially reducing effective strength. To ensure maximum security, use generated passwords without modifications and consider validating them with tools like zxcvbn for a practical strength assessment. See the [Password Entropy Calculation](https://github.com/gerivanc/entropy-password-generator/blob/main/PASSWORDENTROPYCALCULATION.md) file for details.
 
 ## License
 This project is licensed under the MIT License. See the [License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
