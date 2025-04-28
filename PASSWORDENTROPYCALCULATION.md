@@ -17,7 +17,7 @@ where:
 - **E(R)**: Entropy in bits.
 
 Simplified:
-- Entropy = \( \log_2(\text{possibilities per character}) \times \text{password length} \).
+- Entropy = log₂(possibilities per character) × password length.
 - Higher entropy means exponentially greater effort to crack the password.
 - The table below provides the entropy formula for each mode in a simplified notation (e.g., log₂(R)×L) for readability, with the resulting entropy in bits.
 
