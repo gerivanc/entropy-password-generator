@@ -6,9 +6,14 @@
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
 ## [0.4.1] - 2025-04-28
+
 ### Added
 - Added execution instruction in the script header of `password_generator.py`.
 - Added `__init__.py` to `entropy_password_generator/` to ensure proper package structure, with version defined.
+- Added a note in the `README.md` under the "Password Entropy Calculation" section, addressing the limitations of the entropy calculation (\( E(R) = \log_2(R^L) \)). The note highlights potential overestimation in real-world scenarios and suggests using tools like `zxcvbn` for practical strength validation.
+- Added a styled quote block in the `README.md` to emphasize compliance with Proton© (75 bits) and NIST (80+ bits) entropy standards, enhancing visual appeal and user trust.
+- Added an entropy minimum warning in `password_generator.py`. If the entropy of a generated password is below 75 bits (Proton© standard), a warning is displayed with contextual suggestions to improve security (e.g., increase length, include more character types).
+- Added badges for "Keep a Changelog" and "Semantic Versioning" at the beginning of `CHANGELOG.md`, with links to their respective websites, to highlight adherence to these standards.
 
 ### Changed
 - Updated version to `0.4.1` in `password_generator.py` to reflect recent changes.
@@ -18,8 +23,17 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated CI workflow (`python-app.yml`) to add more test cases (no special characters, with ambiguous characters) and additional debugging.
 - Updated PyPI publish workflow (`pypi-publish.yml`) to test the built package before publishing.
 - Updated PyPI publish workflow (`pypi-publish.yml`) to fix checkout and publish errors by using manual git clone and correcting `packages_dir` parameter.
+- Reorganized the `README.md` to separate "Strong Passwords Block I" and "Block II" into distinct sections for CLI usage and examples, improving clarity and usability.
+- Updated entropy values in `README.md` to align with recalculated values based on the `password_generator.py` code, ensuring consistency across documentation.
+
+### Fixed
+- Fixed linting errors in `password_generator.py` (Flake8, rule W293) by removing whitespace in blank lines on lines 224, 277, and 293, ensuring the CI/CD pipeline build passes successfully.
+
+### Removed
+- Removed the "Build Status" badge from `README.md` due to persistent linting failures in the CI/CD pipeline, as the issue was related to linting rules rather than functional errors.
 
 ## [0.4.0] - 2025-04-27
+
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
@@ -49,6 +63,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Adjusted separators in the authorship comment for better readability.
 
 ## [0.3.0] - 2025-04-25
+
 ### Added
 - Deep update to the code structure.
 - Version number (0.3.0) of the author comment and output header in `password_generator.py`.
@@ -59,6 +74,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Adjusted separators in the authorship comment for better readability.
 
 ## [0.2.0] - 2025-04-24
+
 ### Added
 - Badges to `README.md` for License (MIT), Language (Python), and Maintenance status.
 - `Disclaimer` section to `README.md` with security recommendations (use of password managers and 2FA).
@@ -69,6 +85,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated titles in `password_generator.py` from Portuguese to English (`Strong Passwords Block I` and `Block II`).
 
 ## [0.1.0] - 2025-04-20
+
 ### Added
 - Initial project structure with `password_generator.py`, including 20 password generation modes.
 - `README.md` with project overview, usage instructions, and examples.
