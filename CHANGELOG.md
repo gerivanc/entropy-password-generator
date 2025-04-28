@@ -3,7 +3,7 @@
 [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 [![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-blue)](https://semver.org/spec/v2.0.0.html)
 
-All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (Without Seeing), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
+All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
 ## [0.4.1] - 2025-04-28
 
@@ -27,6 +27,9 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Reorganized the `README.md` to separate "Strong Passwords Block I" and "Block II" into distinct sections for CLI usage and examples, improving clarity and usability.
 - Updated entropy values in `README.md` to align with recalculated values based on the `password_generator.py` code, ensuring consistency across documentation.
 - Modified the CI workflow (`.github/workflows/python-app.yml`) to temporarily adjust the Flake8 command to lint only `password_generator.py`, isolating the source of linting errors during debugging.
+- Attempted to apply a custom color (Verde Brilhante 1, #39FF14) to the "Secure by Design" note in the `README.md` under the "Password Entropy Calculation" section using HTML inline styling, but decided against the change due to GitHub Markdown's limited support for custom color rendering.
+- Updated the default password length in `password_generator.py` from 66 to 72 characters to align with the expected default maximum length, enhancing the security of generated passwords by default.
+- Updated the `--length` argument description in `README.md` under the "CLI Options - Usage Block I" and "CLI Options - Usage Block II" sections to reflect the new default value (`default: 72`), ensuring consistency between the code and documentation.
 
 ### Fixed
 - Fixed linting errors in `password_generator.py` (Flake8, rule W293) by removing whitespace in blank lines on lines 224, 277, and 293, ensuring the CI/CD pipeline build passes successfully.
