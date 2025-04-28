@@ -115,12 +115,10 @@ def generate_password(
         raise ValueError("No characters available to generate the password after configuration.")
 
     # Determine minimum required characters
-    min_required = (
-        (1 if use_uppercase else 0) +
-        (1 if use_lowercase else 0) +
-        (1 if use_digits else 0) +
-        (1 if use_special else 0)
-    )
+    min_required = (1 if use_uppercase else 0) + \
+                   (1 if use_lowercase else 0) + \
+                   (1 if use_digits else 0) + \
+                   (1 if use_special else 0)
 
     # Ensure length is sufficient for required characters
     if length < min_required:
@@ -289,12 +287,26 @@ if __name__ == "__main__":
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 13. 20 characters, only lowercase letters and digits, no ambiguous characters")
-        password, entropy = generate_password(length=20, use_uppercase=False, use_lowercase=True, use_digits=True, use_special=False, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=20,
+            use_uppercase=False,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=False,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 14. 20 characters, only uppercase letters and digits, no ambiguous characters")
-        password, entropy = generate_password(length=20, use_uppercase=True, use_lowercase=False, use_digits=True, use_special=False, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=20,
+            use_uppercase=True,
+            use_lowercase=False,
+            use_digits=True,
+            use_special=False,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
