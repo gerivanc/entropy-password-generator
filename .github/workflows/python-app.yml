@@ -19,6 +19,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Debug - Show commit and file content
+      run: |
+        echo "Current commit:"
+        git log -1
+        echo "Content of password_generator.py:"
+        cat entropy_password_generator/password_generator.py
+
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
@@ -31,7 +38,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 entropy_password_generator/ --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
+        flake8 entropy_password_generator/password_generator.py --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
 
     - name: Run script with different options
       run: |
