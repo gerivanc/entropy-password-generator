@@ -148,6 +148,19 @@ def generate_password(
     charset_size = len(set(all_chars))
     entropy = math.log2(charset_size) * length
 
+    # Warn if entropy is below the Proton© recommended minimum (75 bits)
+    if entropy < 75:
+        suggestions = []
+        if length < 24:
+            suggestions.append("increase the password length (e.g., use --length 24 or higher)")
+        if sum([use_uppercase, use_lowercase, use_digits, use_special]) < 3:
+            suggestions.append("include more character types (e.g., use uppercase, lowercase, digits, and special characters)")
+        suggestion_text = " and ".join(suggestions) if suggestions else "use a stronger configuration"
+        print("----------------------------------------")
+        print(f"Warning: Password entropy ({entropy:.2f} bits) is below the recommended 75 bits (Proton© standard).")
+        print(f"To improve security, {suggestion_text}.")
+        print("----------------------------------------")
+
     return ''.join(password), entropy
 
 
