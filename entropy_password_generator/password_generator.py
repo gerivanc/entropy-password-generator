@@ -40,6 +40,7 @@ AMBIG_LOWERCASE = 'ilo'  # i, l, o
 AMBIG_DIGITS = '01'      # 0, 1
 AMBIG_SPECIAL = '|`'     # Vertical bar and backtick
 
+
 def print_header():
     """
     Prints the header with project information at the start of the script execution.
@@ -55,6 +56,7 @@ def print_header():
         "----------------------------------------\n"
     )
     print(header)
+
 
 def generate_password(
     length=66,
@@ -150,6 +152,7 @@ def generate_password(
 
     return ''.join(password), entropy
 
+
 def main():
     """
     Command-line interface for the EntroPy Password Generator.
@@ -198,6 +201,7 @@ def main():
         print(f"Entropy: {entropy:.2f} bits")
     except ValueError as e:
         print(f"Error: {e}")
+
 
 if __name__ == "__main__":
     # Print the header once at the start
@@ -261,12 +265,26 @@ if __name__ == "__main__":
         print("\n=== Strong Passwords Block II ===")
         
         print("\nPassword 11. 15 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=15, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=15,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 12. 18 characters, with ambiguous characters, all character types")
-        password, entropy = generate_password(length=18, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=False)
+        password, entropy = generate_password(
+            length=18,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=False
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
@@ -281,32 +299,74 @@ if __name__ == "__main__":
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 15. 24 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=24, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=24,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 16. 32 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=32, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=32,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 17. 42 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=42, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=42,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 18. 60 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=60, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=60,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 19. 75 characters, default, no ambiguous characters, all character types")
-        password, entropy = generate_password(length=75, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=75,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
         print("\nPassword 20. Maximum 128 characters, all character types, no ambiguous characters")
-        password, entropy = generate_password(length=128, use_uppercase=True, use_lowercase=True, use_digits=True, use_special=True, avoid_ambiguous=True)
+        password, entropy = generate_password(
+            length=128,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
         print(f"Password: {password}")
         print(f"Entropy: {entropy:.2f} bits")
 
