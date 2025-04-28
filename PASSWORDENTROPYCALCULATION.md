@@ -17,7 +17,7 @@ where:
 - **E(R)**: Entropy in bits.
 
 Simplified:
-- Entropy = log₂(possibilities per character) × password length.
+- Entropy = log₂(possibilities per character) × password length
 - Higher entropy means exponentially greater effort to crack the password.
 - The table below provides the entropy formula for each mode in a simplified notation (e.g., log₂(R)×L) for readability, with the resulting entropy in bits.
 
@@ -79,6 +79,13 @@ High entropy directly mitigates risks from:
 
 ## Final Note
 
-Never memorize strong, randomly generated passwords manually. Store them securely in an encrypted environment, such as a trusted password manager. I recommend [Bitwarden©](https://bitwarden.com/), an open-source password manager with zero-knowledge encryption. Combine high-entropy passwords with **FIDO2 security keys**, **two-factor authentication (2FA)**, and **periodic security audits** for maximum protection.
+> **Robust Security Guaranteed**  
+> The EntroPy Password Generator leverages Python's `secrets` module for cryptographically secure randomization, ensuring passwords meet or exceed Proton© (75 bits) and NIST (80+ bits) entropy standards across all 20 modes.
+
+### Storage and Security
+Never memorize strong, randomly generated passwords manually. Instead, store them securely in an encrypted environment, such as a trusted password manager. I recommend [Bitwarden©](https://bitwarden.com/), an open-source password manager with zero-knowledge encryption. Enhance protection by combining high-entropy passwords with **FIDO2 security keys**, **two-factor authentication (2FA)**, and **periodic security audits**.
+
+### Entropy Considerations
+The entropy calculation (\( E(R) = \log_2(R^L) \)) assumes ideal randomness, where each character is independently selected from the character set. This provides a theoretical maximum strength, which the generator achieves using the `secrets` module. However, in real-world scenarios, attackers may use heuristic-based tools (e.g., [zxcvbn](https://github.com/dropbox/zxcvbn)) to detect predictable patterns, such as common words or keyboard sequences, potentially reducing effective entropy. While the generator minimizes such patterns through cryptographic randomization, users can further validate password strength with tools like zxcvbn for a complementary, practical assessment. For optimal security, always use generated passwords as-is, without manual modifications that could introduce predictability.
 
 #### Copyright © 2025 Gerivan Costa dos Santos
