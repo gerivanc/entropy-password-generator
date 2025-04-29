@@ -1,146 +1,399 @@
-import argparse
-import math
+"""
+EntroPy Password Generator - A secure and customizable password generator written in Python.
+
+This script provides a command-line interface for generating strong, random passwords with customizable character sets
+and calculates their entropy to assess strength. It includes 20 predefined modes for password generation, ensuring high
+security standards.
+
+=========================
+Features:
+- Generates passwords with lengths between 15 and 128 characters.
+- Supports uppercase letters, lowercase letters, digits, and special characters.
+- Option to exclude ambiguous characters for better readability.
+- Calculates password entropy to assess strength.
+- Command-line interface for flexible usage.
+----------------------------------------
+
+Copyright © 2025 Gerivan Costa dos Santos
+EntroPy Password Generator
+Author: gerivanc
+GitHub: https://github.com/gerivanc
+MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
+Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
+Version: 0.4.2
+"""
+
 import secrets
 import string
+import math
+import argparse
 
-def calculate_entropy(length, char_set_size):
-    """Calculate the entropy of a password in bits."""
-    return math.log2(char_set_size ** length)
+# Character sets
+SPECIAL_CHARS = '!@#$%^&*()_+-=[]{}|;:,.<>?~`\\'
+UPPERCASE_LETTERS = string.ascii_uppercase  # A-Z
+LOWERCASE_LETTERS = string.ascii_lowercase  # a-z
+DIGITS = string.digits  # 0-9
 
-def generate_password(length, uppercase=True, lowercase=True, digits=True, special=True, ambiguous=True):
-    """Generate a password based on the specified character sets."""
-    # Define character sets
-    uppercase_chars = string.ascii_uppercase
-    lowercase_chars = string.ascii_lowercase
-    digit_chars = string.digits
-    special_chars = "!@#$%^&*()_+-=[]{}|;:,.<>?~\\"
-    
-    # Remove ambiguous characters if not allowed
-    ambiguous_chars = set("IL1O0")
-    if not ambiguous:
-        uppercase_chars = "".join(c for c in uppercase_chars if c not in ambiguous_chars)
-        lowercase_chars = "".join(c for c in lowercase_chars if c not in ambiguous_chars)
-        digit_chars = "".join(c for c in digit_chars if c not in ambiguous_chars)
-    
-    # Build the character pool based on arguments
-    char_pool = ""
-    if uppercase:
-        char_pool += uppercase_chars
-    if lowercase:
-        char_pool += lowercase_chars
-    if digits:
-        char_pool += digit_chars
-    if special:
-        char_pool += special_chars
-    
-    if not char_pool:
-        raise ValueError("At least one character set must be selected (uppercase, lowercase, digits, or special).")
-    
-    # Generate the password
-    password = "".join(secrets.choice(char_pool) for _ in range(length))
-    
-    # Calculate entropy
-    entropy = calculate_entropy(length, len(char_pool))
-    
-    return password, entropy
+# Ambiguous characters
+AMBIG_UPPERCASE = 'ILO'  # I, L, O
+AMBIG_LOWERCASE = 'ilo'  # i, l, o
+AMBIG_DIGITS = '01'      # 0, 1
+AMBIG_SPECIAL = '|`'     # Vertical bar and backtick
 
-def map_arguments_to_mode(args):
-    """Map CLI arguments to the corresponding mode and configuration."""
-    length = args.length
-    uppercase = not args.no_uppercase
-    lowercase = not args.no_lowercase
-    digits = not args.no_digits
-    special = not args.no_special
-    ambiguous = args.with_ambiguous
-    
-    # Define the modes as per README.md, including descriptions
-    modes = [
-        # Block I: All with ambiguous characters, length 24
-        {"mode": 1, "description": "Lowercase + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": False, "lowercase": True, "digits": False, "special": True, "ambiguous": True},
-        {"mode": 2, "description": "Uppercase + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": False, "digits": False, "special": True, "ambiguous": True},
-        {"mode": 3, "description": "Uppercase + Lowercase, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": True, "digits": False, "special": False, "ambiguous": True},
-        {"mode": 4, "description": "Uppercase + Digits, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": False, "digits": True, "special": False, "ambiguous": True},
-        {"mode": 5, "description": "Lowercase + Digits, with ambiguous characters (length 24)", "length": 24, "uppercase": False, "lowercase": True, "digits": True, "special": False, "ambiguous": True},
-        {"mode": 6, "description": "Digits + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": False, "lowercase": False, "digits": True, "special": True, "ambiguous": True},
-        {"mode": 7, "description": "Uppercase + Lowercase + Digits, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": True, "digits": True, "special": False, "ambiguous": True},
-        {"mode": 8, "description": "Uppercase + Lowercase + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": True, "digits": False, "special": True, "ambiguous": True},
-        {"mode": 9, "description": "Uppercase + Digits + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": False, "digits": True, "special": True, "ambiguous": True},
-        {"mode": 10, "description": "Lowercase + Digits + Special characters, with ambiguous characters (length 24)", "length": 24, "uppercase": False, "lowercase": True, "digits": True, "special": True, "ambiguous": True},
-        # Block II: Mixed configurations
-        {"mode": 11, "description": "All character types, no ambiguous characters (length 15)", "length": 15, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 12, "description": "All character types, with ambiguous characters (length 18)", "length": 18, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": True},
-        {"mode": 13, "description": "Lowercase + Digits, no ambiguous characters (length 20)", "length": 20, "uppercase": False, "lowercase": True, "digits": True, "special": False, "ambiguous": False},
-        {"mode": 14, "description": "Uppercase + Digits, no ambiguous characters (length 20)", "length": 20, "uppercase": True, "lowercase": False, "digits": True, "special": False, "ambiguous": False},
-        {"mode": 15, "description": "All character types, no ambiguous characters (length 24)", "length": 24, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 16, "description": "All character types, no ambiguous characters (length 32)", "length": 32, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 17, "description": "All character types, no ambiguous characters (length 42)", "length": 42, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 18, "description": "All character types, no ambiguous characters (length 60)", "length": 60, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 19, "description": "All character types, no ambiguous characters (length 75)", "length": 75, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-        {"mode": 20, "description": "All character types, no ambiguous characters (length 128)", "length": 128, "uppercase": True, "lowercase": True, "digits": True, "special": True, "ambiguous": False},
-    ]
-    
-    # Find the matching mode
-    for mode_config in modes:
-        if (mode_config["length"] == length and
-            mode_config["uppercase"] == uppercase and
-            mode_config["lowercase"] == lowercase and
-            mode_config["digits"] == digits and
-            mode_config["special"] == special and
-            mode_config["ambiguous"] == ambiguous):
-            return mode_config["mode"], mode_config
-    
-    # If no exact match, provide a helpful error message
-    error_msg = (
-        f"No mode matches the provided arguments: length={length}, uppercase={uppercase}, "
-        f"lowercase={lowercase}, digits={digits}, special={special}, ambiguous={ambiguous}\n"
-        "Suggestions:\n"
-        "- For Block I modes, use --length 24 and enable --with-ambiguous (e.g., --length 24 --no-uppercase --no-digits)\n"
-        "- For Block II modes, use lengths like 15, 18, 20, 24, 32, 42, 60, 75, or 128 (e.g., --length 20 --no-lowercase --no-special)\n"
-        "- Ensure at least one character set is enabled (avoid using all --no-* options simultaneously)"
+
+def print_header():
+    """
+    Prints the header with project information at the start of the script execution.
+    """
+    header = (
+        "Copyright © 2025 Gerivan Costa dos Santos\n"
+        "EntroPy Password Generator\n"
+        "Author: gerivanc\n"
+        "GitHub: https://github.com/gerivanc\n"
+        "MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md\n"
+        "Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md\n"
+        "Version: 0.4.2\n"
+        "----------------------------------------\n"
     )
-    raise ValueError(error_msg)
+    print(header)
+
+
+def generate_password(
+    length=72,  # Changed from 66 to 72
+    use_uppercase=True,
+    use_lowercase=True,
+    use_digits=True,
+    use_special=True,
+    avoid_ambiguous=True
+):
+    """
+    Generates a secure random password with customizable settings and calculates its entropy.
+    
+    Parameters:
+    length (int): Password length (minimum 15, maximum 128)
+    use_uppercase (bool): Include uppercase letters (A-Z)
+    use_lowercase (bool): Include lowercase letters (a-z)
+    use_digits (bool): Include digits (0-9)
+    use_special (bool): Include special characters
+    avoid_ambiguous (bool): If True, removes visually ambiguous characters
+    
+    Returns:
+    tuple: (password (str), entropy (float)) - Generated password and its entropy in bits
+    
+    Raises:
+    ValueError: If parameters are invalid or no characters are available
+    """
+    # Validate length
+    if not isinstance(length, int) or length < 15 or length > 128:
+        raise ValueError("Password length must be an integer between 15 and 128 characters.")
+
+    # Ensure at least one character type is selected
+    if not (use_uppercase or use_lowercase or use_digits or use_special):
+        raise ValueError("At least one character type must be selected.")
+
+    # Initialize character sets
+    uppercase_local = UPPERCASE_LETTERS if use_uppercase else ''
+    lowercase_local = LOWERCASE_LETTERS if use_lowercase else ''
+    digits_local = DIGITS if use_digits else ''
+    special_local = SPECIAL_CHARS if use_special else ''
+
+    # Adjust to avoid ambiguous characters
+    if avoid_ambiguous:
+        if use_uppercase:
+            uppercase_local = ''.join(c for c in uppercase_local if c not in AMBIG_UPPERCASE)
+        if use_lowercase:
+            lowercase_local = ''.join(c for c in lowercase_local if c not in AMBIG_LOWERCASE)
+        if use_digits:
+            digits_local = ''.join(c for c in digits_local if c not in AMBIG_DIGITS)
+        if use_special:
+            special_local = ''.join(c for c in special_local if c not in AMBIG_SPECIAL)
+
+    # Combine available characters
+    all_chars = uppercase_local + lowercase_local + digits_local + special_local
+
+    if not all_chars:
+        raise ValueError("No characters available to generate the password after configuration.")
+
+    # Determine minimum required characters
+    min_required = (1 if use_uppercase else 0) + \
+                   (1 if use_lowercase else 0) + \
+                   (1 if use_digits else 0) + \
+                   (1 if use_special else 0)
+
+    # Ensure length is sufficient for required characters
+    if length < min_required:
+        raise ValueError(f"Password length must be at least {min_required} to include all selected character types.")
+
+    # Ensure at least one character of each selected type
+    password = []
+    if use_uppercase:
+        password.append(secrets.choice(uppercase_local))
+    if use_lowercase:
+        password.append(secrets.choice(lowercase_local))
+    if use_digits:
+        password.append(secrets.choice(digits_local))
+    if use_special:
+        password.append(secrets.choice(special_local))
+
+    # Fill the remaining length
+    for _ in range(length - len(password)):
+        password.append(secrets.choice(all_chars))
+
+    # Shuffle the password securely
+    for i in range(len(password) - 1, 0, -1):
+        j = secrets.randbelow(i + 1)
+        password[i], password[j] = password[j], password[i]
+
+    # Calculate entropy
+    charset_size = len(set(all_chars))
+    entropy = math.log2(charset_size) * length
+
+    # Warn if entropy is below the Proton© recommended minimum (75 bits)
+    if entropy < 75:
+        suggestions = []
+        if length < 24:
+            suggestions.append("increase the password length (e.g., use --length 24 or higher)")
+        if sum([use_uppercase, use_lowercase, use_digits, use_special]) < 3:
+            suggestions.append("include more character types (e.g., use uppercase, lowercase, digits, and special characters)")
+        suggestion_text = " and ".join(suggestions) if suggestions else "use a stronger configuration"
+        print("----------------------------------------")
+        print(f"Warning: Password entropy ({entropy:.2f} bits) is below the recommended 75 bits (Proton© standard).")
+        print(f"To improve security, {suggestion_text}.")
+        print("----------------------------------------")
+
+    return ''.join(password), entropy
+
 
 def main():
-    parser = argparse.ArgumentParser(description="EntroPy Password Generator - Generate secure passwords with high entropy.")
-    parser.add_argument("--length", type=int, default=72, help="Password length (default: 72)")
-    parser.add_argument("--no-uppercase", action="store_true", help="Exclude uppercase letters")
-    parser.add_argument("--no-lowercase", action="store_true", help="Exclude lowercase letters")
-    parser.add_argument("--no-digits", action="store_true", help="Exclude digits")
-    parser.add_argument("--no-special", action="store_true", help="Exclude special characters")
-    parser.add_argument("--with-ambiguous", action="store_true", help="Include ambiguous characters")
-    
-    args = parser.parse_args()
-    
-    # Map arguments to a specific mode
-    mode, config = map_arguments_to_mode(args)
-    
-    # Generate the password for the matched mode
-    password, entropy = generate_password(
-        length=config["length"],
-        uppercase=config["uppercase"],
-        lowercase=config["lowercase"],
-        digits=config["digits"],
-        special=config["special"],
-        ambiguous=config["ambiguous"]
+    """
+    Command-line interface for the EntroPy Password Generator.
+    Allows customization of password generation via terminal arguments.
+    """
+    parser = argparse.ArgumentParser(
+        description="EntroPy Password Generator: A secure and customizable password generator."
     )
-    
-    # Display the result with mode description
-    print(f"\nMode {mode}: {config['description']}")
-    print(f"Generated password: {password}")
-    print(f"Entropy: {entropy:.2f} bits")
-    
-    # Check for minimum entropy (Proton© standard: 75 bits)
-    if entropy < 75:
-        print("Warning: Password entropy is below the Proton© recommended minimum of 75 bits.")
-        print("Suggestions to improve security:")
-        print("- Increase the password length (e.g., use --length 24 or higher)")
-        print("- Include more character types (e.g., avoid --no-uppercase, --no-digits, etc.)")
+    parser.add_argument(
+        "--length", type=int, default=72,  # Changed from 66 to 72
+        help="Password length (15 to 128 characters, default: 72)"  # Updated help
+    )
+    parser.add_argument(
+        "--no-uppercase", action="store_false", dest="use_uppercase",
+        help="Exclude uppercase letters"
+    )
+    parser.add_argument(
+        "--no-lowercase", action="store_false", dest="use_lowercase",
+        help="Exclude lowercase letters"
+    )
+    parser.add_argument(
+        "--no-digits", action="store_false", dest="use_digits",
+        help="Exclude digits"
+    )
+    parser.add_argument(
+        "--no-special", action="store_false", dest="use_special",
+        help="Exclude special characters"
+    )
+    parser.add_argument(
+        "--with-ambiguous", action="store_false", dest="avoid_ambiguous",
+        help="Include ambiguous characters"
+    )
+
+    args = parser.parse_args()
+
+    try:
+        password, entropy = generate_password(
+            length=args.length,
+            use_uppercase=args.use_uppercase,
+            use_lowercase=args.use_lowercase,
+            use_digits=args.use_digits,
+            use_special=args.use_special,
+            avoid_ambiguous=args.avoid_ambiguous
+        )
+        print(f"Generated password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+    except ValueError as e:
+        print(f"Error: {e}")
+
 
 if __name__ == "__main__":
-    print("EntroPy Password Generator")
-    print("Author: Gerivan Costa dos Santos")
-    print("GitHub: https://github.com/gerivanc/entropy-password-generator")
-    print("License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md")
-    print("Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md")
-    print("Version: 0.4.2\n")
-    main()
+    # Print the header once at the start
+    print_header()
+
+    try:
+        # Strong Passwords Block I (fixed length 24, with ambiguous characters)
+        print("\n=== Strong Passwords Block I ===")
+        
+        print("\nPassword 01. 24 characters, lowercase + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_uppercase=False, use_digits=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 02. 24 characters, uppercase + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_lowercase=False, use_digits=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 03. 24 characters, uppercase + lowercase, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_digits=False, use_special=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 04. 24 characters, uppercase + digits, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_lowercase=False, use_special=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 05. 24 characters, lowercase + digits, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_uppercase=False, use_special=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 06. 24 characters, digits + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_uppercase=False, use_lowercase=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 07. 24 characters, uppercase + lowercase + digits, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_special=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 08. 24 characters, uppercase + lowercase + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_digits=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 09. 24 characters, uppercase + digits + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_lowercase=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 10. 24 characters, lowercase + digits + special, with ambiguous characters")
+        password, entropy = generate_password(length=24, use_uppercase=False, avoid_ambiguous=False)
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        # Strong Passwords Block II (custom modes, with different character sets)
+        print("\n=== Strong Passwords Block II ===")
+        
+        print("\nPassword 11. 15 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=15,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 12. 18 characters, with ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=18,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=False
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 13. 20 characters, only lowercase letters and digits, no ambiguous characters")
+        password, entropy = generate_password(
+            length=20,
+            use_uppercase=False,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=False,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 14. 20 characters, only uppercase letters and digits, no ambiguous characters")
+        password, entropy = generate_password(
+            length=20,
+            use_uppercase=True,
+            use_lowercase=False,
+            use_digits=True,
+            use_special=False,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 15. 24 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=24,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 16. 32 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=32,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 17. 42 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=42,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 18. 60 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=60,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 19. 75 characters, default, no ambiguous characters, all character types")
+        password, entropy = generate_password(
+            length=75,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+        print("\nPassword 20. Maximum 128 characters, all character types, no ambiguous characters")
+        password, entropy = generate_password(
+            length=128,
+            use_uppercase=True,
+            use_lowercase=True,
+            use_digits=True,
+            use_special=True,
+            avoid_ambiguous=True
+        )
+        print(f"Password: {password}")
+        print(f"Entropy: {entropy:.2f} bits")
+
+    except ValueError as e:
+        print(f"Error: {e}")
