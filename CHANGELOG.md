@@ -5,6 +5,12 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.4.2] - 2025-04-29
+
+### Fixed
+- Fixed an `ImportError` in `password_generator.py` by removing circular imports and ensuring proper package structure in `entropy_password_generator`.
+- Fixed CLI behavior to generate a single password based on the provided arguments, aligning with the usage instructions in `README.md` for Block I and Block II modes.
+
 ## [0.4.1] - 2025-04-28
 
 ### Added
@@ -16,7 +22,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added badges for "Keep a Changelog" and "Semantic Versioning" at the beginning of `CHANGELOG.md`, with links to their respective websites, to highlight adherence to these standards.
 - Added a debug step in the CI workflow (`.github/workflows/python-app.yml`) to display the current commit and content of `password_generator.py`, aiding in diagnosing pipeline issues.
 - Added a new section titled "Practical Applications of Entropy in Mobile Devices" in `PASSWORDENTROPYCALCULATION.md`, providing practical context for entropy calculations.
-- Added a table in `PASSWORDENTROPYCALCULATION.md` comparing screen lock methods on Android© and iOS© devices, with entropy values ranging from 9-18 bits to 78-130+ bits.
+- Added a table in `PASSWORDENTROPYCALCULATION.md` comparing screen lock methods on Android and iOS devices, with entropy values ranging from 9-18 bits to 78-130+ bits, translated to English for consistency with the document's language.
 - Added an introductory paragraph and a comparative note in the "Practical Applications of Entropy in Mobile Devices" section of `PASSWORDENTROPYCALCULATION.md`, linking entropy concepts to the project's password generation modes.
 - Added the `pyproject.toml` file to the project root, enabling modern package configuration for PyPI publication and ensuring compatibility with tools like `build` and `twine`.
 
