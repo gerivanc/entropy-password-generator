@@ -15,6 +15,9 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added an entropy minimum warning in `password_generator.py`. If the entropy of a generated password is below 75 bits (Proton© standard), a warning is displayed with contextual suggestions to improve security (e.g., increase length, include more character types).
 - Added badges for "Keep a Changelog" and "Semantic Versioning" at the beginning of `CHANGELOG.md`, with links to their respective websites, to highlight adherence to these standards.
 - Added a debug step in the CI workflow (`.github/workflows/python-app.yml`) to display the current commit and content of `password_generator.py`, aiding in diagnosing pipeline issues.
+- Added a new section titled "Practical Applications of Entropy in Mobile Devices" in `PASSWORDENTROPYCALCULATION.md`, providing practical context for entropy calculations.
+- Added a table in `PASSWORDENTROPYCALCULATION.md` comparing screen lock methods on Android and iOS devices, with entropy values ranging from 9-18 bits to 78-130+ bits, translated to English for consistency with the document's language.
+- Added an introductory paragraph and a comparative note in the "Practical Applications of Entropy in Mobile Devices" section of `PASSWORDENTROPYCALCULATION.md`, linking entropy concepts to the project's password generation modes.
 
 ### Changed
 - Updated version to `0.4.1` in `password_generator.py` to reflect recent changes.
