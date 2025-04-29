@@ -57,13 +57,13 @@ To maintain consistency, please adhere to the following guidelines:
 We are committed to fostering an inclusive and respectful community. Please:
 - Be kind and respectful in all interactions.
 - Avoid offensive language or behavior.
-- Report any inappropriate behavior to the project maintainer at enc28ysi@protonmail.com.
+- Report any inappropriate behavior to the project maintainer at dean-grumbly-plop@duck.com.
 
 ### 5. Getting Help
 If you have questions or need assistance:
 - Check the [README](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md) for usage details.
 - Open an issue with your question.
-- Contact the maintainer at enc28ysi@protonmail.com.
+- Contact the maintainer at dean-grumbly-plop@duck.com.
 
 ## Acknowledgments
 Thank you for contributing to the **EntroPy Password Generator**! Your efforts help make this project a valuable tool for secure password generation.
