@@ -336,6 +336,6 @@ Want to contribute? Check out our [Contributing Guidelines](https://github.com/g
 See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md) for a detailed history of changes to this project.
 
 ## Contact
-For questions or feedback, please contact: enc28ysi@protonmail.com.
+For questions or feedback, please contact: dean-grumbly-plop@duck.com.
 
 #### Copyright © 2025 Gerivan Costa dos Santos
