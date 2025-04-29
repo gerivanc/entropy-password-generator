@@ -18,6 +18,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a new section titled "Practical Applications of Entropy in Mobile Devices" in `PASSWORDENTROPYCALCULATION.md`, providing practical context for entropy calculations.
 - Added a table in `PASSWORDENTROPYCALCULATION.md` comparing screen lock methods on Android© and iOS© devices, with entropy values ranging from 9-18 bits to 78-130+ bits.
 - Added an introductory paragraph and a comparative note in the "Practical Applications of Entropy in Mobile Devices" section of `PASSWORDENTROPYCALCULATION.md`, linking entropy concepts to the project's password generation modes.
+- Added the `pyproject.toml` file to the project root, enabling modern package configuration for PyPI publication and ensuring compatibility with tools like `build` and `twine`.
 
 ### Changed
 - Updated version to `0.4.1` in `password_generator.py` to reflect recent changes.
