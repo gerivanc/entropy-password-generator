@@ -130,4 +130,4 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Renamed `CONTRIBUTING.markdown` to `CONTRIBUTING.md` for consistency.
 - Removed redundant file `EntroPy Password Generator.markdown`.
 
-#### `Copyright © 2025 Gerivan Costa dos Santos`
+#### `Copyright© 2025 Gerivan Costa dos Santos`
