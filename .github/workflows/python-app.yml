@@ -40,8 +40,8 @@ jobs:
       run: |
         flake8 entropy_password_generator/password_generator.py --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
 
-    - name: Run script with different options
+    - name: Run script with different modes
       run: |
-        python -m entropy_password_generator.password_generator --length 15
-        python -m entropy_password_generator.password_generator --length 24 --no-special
-        python -m entropy_password_generator.password_generator --length 20 --with-ambiguous
+        python -m entropy_password_generator.password_generator --mode 1
+        python -m entropy_password_generator.password_generator --mode 12
+        python -m entropy_password_generator.password_generator --mode 15
