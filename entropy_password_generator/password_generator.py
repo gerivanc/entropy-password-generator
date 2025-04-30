@@ -45,7 +45,7 @@ MODES = {
     # Block I: All with ambiguous characters, length 24
     1: {"length": 24, "use_uppercase": False, "use_lowercase": True, "use_digits": False, "use_special": True, "avoid_ambiguous": False},
     2: {"length": 24, "use_uppercase": True, "use_lowercase": False, "use_digits": False, "use_special": True, "avoid_ambiguous": False},
-    3: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": False, "use_special": False, "avoid_ambiguous":ertos
+    3: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": False, "use_special": False, "avoid_ambiguous": False},
     4: {"length": 24, "use_uppercase": True, "use_lowercase": False, "use_digits": True, "use_special": False, "avoid_ambiguous": False},
     5: {"length": 24, "use_uppercase": False, "use_lowercase": True, "use_digits": True, "use_special": False, "avoid_ambiguous": False},
     6: {"length": 24, "use_uppercase": False, "use_lowercase": False, "use_digits": True, "use_special": True, "avoid_ambiguous": False},
