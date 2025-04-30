@@ -1,4 +1,4 @@
-# EntroPy Password Generator (v0.4.4)
+# EntroPy Password Generator (v0.4.6)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue)](https://www.python.org/)
@@ -93,22 +93,24 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 ## Usage
 Run the generator via the command-line interface by specifying a mode or custom configuration.
 
+**Note**: To avoid the `RuntimeWarning` that may occur when using `python -m`, it is recommended to run the script using the direct path: `python3 entropy_password_generator/password_generator.py`. This ensures a cleaner execution experience.
+
 ### Using Predefined Modes
 Use the `--mode` option to generate a password for a specific mode (1 to 20). Below are examples for each mode:
 
 #### Block I (All with ambiguous characters, length 24)
 **Mode 1: Lowercase + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 1
+python3 entropy_password_generator/password_generator.py --mode 1
 ```
 ```
-Generated password: ax!zq#ry^m&p-t=lk~jw{
-Entropy: 139.92 bits
+Generated password: _a`.&v_rqznl|;.!x#!h`w_w
+Entropy: 138.75 bits
 ```
 
 **Mode 2: Uppercase + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 2
+python3 entropy_password_generator/password_generator.py --mode 2
 ```
 ```
 Generated password: AX!ZQ#RY^M&P-T=LK~JW{
@@ -117,16 +119,16 @@ Entropy: 139.92 bits
 
 **Mode 3: Uppercase + Lowercase**
 ```bash
-python -m entropy_password_generator.password_generator --mode 3
+python3 entropy_password_generator/password_generator.py --mode 3
 ```
 ```
-Generated password: AxZqRyMkPlTvCnHwBsKdFeJi
-Entropy: 136.80 bits
+Generated password: fIKMPxCQfGpOIlKqVdtzxWcR
+Entropy: 136.81 bits
 ```
 
 **Mode 4: Uppercase + Digits**
 ```bash
-python -m entropy_password_generator.password_generator --mode 4
+python3 entropy_password_generator/password_generator.py --mode 4
 ```
 ```
 Generated password: AX7ZQ4R9Y2M8P5T3K6W0N
@@ -135,7 +137,7 @@ Entropy: 124.08 bits
 
 **Mode 5: Lowercase + Digits**
 ```bash
-python -m entropy_password_generator.password_generator --mode 5
+python3 entropy_password_generator/password_generator.py --mode 5
 ```
 ```
 Generated password: ax7zq4r9y2m8p5t3k6w0n
@@ -144,7 +146,7 @@ Entropy: 124.08 bits
 
 **Mode 6: Digits + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 6
+python3 entropy_password_generator/password_generator.py --mode 6
 ```
 ```
 Generated password: 7!4#9$2&8%5^3*6-0=2+|
@@ -153,7 +155,7 @@ Entropy: 128.64 bits
 
 **Mode 7: Uppercase + Lowercase + Digits**
 ```bash
-python -m entropy_password_generator.password_generator --mode 7
+python3 entropy_password_generator/password_generator.py --mode 7
 ```
 ```
 Generated password: Ax7Zq4Ry9Mk2Pl8Tv5Cn3Hw
@@ -162,7 +164,7 @@ Entropy: 142.80 bits
 
 **Mode 8: Uppercase + Lowercase + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 8
+python3 entropy_password_generator/password_generator.py --mode 8
 ```
 ```
 Generated password: Ax!Zq@Ry#Mk-Pl=Tv&Cn+Hw
@@ -171,7 +173,7 @@ Entropy: 153.12 bits
 
 **Mode 9: Uppercase + Digits + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 9
+python3 entropy_password_generator/password_generator.py --mode 9
 ```
 ```
 Generated password: AX!7ZQ#4R$9Y@2M&8P%5T*3
@@ -180,17 +182,17 @@ Entropy: 145.68 bits
 
 **Mode 10: Lowercase + Digits + Special characters**
 ```bash
-python -m entropy_password_generator.password_generator --mode 10
+python3 entropy_password_generator/password_generator.py --mode 10
 ```
 ```
-Generated password: ax!7zq#4r$9y@2m&8p%5t*3
-Entropy: 145.68 bits
+Generated password: 9#*[%*?p`s-h}zdn5&w{xmn7]
+Entropy: 144.54 bits
 ```
 
 #### Block II (Mixed configurations)
 **Mode 11: All character types, no ambiguous characters (length 15)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 11
+python3 entropy_password_generator/password_generator.py --mode 11
 ```
 ```
 Generated password: A7xPq9zT2rYwK5m
@@ -199,16 +201,16 @@ Entropy: 95.70 bits
 
 **Mode 12: All character types, with ambiguous characters (length 18)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 12
+python3 entropy_password_generator/password_generator.py --mode 12
 ```
 ```
-Generated password: A7xPq9zT2rYwK5mJ3I
-Entropy: 117.72 bits
+Generated password: }s@h3;blyrLau<!Q}>
+Entropy: 117.14 bits
 ```
 
 **Mode 13: Lowercase + Digits, no ambiguous characters (length 20)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 13
+python3 entropy_password_generator/password_generator.py --mode 13
 ```
 ```
 Generated password: ax9zq4r7y2m8p5t3k6w
@@ -217,7 +219,7 @@ Entropy: 99.00 bits
 
 **Mode 14: Uppercase + Digits, no ambiguous characters (length 20)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 14
+python3 entropy_password_generator/password_generator.py --mode 14
 ```
 ```
 Generated password: AX9ZQ4R7Y2M8P5T3K6W
@@ -226,7 +228,7 @@ Entropy: 99.00 bits
 
 **Mode 15: All character types, no ambiguous characters (length 24)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 15
+python3 entropy_password_generator/password_generator.py --mode 15
 ```
 ```
 Generated password: A7xPq9zT2rYwK5mJ3kG8vN
@@ -235,7 +237,7 @@ Entropy: 153.12 bits
 
 **Mode 16: All character types, no ambiguous characters (length 32)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 16
+python3 entropy_password_generator/password_generator.py --mode 16
 ```
 ```
 Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR
@@ -244,7 +246,7 @@ Entropy: 204.16 bits
 
 **Mode 17: All character types, no ambiguous characters (length 42)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 17
+python3 entropy_password_generator/password_generator.py --mode 17
 ```
 ```
 Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5n
@@ -253,7 +255,7 @@ Entropy: 267.96 bits
 
 **Mode 18: All character types, no ambiguous characters (length 60)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 18
+python3 entropy_password_generator/password_generator.py --mode 18
 ```
 ```
 Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w
@@ -262,7 +264,7 @@ Entropy: 382.80 bits
 
 **Mode 19: All character types, no ambiguous characters (length 75)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 19
+python3 entropy_password_generator/password_generator.py --mode 19
 ```
 ```
 Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w2tY5mP8xN6r
@@ -271,30 +273,73 @@ Entropy: 478.50 bits
 
 **Mode 20: All character types, no ambiguous characters (length 128)**
 ```bash
-python -m entropy_password_generator.password_generator --mode 20
+python3 entropy_password_generator/password_generator.py --mode 20
 ```
 ```
-Generated password: A7xPq9zT2rYwK5mJ3kG8vN4tF2wE6bR9yU2pL5nQ8mB4vX7zT3rK9w2tY5mP8xN6rZkB3wE9tL4qP6mV2xR8yH5nF7jT1zG4rK9vU3m
-Entropy: 816.64 bits
+Generated password: c-53d32q!ysf>d[8(+Kzj>!4]adtSx9)Ezdfp*tf9#Z~\akcq}m>tc*ctnnkMDB$W?e&[t3wvXe$Bh)6dTfQ7$.3)Gf5x_~}hK9t(Gn.2Pt}F#{]Q#dW3GE9X_wgX:VY
+Entropy: 811.50 bits
 ```
 
 ### Using Custom Configuration
-If no `--mode` is specified, you can customize the password generation with the following options:
+If no `--mode` is specified, you can customize the password generation with the following options. Below are examples showcasing various configurations to meet different needs, from short and simple passwords to long and highly secure ones:
+
 ```bash
-python -m entropy_password_generator.password_generator --length 24 --no-uppercase --no-digits
+python3 entropy_password_generator/password_generator.py --length 24 --no-uppercase --no-digits
 ```
 ```
-Generated password: ax!zq#ry^m&p-t=lk~jw{
-Entropy: 139.92 bits
+Generated password: ),[rxv%,g(v>c:,qs[![-}?r
+Entropy: 135.45 bits
 ```
 
 ```bash
-python -m entropy_password_generator.password_generator --length 18 --with-ambiguous
+python3 entropy_password_generator/password_generator.py --length 18 --with-ambiguous
 ```
 ```
-Generated password: A7xPq9zT2rYwK5mJ3I
-Entropy: 117.72 bits
+Generated password: CI[4fI3He06j<%KJSO
+Entropy: 117.14 bits
 ```
+
+```bash
+python3 entropy_password_generator/password_generator.py --length 15 --no-digits --no-special
+```
+```
+Generated password: nScsCKsebvycsbF
+Entropy: 82.85 bits
+```
+
+```bash
+python3 entropy_password_generator/password_generator.py --length 128 --no-uppercase --no-lowercase
+```
+```
+Generated password: 78[-}!2[={;#@2]4#]&6&*75}:8^#8\-^&2(.*^8=!&$#![4:%,7!_5&>!_^3-&>{387{::$>\(>\!_*^4?~44+~;4^.~%73^\\=2@96+?22)-.$+>.?5:)]@+}=*7:7
+Entropy: 656.55 bits
+```
+
+```bash
+python3 entropy_password_generator/password_generator.py --length 32
+```
+```
+Generated password: }>u<8Qu%n3F,2!egHppA+:Y4^rX2;nw$
+Entropy: 208.88 bits
+```
+
+```bash
+python3 entropy_password_generator/password_generator.py --length 20 --no-uppercase --no-special --with-ambiguous
+```
+```
+Generated password: cfo8sfzlw8574wxncpi9
+Entropy: 103.40 bits
+```
+
+```bash
+python3 entropy_password_generator/password_generator.py --length 24 --no-lowercase --no-digits --with-ambiguous
+```
+```
+Generated password: GK>&GLM.IY,=W?BP?%)Z#;$
+Entropy: 138.95 bits
+```
+
+Explore these options to create passwords tailored to your specific requirements, ensuring a balance between security and usability.
 
 ## Password Entropy Calculation
 
