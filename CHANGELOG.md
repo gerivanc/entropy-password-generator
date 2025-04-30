@@ -110,7 +110,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Changed
 - Adjusted `Entropy Calculation` section in `README.md` with new formula notation (`E(R) = log₂(RL)`).
 - Reformulated `Contributing` section in `README.md` for clarity ("Want to contribute? Check out our [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md)").
-- Updated titles in `password_generator.py` from Portuguese to English (`Strong Passwords Block I` and `Block II`).
+- Updated titles in `password_generator.py` (`Strong Passwords Block I` and `Block II`).
 
 ## [0.1.0] - 2025-04-20
 
