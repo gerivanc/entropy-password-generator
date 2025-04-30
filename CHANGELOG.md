@@ -5,6 +5,15 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.4.5] - 2025-05-01
+
+### Changed
+- Updated `README.md` to use the direct command path (`python3 entropy_password_generator/password_generator.py`) instead of `python -m` in the "Using Predefined Modes" and "Using Custom Configuration" sections, avoiding the `RuntimeWarning` during execution.
+- Updated example passwords and entropy values in `README.md` to reflect recent test results for Modes 1, 3, 10, 12, 20, and custom configurations, ensuring consistency with the script's current output.
+- Added a note in the "Usage" section of `README.md` recommending the use of the direct command path to avoid the `RuntimeWarning`, improving user experience.
+- Updated `CONTRIBUTING.md` to use the correct direct command path (`python3 entropy_password_generator/password_generator.py`) in the "Coding Standards" section for test examples, ensuring accuracy.
+- Added a note in the "Coding Standards" section of `CONTRIBUTING.md` recommending the use of the direct command path to avoid the `RuntimeWarning`, providing clearer guidance for contributors.
+
 ## [0.4.4] - 2025-05-01
 
 ### Changed
@@ -51,7 +60,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated `password_generator.py` to fix version inconsistency in header (from 0.2.0 to 0.3.0).
 - Updated CI workflow (`python-app.yml`) to add more test cases (no special characters, with ambiguous characters) and additional debugging.
 - Updated PyPI publish workflow (`pypi-publish.yml`) to test the built package before publishing.
-- Updated PyPI publish workflow (`pypi-publish.yml`) to fix checkout and publish errors by using manual git clone and correcting `packages_dir` parameter.
+- Updated PyPI publish workflow (`pypi-publish.yml`) to fix checkout and publish errors by using manual git clone and correcting `packages_dir` parameter Scam
 - Reorganized the `README.md` to separate "Strong Passwords Block I" and "Block II" into distinct sections for CLI usage and examples, improving clarity and usability.
 - Updated entropy values in `README.md` to align with recalculated values based on the `password_generator.py` code, ensuring consistency across documentation.
 - Modified the CI workflow (`.github/workflows/python-app.yml`) to temporarily adjust the Flake8 command to lint only `password_generator.py`, isolating the source of linting errors during debugging.
@@ -82,7 +91,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated CI workflow (`python-app.yml`) to use `python -m` for script execution and added debug step to verify working directory.
 - Updated CI workflow (`python-app.yml`) to fix script execution by invoking the script directly instead of using `python -m`.
 - Refactored `password_generator.py` to fix flake8 linting errors (line length, complexity, spacing).
-- Updated minimum Python requirement to 3.8 in `README.md` and `pyproject.toml` due to Python 3godnie
+- Updated minimum Python requirement to 3.8 in `README.md` and `pyproject.toml` due to Python 3.6 deprecation.
 - Updated CI workflow (`python-app.yml`) to test with Python 3.8, 3.10, and 3.12, removing Python 3.6.
 - Adjusted CLI usage commands in `README.md` to use the package structure (`python -m entropy_password_generator.password_generator`).
 - Restructured project as a Python package for PyPI publication, including `pyproject.toml` and package directory.
