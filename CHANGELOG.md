@@ -5,6 +5,18 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.4.3] - 2025-04-30
+
+### Added
+- Added `--mode <number>` argument to `password_generator.py` CLI, allowing users to select a specific predefined password generation mode (1 to 20) for Block I and Block II, simplifying the generation of individual modes.
+- Added a dictionary (`MODES`) in `password_generator.py` to centralize the configurations of all 20 password generation modes, improving maintainability and scalability.
+- Updated `README.md` to reflect the new `--mode` argument, including revised "CLI Options" and "Usage" sections with examples for generating passwords using `--mode` for each of the 20 modes.
+
+### Changed
+- Modified the `main()` function in `password_generator.py` to prioritize `--mode` over manual configuration arguments, generating only the password for the specified mode instead of all modes.
+- Updated the CLI behavior in `password_generator.py` to display mode-specific output (e.g., "Mode X Password:") when `--mode` is used, improving user experience and clarity.
+- Reorganized the "Usage" section in `README.md` to separate predefined mode usage (using `--mode`) from custom configuration, enhancing readability and usability.
+
 ## [0.4.2] - 2025-04-29
 
 ### Fixed
