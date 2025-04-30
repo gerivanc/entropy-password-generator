@@ -1,4 +1,4 @@
-# EntroPy Password Generator (v0.4.2)
+# EntroPy Password Generator (v0.4.3)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue)](https://www.python.org/)
