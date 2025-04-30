@@ -26,7 +26,7 @@ We encourage contributions via pull requests (PRs). To submit a PR:
      ```
 3. **Make changes**:
    - Follow the coding standards below.
-   - Test your changes locally (e.g., `python3 password_generator.py --mode 1` or `python3 password_generator.py --length 20 --no-special`). Ensure compatibility with the `MODES` dictionary in `password_generator.py` for mode-based generation.
+   - Test your changes locally (e.g., `python3 entropy_password_generator/password_generator.py --mode 1` or `python3 entropy_password_generator/password_generator.py --length 20 --no-special`). Ensure compatibility with the `MODES` dictionary in `password_generator.py` for mode-based generation.
    - Update documentation if necessary (e.g., `README.md` or inline comments).
 4. **Commit changes**:
    - Write clear, concise commit messages:
@@ -49,12 +49,13 @@ To maintain consistency, please adhere to the following guidelines:
 - **Security**: Ensure changes maintain the use of the `secrets` module for cryptographic randomness.
 - **Testing**: Test your changes locally to ensure they don’t break existing functionality. Run:
   ```bash
-  python3 password_generator.py --mode 1
+  python3 entropy_password_generator/password_generator.py --mode 1
   ```
   or
   ```bash
-  python3 password_generator.py --length 15
+  python3 entropy_password_generator/password_generator.py --length 15
   ```
+  **Note**: It is recommended to use the direct path (`python3 entropy_password_generator/password_generator.py`) instead of `python -m` to avoid the `RuntimeWarning` that may occur due to module import behavior.
 - **File Structure**: Keep changes within the existing structure (e.g., update `password_generator.py` for core changes).
 
 ### 4. Code of Conduct
