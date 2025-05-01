@@ -360,8 +360,10 @@ Want to contribute? Check out our [Contributing Guidelines](https://github.com/g
 ## Changelog
 See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md) for a detailed history of changes to this project.
 
+## Security - Reporting a Vulnerability 
+If you discover a security vulnerability in EntroPy Password Generator, please report it immediately to ensure the safety of all users. See the [Security](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) for more details.
+
 ## Contact
 For questions or feedback, please contact: dean-grumbly-plop@duck.com.
-
 
 #### Copyright © 2025 Gerivan Costa dos Santos
