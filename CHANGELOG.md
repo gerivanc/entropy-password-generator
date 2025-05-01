@@ -5,6 +5,15 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.4.7] - 2025-05-01
+
+### Added
+- Added an explicit `dependencies = []` entry in `pyproject.toml` to clarify that the project has no external dependencies, enhancing transparency for users.
+- Added a CLI entry point in `pyproject.toml` under `[project.scripts]` (`entropy-password-generator = "entropy_password_generator.password_generator:main"`), allowing users to run the generator directly via the command `entropy-password-generator` after installation.
+- Added a step in `pypi-publish.yml` to clean previous build artifacts (`rm -rf dist/*`) before building the package, preventing potential conflicts during publication.
+- Added a caching step for pip dependencies in `pypi-publish.yml` using `actions/cache@v3`, improving the efficiency of the publication workflow.
+- Added a verification step in `pypi-publish.yml` to test the package installation from Test PyPI before publishing to the official PyPI, ensuring the package is functional.
+
 ## [0.4.6] - 2025-05-01
 
 ### Changed
