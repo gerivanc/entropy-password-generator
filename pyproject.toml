@@ -15,12 +15,16 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/gerivanc/entropy-password-generator"
 Repository = "https://github.com/gerivanc/entropy-password-generator.git"
 Issues = "https://github.com/gerivanc/entropy-password-generator/issues"
 Changelog = "https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md"
+
+[project.scripts]
+entropy-password-generator = "entropy_password_generator.password_generator:main"
 
 [build-system]
 requires = ["hatchling"]
