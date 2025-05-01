@@ -13,6 +13,8 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a step in `pypi-publish.yml` to clean previous build artifacts (`rm -rf dist/*`) before building the package, preventing potential conflicts during publication.
 - Added a caching step for pip dependencies in `pypi-publish.yml` using `actions/cache@v3`, improving the efficiency of the publication workflow.
 - Added a verification step in `pypi-publish.yml` to test the package installation from Test PyPI before publishing to the official PyPI, ensuring the package is functional.
+- Added `SECURITY.md` file to provide a security policy, detailing supported versions and instructions for reporting vulnerabilities, enhancing project security practices.
+- Added a "Security - Reporting a Vulnerability" section in `README.md` to inform users about the security policy and link to `SECURITY.md`, improving visibility of vulnerability reporting procedures.
 
 ## [0.4.6] - 2025-05-01
 
