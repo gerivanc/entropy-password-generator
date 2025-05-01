@@ -17,9 +17,11 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a verification step in `pypi-publish.yml` to test the package installation from Test PyPI before publishing to the official PyPI, ensuring the package is functional.
 - Added `SECURITY.md` file to provide a security policy, detailing supported versions and instructions for reporting vulnerabilities, enhancing project security practices.
 - Added a "Security - Reporting a Vulnerability" section in `README.md` to inform users about the security policy and link to `SECURITY.md`, improving visibility of vulnerability reporting procedures.
+- Detailed specification for usage modes in **Using Custom Configuration** in README.md file
 
 ### Changed
 - Updated the "Visitors" section in `README.md` to use the HITS service (hits.seeyoufarm.com) for the visitor counter badge, replacing the previous visitcount.itsvg.in service, which was found to be unavailable, ensuring reliable tracking of repository visits.
+- For usage modes in Using Custom Configuration in `README.md`
 
 ## [0.4.6] - 2025-05-01
 
