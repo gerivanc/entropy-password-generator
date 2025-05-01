@@ -8,6 +8,8 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ## [0.4.7] - 2025-05-01
 
 ### Added
+- Added a "Visitors" section to `README.md` with a visitor counter badge using the `github-profile-views-counter` service, allowing tracking of repository visits.
+- Added an optional "GitHub Stats" section to `README.md` (commented out by default) using `github-readme-stats`, providing a template for displaying GitHub statistics like stars, commits, and contributions.
 - Added an explicit `dependencies = []` entry in `pyproject.toml` to clarify that the project has no external dependencies, enhancing transparency for users.
 - Added a CLI entry point in `pyproject.toml` under `[project.scripts]` (`entropy-password-generator = "entropy_password_generator.password_generator:main"`), allowing users to run the generator directly via the command `entropy-password-generator` after installation.
 - Added a step in `pypi-publish.yml` to clean previous build artifacts (`rm -rf dist/*`) before building the package, preventing potential conflicts during publication.
@@ -15,6 +17,9 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a verification step in `pypi-publish.yml` to test the package installation from Test PyPI before publishing to the official PyPI, ensuring the package is functional.
 - Added `SECURITY.md` file to provide a security policy, detailing supported versions and instructions for reporting vulnerabilities, enhancing project security practices.
 - Added a "Security - Reporting a Vulnerability" section in `README.md` to inform users about the security policy and link to `SECURITY.md`, improving visibility of vulnerability reporting procedures.
+
+### Changed
+- Updated the "Visitors" section in `README.md` to use the HITS service (hits.seeyoufarm.com) for the visitor counter badge, replacing the previous visitcount.itsvg.in service, which was found to be unavailable, ensuring reliable tracking of repository visits.
 
 ## [0.4.6] - 2025-05-01
 
