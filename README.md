@@ -288,8 +288,9 @@ Entropy: 811.50 bits
 ```
 
 ### Using Custom Configuration
-If no `--mode` is specified, you can customize the password generation with the following options. Below are examples showcasing various configurations to meet different needs, from short and simple passwords to long and highly secure ones:
+Use the `----length` option to generate a password with the specified length (15 to 128). Below are examples showcasing various configurations to meet different needs, from short and simple passwords to long and highly secure ones:
 
+**Mode Combinations --length: --no-uppercase --no-digits**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 24 --no-uppercase --no-digits
 ```
@@ -298,6 +299,7 @@ Generated password: ),[rxv%,g(v>c:,qs[![-}?r
 Entropy: 135.45 bits
 ```
 
+**Mode Combinations --length: --with-ambiguous**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 18 --with-ambiguous
 ```
@@ -306,6 +308,7 @@ Generated password: CI[4fI3He06j<%KJSO
 Entropy: 117.14 bits
 ```
 
+**Mode Combinations --length: --no-digits --no-special**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15 --no-digits --no-special
 ```
@@ -314,6 +317,7 @@ Generated password: nScsCKsebvycsbF
 Entropy: 82.85 bits
 ```
 
+**Mode Combinations --length: --no-uppercase --no-lowercase**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 128 --no-uppercase --no-lowercase
 ```
@@ -322,6 +326,7 @@ Generated password: 78[-}!2[={;#@2]4#]&6&*75}:8^#8\-^&2(.*^8=!&$#![4:%,7!_5&>!_^
 Entropy: 656.55 bits
 ```
 
+**Mode Combinations --length: --length** Here is the cherry on the cake you only set the length between 15 and 128.
 ```bash
 python3 entropy_password_generator/password_generator.py --length 32
 ```
@@ -330,6 +335,7 @@ Generated password: }>u<8Qu%n3F,2!egHppA+:Y4^rX2;nw$
 Entropy: 208.88 bits
 ```
 
+**Mode Combinations --length: --no-uppercase --no-special --with-ambiguous**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 20 --no-uppercase --no-special --with-ambiguous
 ```
@@ -338,6 +344,7 @@ Generated password: cfo8sfzlw8574wxncpi9
 Entropy: 103.40 bits
 ```
 
+**Mode Combinations --length: --no-lowercase --no-digits --with-ambiguous**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 24 --no-lowercase --no-digits --with-ambiguous
 ```
