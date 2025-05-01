@@ -1,5 +1,6 @@
 # EntroPy Password Generator (v0.4.7)
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate/?hosted_button_id=D2JZSWRLTZDL6)
 <div align="center">
 
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
@@ -378,6 +379,11 @@ If you discover a security vulnerability in EntroPy Password Generator, please r
 
 ## Contact
 For questions or feedback, please contact: dean-grumbly-plop@duck.com.
+
+## Support This Project
+If you find EntroPy Password Generator useful, consider supporting its development with a donation:
+
+[<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal">](https://www.paypal.com/donate/?hosted_button_id=D2JZSWRLTZDL6)
 
 ## Visitors
 
