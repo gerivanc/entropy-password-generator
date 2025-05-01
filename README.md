@@ -3,7 +3,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue)](https://www.python.org/)
 [![Entropy Compliant: Proton© & NIST](https://img.shields.io/badge/Entropy%20Compliant-Proton%20%26%20NIST-green)](https://proton.me/blog/what-is-password-entropy)
-[![PyPI](https://img.shields.io/pypi/v/entropy-password-generator)](https://pypi.org/project/entropy-password-generator/)
 [![Maintained](https://img.shields.io/maintenance/yes/2025?label=Maintained)](https://github.com/gerivanc/entropy-password-generator/graphs/commit-activity)
 
 **EntroPy Password Generator** is a secure and customizable password generator developed in Python. It generates strong passwords with configurable character sets and calculates their entropy to evaluate robustness. The project provides 20 modes for secure password generation, ranging from 15 to 128 characters, with entropies between 95.70 bits and 816.64 bits, exceeding the [Proton©](https://proton.me/blog/what-is-password-entropy) recommended minimum of 75 bits and the cryptographic strength best practices outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) and [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).
