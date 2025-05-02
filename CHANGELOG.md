@@ -15,6 +15,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a note in `SECURITY.md` clarifying that the Test PyPI release is intended for testing purposes and should not be used in production environments, reinforcing security best practices.
 - Added an issue template (`issue_template.md`) in `.github/ISSUE_TEMPLATE/` to standardize issue reporting and improve contributor experience.
 - Added `config.yml` to `.github/ISSUE_TEMPLATE/` to customize the issue creation experience, disabling blank issues and adding a security vulnerability reporting link.
+- Added a "Reporting Issues" section to `README.md`, linking to the issue template to encourage community feedback and bug reporting.
 
 ### Changed
 - Updated the "Usage" section in `README.md` to include an example of running the CLI command (`entropy-password-generator --mode 1`) after installing the package from Test PyPI, ensuring consistency with the new installation method.
@@ -23,6 +24,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Updated the project’s Test PyPI history link in `README.md` to point to [https://test.pypi.org/project/entropy-password-generator/#history](https://test.pypi.org/project/entropy-password-generator/#history), ensuring users can view the release history directly.
 - Updated the "Coding Standards" section in `CONTRIBUTING.md` to include a note about using the `entropy-password-generator` command for testing after installation from Test PyPI, aligning with the new installation method and improving contributor guidance.
 - Updated the `python-app.yml` workflow to include a step for installing the package from Test PyPI and replaced `python -m` commands with `entropy-password-generator` to avoid `RuntimeWarning` and align with the new CLI functionality.
+- Updated the `README.md` file to include a section to link to the `issue_template.md` file page.
 
 ### Fixed
 - Fixed a minor typo in the `README.md` "Installation from Test PyPI" section, ensuring the pip command uses the correct index URL (`https://test.pypi.org/simple/`) for clarity and accuracy.
