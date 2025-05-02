@@ -415,23 +415,13 @@ The generator calculates password entropy using the formula: \( E(R) = \log_2(R^
 
 ---
 
-## License
-This project is licensed under the MIT License. See the [License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
-
----
-
-## Contributing
-Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
-
----
-
 ## Reporting Issues
 Help us improve **EntroPy Password Generator** by reporting bugs or suggesting enhancements using our [issue template](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
 
 ---
 
-## Changelog
-See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md) for a detailed history of changes to this project.
+## Contributing
+Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
 
 ---
 
@@ -445,8 +435,8 @@ See the [RELEASE.md](https://github.com/gerivanc/entropy-password-generator/blob
 
 ---
 
-## Contact
-For questions or feedback, please contact: dean-grumbly-plop@duck.com.
+## Changelog
+See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md) for a detailed history of changes to this project.
 
 ---
 
@@ -457,13 +447,22 @@ If you find EntroPy Password Generator useful, consider supporting its developme
 
 ---
 
-## Visitors
+## Contact
+For questions or feedback, please contact: dean-grumbly-plop@duck.com.
 
+---
+
+## Visitors
 <div align="center">
 
   ![Visitor Count](https://profile-counter.glitch.me/entropy-password-generator/count.svg)
 
 </div>
+
+---
+
+## License
+This project is licensed under the MIT License. See the [License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) file for details.
 
 ---
 
