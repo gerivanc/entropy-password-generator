@@ -440,6 +440,11 @@ If you discover a security vulnerability in EntroPy Password Generator, please r
 
 ---
 
+## Release Notes
+See the [RELEASE.md](https://github.com/gerivanc/entropy-password-generator/blob/main/RELEASE.md) for detailed release notes for each version.
+
+---
+
 ## Contact
 For questions or feedback, please contact: dean-grumbly-plop@duck.com.
 
