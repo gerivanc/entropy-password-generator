@@ -63,6 +63,18 @@ jobs:
       run: |
         twine upload --repository testpypi dist/*
 
+    - name: Verify Test PyPI publication
+      run: |
+        sleep 10
+        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
+        python -c "import entropy_password_generator; print(f'Verified Test PyPI package version: {entropy_password_generator.__version__}')"
+
+    - name: Generate changelog summary
+      run: |
+        echo "Changelog for version ${{ steps.version.outputs.version }}:" > release_summary.txt
+        sed -n '/## \[${{ steps.version.outputs.version }}\]/,/## \[/p' CHANGELOG.md | head -n -1 >> release_summary.txt
+        cat release_summary.txt
+
     - name: Test package from Test PyPI
       run: |
         pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
