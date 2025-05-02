@@ -11,6 +11,9 @@ The following versions of the EntroPy Password Generator are currently supported
 | 1.0.x   | :white_check_mark: |
 | < 1.0   | :x:                |
 
+## Test PyPI Usage
+The Test PyPI release of EntroPy Password Generator is intended for testing purposes only and should not be used in production environments. For production use, please install the package from the official PyPI repository.
+
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability in the EntroPy Password Generator, please report it promptly to ensure the safety of all users. Follow these steps:
