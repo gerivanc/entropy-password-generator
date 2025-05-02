@@ -114,4 +114,6 @@ Never memorize strong, randomly generated passwords manually. Instead, store the
 ### Entropy Considerations
 The entropy calculation (\( E(R) = \log_2(R^L) \)) assumes ideal randomness, where each character is independently selected from the character set. This provides a theoretical maximum strength, which the generator achieves using the `secrets` module. However, in real-world scenarios, attackers may use heuristic-based tools (e.g., [zxcvbn](https://github.com/dropbox/zxcvbn)) to detect predictable patterns, such as common words or keyboard sequences, potentially reducing effective entropy. While the generator minimizes such patterns through cryptographic randomization, users can further validate password strength with tools like zxcvbn for a complementary, practical assessment. For optimal security, always use generated passwords as-is, without manual modifications that could introduce predictability.
 
+---
+
 #### Copyright © 2025 Gerivan Costa dos Santos
