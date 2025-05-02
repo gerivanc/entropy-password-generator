@@ -40,8 +40,12 @@ jobs:
       run: |
         flake8 entropy_password_generator/password_generator.py --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
 
+    - name: Install package from Test PyPI
+      run: |
+        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator
+
     - name: Run script with different modes
       run: |
-        python -m entropy_password_generator.password_generator --mode 1
-        python -m entropy_password_generator.password_generator --mode 12
-        python -m entropy_password_generator.password_generator --mode 15
+        entropy-password-generator --mode 1
+        entropy-password-generator --mode 12
+        entropy-password-generator --mode 15
