@@ -13,6 +13,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a badge in `README.md` for the Test PyPI release, linking to [https://test.pypi.org/project/entropy-password-generator/](https://test.pypi.org/project/entropy-password-generator/), to highlight the availability of the package and encourage testing.
 - Added a verification step in the `pypi-publish.yml` workflow to confirm successful publication to Test PyPI by checking the package’s availability and version on the Test PyPI index, ensuring reliability of the release process.
 - Added a note in `SECURITY.md` clarifying that the Test PyPI release is intended for testing purposes and should not be used in production environments, reinforcing security best practices.
+- Added an issue template (`issue_template.md`) in `.github/ISSUE_TEMPLATE/` to standardize issue reporting and improve contributor experience.
 
 ### Changed
 - Updated the "Usage" section in `README.md` to include an example of running the CLI command (`entropy-password-generator --mode 1`) after installing the package from Test PyPI, ensuring consistency with the new installation method.
@@ -444,4 +445,6 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Renamed `CONTRIBUTING.markdown` to `CONTRIBUTING.md` for consistency.
 - Removed redundant file `EntroPy Password Generator.markdown`.
 
-#### Copyright© 2025 Gerivan Costa dos Santos
+---
+
+#### Copyright © 2025 Gerivan Costa dos Santos
