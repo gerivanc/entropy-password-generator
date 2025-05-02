@@ -47,7 +47,7 @@ To maintain consistency, please adhere to the following guidelines:
 - **Language**: Use Python 3.6+ and follow PEP 8 style guidelines.
 - **Comments and Docstrings**: Write clear comments and docstrings in English for all functions and complex logic.
 - **Security**: Ensure changes maintain the use of the `secrets` module for cryptographic randomness.
-- **Testing**: Test your changes locally to ensure they don’t break existing functionality. Run:
+- **Testing**: Test your changes locally to ensure they don’t break existing functionality. After cloning the repository, run:
   ```bash
   python3 entropy_password_generator/password_generator.py --mode 1
   ```
@@ -55,7 +55,11 @@ To maintain consistency, please adhere to the following guidelines:
   ```bash
   python3 entropy_password_generator/password_generator.py --length 15
   ```
-  **Note**: It is recommended to use the direct path (`python3 entropy_password_generator/password_generator.py`) instead of `python -m` to avoid the `RuntimeWarning` that may occur due to module import behavior.
+  Alternatively, if you have installed the package from Test PyPI (`pip install -i https://test.pypi.org/simple/ entropy-password-generator`), you can test using:
+  ```bash
+  entropy-password-generator --mode 1
+  ```
+  **Note**: It is recommended to use the direct path (`python3 entropy_password_generator/password_generator.py`) or the CLI command (`entropy-password-generator`) instead of `python -m` to avoid the `RuntimeWarning` that may occur due to module import behavior.
 - **File Structure**: Keep changes within the existing structure (e.g., update `password_generator.py` for core changes).
 
 ### 4. Code of Conduct
