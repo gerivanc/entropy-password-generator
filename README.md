@@ -466,4 +466,4 @@ This project is licensed under the MIT License. See the [License](https://github
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+## Copyright © 2025 Gerivan Costa dos Santos
