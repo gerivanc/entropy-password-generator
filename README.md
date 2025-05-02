@@ -288,7 +288,8 @@ Entropy: 811.50 bits
 ```
 
 ### Using Custom Configuration
-Use the `----length` option to generate a password with the specified length (15 to 128). Below are examples showcasing various configurations to meet different needs, from short and simple passwords to long and highly secure ones:
+Use the `----length` option to generate a password with the specified length (15 to 128). 
+Below are examples showcasing various configurations to meet different needs, from short and simple passwords to long and highly secure ones:
 
 **Mode Combinations --length: --no-uppercase --no-digits**
 ```bash
@@ -326,7 +327,7 @@ Generated password: 78[-}!2[={;#@2]4#]&6&*75}:8^#8\-^&2(.*^8=!&$#![4:%,7!_5&>!_^
 Entropy: 656.55 bits
 ```
 
-**Mode Combinations --length: --length** Here is the cherry on the cake you only set the length between 15 and 128.
+**Mode Combinations --length: --length**. In this mode, you find the 'cherry on top.' The length is set between 15 and 128.
 ```bash
 python3 entropy_password_generator/password_generator.py --length 32
 ```
