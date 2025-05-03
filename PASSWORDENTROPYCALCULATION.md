@@ -82,7 +82,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 1
   ```
   ```
-  Generated password: "zq!wr#ty&pm$nk%lc*hj=vx"
+  Generated password:  zq!wr#ty&pm$nk%lc*hj=vx 
   Entropy: 140.59 bits
   ```
 
@@ -91,7 +91,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 3
   ```
   ```
-  Generated password: "KjZmPqRtYxWvLcFnBsHdIkOg"
+  Generated password:  KjZmPqRtYxWvLcFnBsHdIkOg 
   Entropy: 136.80 bits
   ```
 
@@ -100,7 +100,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 8
   ```
   ```
-  Generated password: "Kj#nPq@Rt!xWv&MbHs$YkLc"
+  Generated password: Kj#nPq@Rt!xWv&MbHs$YkLc 
   Entropy: 153.12 bits
   ```
 
@@ -109,7 +109,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 11
   ```
   ```
-  Generated password: "Kj9mPqRtY2xWvN8"
+  Generated password:  Kj9mPqRtY2xWvN8 
   Entropy: 95.70 bits
   ```
 
@@ -118,7 +118,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 15
   ```
   ```
-  Generated password: "Hs7kQwZx9mPvRtY2nB4cF8j"
+  Generated password: Hs7kQwZx9mPvRtY2nB4cF8j 
   Entropy: 153.12 bits
   ```
 
@@ -127,7 +127,7 @@ To illustrate the entropy mechanics, below are sample passwords for three modes 
   python3 entropy_password_generator/password_generator.py --mode 20
   ```
   ```
-  Generated password: "Ax9kQw#Z2vRt$Y4mPv&B6nJcF8tH3xK5zL7qM2wN4yP8rT9bV6cW2xZ5kQ7mN3tP9vR4yB8nF2wH6zJ5kL9qT3mV7xP2rN4cY8bW6tK9zQ5vM3nH2xF7pR4yT8k"
+  Generated password:  Ax9kQw#Z2vRt$Y4mPv&B6nJcF8tH3xK5zL7qM2wN4yP8rT9bV6cW2xZ5kQ7mN3tP9vR4yB8nF2wH6zJ5kL9qT3mV7xP2rN4cY8bW6tK9zQ5vM3nH2xF7pR4yT8k 
   Entropy: 830.98 bits
   ```
 
