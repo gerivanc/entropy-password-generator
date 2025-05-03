@@ -133,13 +133,13 @@ python3 entropy_password_generator/password_generator.py --length <number>
 ```
 
 ### Screenshots
-Below is an example of the CLI output for **Mode 8**:
-![Mode 8 Output](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/screenshots/mode8.png)
+Below is an example of the CLI output for **Mode 15**:
+![Mode 15 Output](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/screenshots/--mode15.png)
 *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 15`. Demonstration image of the output result of the function.
 
-Below is an example of the CLI output for  **--length**. Here you can set the password length between 15-128 characters:
-![--length 75 Output](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/screenshots/--length.png)
-*Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 75`. Demonstration image of the output result of the function.
+Below is an example of the CLI output for  **--length**:
+![--length 85 Output](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/screenshots/--length85.png)
+*Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 85`. Demonstration image of the output result of the function. Here you can set the password length between 15-128 characters.
 
 ### Using Predefined Modes
 Below are examples for each of the 20 predefined modes, showcasing their configurations and entropy:
