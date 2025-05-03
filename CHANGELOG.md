@@ -16,6 +16,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added an issue template (`issue_template.md`) in `.github/ISSUE_TEMPLATE/` to standardize issue reporting and improve contributor experience.
 - Added `config.yml` to `.github/ISSUE_TEMPLATE/` to customize the issue creation experience, disabling blank issues and adding a security vulnerability reporting link.
 - Added a "Reporting Issues" section to `README.md`, linking to the issue template to encourage community feedback and bug reporting.
+- Published the `entropy-password-generator` package version 0.4.8 to the Test Python Package Index, available at [https://test.pypi.org/project/entropy-password-generator/0.4.8/](https://test.pypi.org/project/entropy-password-generator/0.4.8/).
 
 ### Changed
 - Updated the "Usage" section in `README.md` to include an example of running the CLI command (`entropy-password-generator --mode 1`) after installing the package from Test PyPI, ensuring consistency with the new installation method.
