@@ -179,7 +179,7 @@ Comparing these methods with the EntroPy Password Generator, even the most basic
 - [NIST SP 800-63B: 5.1.2.2 Look-Up Secret Verifiers](https://pages.nist.gov/800-63-3/sp800-63b.html)
 - [NIST SP 800-132: Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)
 - [NIST IR 8320: Hardware-Enabled Security](https://nvlpubs.nistpubs/ir/2022/NIST.IR.8320.pdf)
-- [Have I Been Pwned](https://haveibeenpwned.com/) - Check if your passwords have been compromised
+- [Have I Been Pwned](https://haveibeenpwned.com/Passwords) - Check if your passwords have been compromised.
 
 ---
 
