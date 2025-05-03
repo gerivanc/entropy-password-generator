@@ -125,7 +125,7 @@ Alternatively, run directly from the repository:
 python3 entropy_password_generator/password_generator.py --mode <number>
 ```
 
-either
+else
 
 Alternatively, run directly from the repository:
 ```bash
