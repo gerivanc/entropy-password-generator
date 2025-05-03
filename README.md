@@ -338,6 +338,8 @@ Generated password: Ax9kQw#Z2vRt$Y4mPv&B6nJcF8tH3x
 Entropy: 204.16 bits
 ```
 
+*Note*: Here you can set the password length between 15-128 characters.
+
 #### Simple Readable Password (15 chars, lowercase + digits, no ambiguous)
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15 --no-uppercase --no-special
