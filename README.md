@@ -351,7 +351,7 @@ python3 entropy_password_generator/password_generator.py --length 128 --no-upper
 ```
 ```
 Generated password: 7!4#9$2&8%5^3*6+2=9-1~4#7$2&8%5^3*6+2=9-1~4#7$2&8%5^3*6+2=9-1~4#7$2&8%5^3*6+2=9-1~4#7$2&8%5^3*6+2=9-1~4#7$2&8%5^3*6+2=9-1~4#7$2&
-Entropy: 717.76 bits
+Entropy: 830.98 bits
 ```
 
 Explore these options to create passwords tailored to your specific requirements, ensuring optimal security.
