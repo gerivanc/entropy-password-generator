@@ -5,6 +5,16 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.4.9] - 2025-05-03
+
+### Added
+- Added a new section in `README.md` titled "Suggestions for Password Types," featuring a table with six of the strongest password modes (Modes 8, 9, 10 from Block I; Modes 15, 19, 20 from Block II) and their recommended services (e.g., high-security website logins, password manager master keys, cryptographic keys), providing practical guidance for users.
+
+### Changed
+- Updated the version number in `README.md` to `0.4.9`, reflecting the latest release.
+- Removed the "Validating Password Strength" section from `README.md` to emphasize the inherent strength of each mode and allow users to choose modes based on their specific needs.
+- Removed quotes from password examples in the "Using Predefined Modes" section of `README.md` for Block I and Block II, improving visual clarity and aesthetics.
+
 ## [0.4.8] - 2025-05-02
 
 ### Added
