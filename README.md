@@ -133,7 +133,7 @@ python3 entropy_password_generator/password_generator.py --length <number>
 ```
 
 ### Screenshots
-Below is an example of the CLI output for **Mode 15**:
+Below is an example of the CLI output for **Mode 8**:
 ![Mode 8 Output](https://github.com/gerivanc/entropy-password-generator/blob/main/entropy_password_generator/screenshots/mode8.png)
 *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 15`. Demonstration image of the output result of the function.
 
