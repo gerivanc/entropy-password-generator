@@ -368,16 +368,16 @@ Entropy: 830.98 bits
 Explore these options to create passwords tailored to your specific requirements, ensuring optimal security.
 
 ### Suggestions for Password Types
-The table below suggests six of the strongest password modes for daily use, covering a range of online services:
+The table below suggests six of the strongest password **`modes`** for daily use, covering a range of online services:
 
 | Mode (Entropy) | Recommended Service |
 |----------------|---------------------|
-| Mode 8 (153.12 bits) | High-security website logins (e.g., cloud storage, VPNs) |
-| Mode 9 (145.68 bits) | Database or API access (e.g., developer tools, server management) |
-| Mode 10 (145.68 bits) | Secure file encryption (e.g., encrypted backups, sensitive documents) |
-| Mode 15 (153.12 bits) | Enterprise accounts (e.g., corporate email, project management tools) |
-| Mode 19 (478.50 bits) | Password manager master keys (e.g., Bitwarden, 1Password) |
-| Mode 20 (830.98 bits) | Cryptographic keys (e.g., blockchain wallets, SSH keys) |
+| `Mode 8 (153.12 bits)` | High-security website logins (e.g., cloud storage, VPNs) |
+| `Mode 9 (145.68 bits)` | Database or API access (e.g., developer tools, server management) |
+| `Mode 10 (145.68 bits)` | Secure file encryption (e.g., encrypted backups, sensitive documents) |
+| `Mode 15 (153.12 bits)` | Enterprise accounts (e.g., corporate email, project management tools) |
+| `Mode 19 (478.50 bits)` | Password manager master keys (e.g., Bitwarden, 1Password) |
+| `Mode 20 (830.98 bits)` | Cryptographic keys (e.g., blockchain wallets, SSH keys) |
 
 These modes ensure robust protection for critical accounts, balancing entropy and usability.
 
