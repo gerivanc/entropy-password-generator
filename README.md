@@ -363,7 +363,7 @@ Combine CLI options to create passwords tailored to specific needs. Here you can
 
 #### Wi-Fi Password (15chars, all types, with ambiguous) 
 ```bash
-python3 entropy_password_generator/password_generator.py --length 32
+python3 entropy_password_generator/password_generator.py --length 15
 ```
 ```
 Generated password: t3Fo1^XNvyuZ{Ui
