@@ -1,4 +1,3 @@
-
 """
 EntroPy Password Generator - A secure and customizable password generator
 written in Python.
