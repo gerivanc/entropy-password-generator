@@ -108,26 +108,26 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 
 | Mode | Length | Character Set | R (Charset Size) | Entropy (bits) | Security Level | Use Case |
 |------|--------|---------------|------------------|----------------|----------------|----------|
-| 11 | 15 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 95.10 | Strong | Personal accounts (email, social media) |
-| 13 | 20 | Lowercase + Digits (no ambiguous) | 31 | 99.08 | Strong | Basic application logins |
-| 14 | 20 | Uppercase + Digits (no ambiguous) | 31 | 99.08 | Strong | Device authentication |
-| 12 | 18 | Full (uppercase, lowercase, digits, symbols, with ambiguous) | 94 | 117.14 | Very Strong | Professional accounts (work email, VPN) |
+| 11 | 15 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 95.10 | Strong | Personal accounts (email, social media) |
+| 13 | 20 | Lowercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Basic application logins |
+| 14 | 20 | Uppercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Device authentication |
+| 12 | 18 | Full (uppercase, lowercase, digits, symbols, with ambiguous) | 95 | 117.14 | Very Strong | Professional accounts (work email, VPN) |
 | 4 | 24 | Uppercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Legacy systems requiring uppercase |
 | 5 | 24 | Lowercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Readable passwords for manual entry |
-| 6 | 24 | Digits + Special (with ambiguous) | 42 | 126.85 | Very Strong | API tokens with limited character sets |
+| 6 | 24 | Digits + Special (with ambiguous) | 43 | 126.85 | Very Strong | API tokens with limited character sets |
 | 3 | 24 | Uppercase + Lowercase (with ambiguous) | 52 | 136.81 | Very Strong | General-purpose website logins |
-| 1 | 24 | Lowercase + Special (with ambiguous) | 58 | 138.75 | Very Strong | Secure notes or backup codes |
-| 2 | 24 | Uppercase + Special (with ambiguous) | 58 | 138.75 | Very Strong | Administrative console access |
+| 1 | 24 | Lowercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Secure notes or backup codes |
+| 2 | 24 | Uppercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Administrative console access |
 | 7 | 24 | Uppercase + Lowercase + Digits (with ambiguous) | 62 | 142.90 | Very Strong | Multi-user system credentials |
-| 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 68 | 144.54 | Very Strong | Database access keys |
-| 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 68 | 144.54 | Very Strong | Secure file encryption |
-| 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 84 | 151.16 | Extremely Strong | High-security application logins |
-| 15 | 24 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 152.16 | Extremely Strong | Enterprise-grade passwords |
-| 16 | 32 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 202.88 | Cryptographic Grade | API keys for sensitive services |
-| 17 | 42 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 266.27 | Cryptographic Grade | Server authentication tokens |
-| 18 | 60 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 380.39 | Ultra Secure | Financial system credentials |
-| 19 | 75 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 475.49 | Ultra Secure | Master keys for password managers |
-| 20 | 128 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
+| 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Database access keys |
+| 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Secure file encryption |
+| 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 85 | 151.16 | Extremely Strong | High-security application logins |
+| 15 | 24 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 152.16 | Extremely Strong | Enterprise-grade passwords |
+| 16 | 32 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 202.88 | Cryptographic Grade | API keys for sensitive services |
+| 17 | 42 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 266.27 | Cryptographic Grade | Server authentication tokens |
+| 18 | 60 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 380.39 | Ultra Secure | Financial system credentials |
+| 19 | 75 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 475.49 | Ultra Secure | Master keys for password managers |
+| 20 | 128 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
 
 > **Note**: Entropy values are theoretical maximums, assuming uniform random selection. The requirement of at least one character per selected type (e.g., uppercase, lowercase) slightly reduces effective entropy for shorter passwords. This reduction is negligible, and all modes exceed Proton© and NIST standards.
 
@@ -354,7 +354,7 @@ Entropy: 475.49 bits
 python3 entropy_password_generator/password_generator.py --mode 20
 ```
 ```
-Generated password: Ax9kQw#Z2vRt$Y4mPv&B6nJcF8tH3xK5zL7qM2wN4yP8rT9bV6cW2xZ5kQ7mN3tP9vR4yB8nF2wH6zJ5kL9qT3mV7xP2rN4cY8bW6tK9zQ5vM3nH2xF7pR4yT8k
+Generated password: _N$q6xm,jE2Yt=7P{GAg?XS6~-RMn=]T}~?Qt_;k)5eW[k?UZH^6$Su*a7ARaNyj)X>^*FVtMw7;t\yNK.^_@DZpQ\\K,B}qKRZ}3&}Tp&QP^H>M]<4Fb(*Wn7%U42t%
 Entropy: 811.50 bits
 ```
 
