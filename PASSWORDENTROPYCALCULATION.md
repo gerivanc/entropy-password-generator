@@ -187,7 +187,8 @@ Comparing these methods with the EntroPy Password Generator, even the most basic
 ## Final Note
 
 > **Robust Security Guaranteed**  
-> The EntroPy Password Generator leverages Python's `secrets` module for cryptographically secure randomization, ensuring passwords meet or exceed Proton© (75 bits) and NIST (80+ bits) entropy standards across all 20 modes.
+> The EntroPy Password Generator leverages Python's `secrets` module for cryptographically secure randomization, ensuring passwords meet or exceed Proton© (75 bits) and 
+NIST (80+ bits) entropy standards across all 20+ modes.
 
 ### Storage and Security
 Never memorize strong, randomly generated passwords manually. Instead, store them securely in an encrypted environment, such as a trusted password manager. I recommend [Bitwarden©](https://bitwarden.com/), an open-source password manager with zero-knowledge encryption. Enhance protection by combining high-entropy passwords with **FIDO2 security keys**, **two-factor authentication (2FA)**, and **periodic security audits**.
