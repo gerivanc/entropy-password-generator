@@ -361,7 +361,7 @@ Entropy: 811.50 bits
 ### Block III (Using Custom Configuration)
 Combine CLI options to create passwords tailored to specific needs. Here you can set the password length between 15-128 characters. Below are examples for common scenarios, ensuring a balance between security and usability:
 
-#### Wi-Fi Password (15chars, all types, with ambiguous) 
+**Wi-Fi Password (15chars, all types, with ambiguous)** 
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15
 ```
@@ -370,7 +370,7 @@ Generated password: t3Fo1^XNvyuZ{Ui
 Entropy: 97.62 bits
 ```
 
-#### Cloud Storage Services (32 chars, all types, no ambiguous)
+**Cloud Storage Services (32 chars, all types, no ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 32
 ```
@@ -379,7 +379,7 @@ Generated password: Y9=emJ}wTPK#VMgr~&;;s}e._Z9Q$p;U
 Entropy: 202.88 bits
 ```
 
-#### Simple Readable Password (15 chars, lowercase + digits, no ambiguous)
+**Simple Readable Password (15 chars, lowercase + digits, no ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15 --no-uppercase --no-special
 ```
@@ -389,7 +389,7 @@ Entropy: 74.31 bits (Warning: Below Proton© standard)
 ```
 > **Note**: Warning: Password entropy (74.31 bits) is below the recommended 75 bits (Proton© standard). To improve security, increase the password length (e.g., use --length 24 or higher) and include more character types (e.g., use uppercase, lowercase, digits, and special characters).
 
-#### API Token (24 chars, uppercase + digits + special, with ambiguous)
+**API Token (24 chars, uppercase + digits + special, with ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 24 --no-lowercase --with-ambiguous
 ```
@@ -398,7 +398,7 @@ Generated password: 3#4K:%<9MAE~&M+59#\%}G~1
 Entropy: 144.54 bits
 ```
 
-#### Cryptographic Key (128 chars, all types, with ambiguous)
+**Cryptographic Key (128 chars, all types, with ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous
 ```
