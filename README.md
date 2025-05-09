@@ -1,3 +1,5 @@
+![](https://drive.google.com/uc?export=download&id=1KubFo_zUFuJDc9HfMx5rwtVRMvlY45t0)
+---
 # EntroPy Password Generator (v0.5.0)
 
 <div align="center">
