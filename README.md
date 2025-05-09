@@ -162,13 +162,13 @@ python3 entropy_password_generator/password_generator.py --length <number>
 ```
 
 ### Screenshots
-Below is an example of the CLI output for **Mode 15**:
-![Mode 15 Output](https://drive.google.com/uc?export=download&id=1ktWzWPmiCsR0HM94_TZO8slkh_EnLCOk)
+Below is an example of the CLI output for **Mode 15** `--mode 15`:
+![Mode 15 Output](https://drive.google.com/uc?export=download&id=1JspjkJzXBFwPGId_yF4Lv7ycoe7RwLpi)
 *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 15`. Demonstration image of the output result of the function.
 
-Below is an example of the CLI output for  **--length**:
-![--length 85 Output](https://drive.google.com/uc?export=download&id=1OaZcJv2vJJBb3qIJzvieU1W6P0sJdfWi)
-*Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 85`. Demonstration image of the output result of the function. 
+Below is an example of the CLI output for  **--length** `--length 85 --with-ambiguous`:
+![--length 85 Output](https://drive.google.com/uc?export=download&id=1D-hN2oAKwBrT0Fy8rk0mshJbDtLbAD5C)
+*Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 85 --with-ambiguous`. Demonstration image of the output result of the function. 
 
 ---
 
