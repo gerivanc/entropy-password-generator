@@ -10,7 +10,7 @@ written in Python](https://drive.google.com/uc?export=download&id=1KubFo_zUFuJDc
   <img src="https://img.shields.io/badge/Entropy%20Compliant-Proton%20%26%20NIST-green" alt="Entropy Compliant">
   <img src="https://img.shields.io/maintenance/yes/2025?label=Maintained" alt="Maintained">
   <a href="https://test.pypi.org/project/entropy-password-generator/"><img src="https://img.shields.io/badge/Project-Test%20PyPI-blue?logo=pypi" alt="Test PyPI Project"></a>
-  <a href="https://pypi.org/project/entropy-password-generator/0.4.9/"><img src="https://img.shields.io/badge/Project-PyPI-blue?logo=pypi" alt="PyPI Project"></a>
+  <a href="https://pypi.org/project/entropy-password-generator/"><img src="https://img.shields.io/badge/Project-PyPI-blue?logo=pypi" alt="PyPI Project"></a>
 
 </div>
 
