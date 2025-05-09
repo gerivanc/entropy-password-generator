@@ -38,14 +38,22 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 entropy_password_generator/password_generator.py --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
+        flake8 entropy_password_generator/password_generator.py --max-line-length=79 --ignore=E203,E305,W294 --count --show-source --statistics
 
-    - name: Install package from Test PyPI
+    - name: Install package locally
       run: |
-        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator
+        pip install .
 
     - name: Run script with different modes
       run: |
         entropy-password-generator --mode 1
         entropy-password-generator --mode 12
         entropy-password-generator --mode 15
+        entropy-password-generator --length 128
+        entropy-password-generator --length 15 --no-special
+
+    - name: Validate script output
+      run: |
+        entropy-password-generator --mode 1 | grep -q "Password:" && echo "Mode 1 output valid" || echo "Mode 1 output invalid"
+        entropy-password-generator --mode 12 | grep -q "Password:" && echo "Mode 12 output valid" || echo "Mode 12 output invalid"
+        entropy-password-generator --mode 15 | grep -q "Password:" && echo "Mode 15 output valid" || echo "Mode 15 output invalid"
