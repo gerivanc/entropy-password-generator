@@ -78,59 +78,65 @@ The table below details each mode, ordered by increasing entropy, with configura
 ### Example Passwords
 To illustrate the entropy mechanics, below are sample passwords for three modes from each block, showcasing their character sets and strengths:
 
-- **Mode 1** (Block I, 24 chars, lowercase + special, with ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 1
-  ```
-  ```
-  Generated password:  zq!wr#ty&pm$nk%lc*hj=vx 
-  Entropy: 140.59 bits
-  ```
+#### Block I (All with ambiguous characters, length 24)
 
-- **Mode 3** (Block I, 24 chars, uppercase + lowercase, with ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 3
-  ```
-  ```
-  Generated password:  KjZmPqRtYxWvLcFnBsHdIkOg 
-  Entropy: 136.80 bits
-  ```
+ **Mode 1: Lowercase + Special characters**
+```bash
+python3 entropy_password_generator/password_generator.py --mode 1
+```
+```
+Generated password: &\]*y>fhqs*e<.+fl=~ijy-i
+Entropy: 138.75 bits
+```
+  
+  **Mode 8: Uppercase + Lowercase + Special characters**
+```bash
+python3 entropy_password_generator/password_generator.py --mode 8
+```
+```
+Generated password: NmP<ToUHnm*:m\u:Rhspj=:w
+Entropy: 151.16 bits
+```
+  
+ #### Block II (Mixed configurations)
+  
+  **Mode 11: All character types, no ambiguous characters (length 15)**
+```bash
+python3 entropy_password_generator/password_generator.py --mode 11
+```
+```
+Generated password: ?*WjM\MR-.JkQr5
+Entropy: 95.10 bits
+```
 
-- **Mode 8** (Block I, 24 chars, uppercase + lowercase + special, with ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 8
-  ```
-  ```
-  Generated password: Kj#nPq@Rt!xWv&MbHs$YkLc 
-  Entropy: 153.12 bits
-  ```
+**Mode 20: All character types, no ambiguous characters (length 128)**
+```bash
+python3 entropy_password_generator/password_generator.py --mode 20
+```
+```
+Generated password: _N$q6xm,jE2Yt=7P{GAg?XS6~-RMn=]T}~?Qt_;k)5eW[k?UZH^6$Su*a7ARaNyj)X>^*FVtMw7;t\yNK.^_@DZpQ\\K,B}qKRZ}3&}Tp&QP^H>M]<4Fb(*Wn7%U42t%
+Entropy: 811.50 bits
+```
 
-- **Mode 11** (Block II, 15 chars, full no ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 11
-  ```
-  ```
-  Generated password:  Kj9mPqRtY2xWvN8 
-  Entropy: 95.70 bits
-  ```
+### Block III (Using Custom Configuration)
 
-- **Mode 15** (Block II, 24 chars, full no ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 15
-  ```
-  ```
-  Generated password: Hs7kQwZx9mPvRtY2nB4cF8j 
-  Entropy: 153.12 bits
-  ```
+**Wi-Fi Password (15chars, all types, with ambiguous)** 
+```bash
+python3 entropy_password_generator/password_generator.py --length 15
+```
+```
+Generated password: t3Fo1^XNvyuZ{Ui
+Entropy: 97.62 bits
+```
 
-- **Mode 20** (Block II, 128 chars, full no ambiguous):
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 20
-  ```
-  ```
-  Generated password:  Ax9kQw#Z2vRt$Y4mPv&B6nJcF8tH3xK5zL7qM2wN4yP8rT9bV6cW2xZ5kQ7mN3tP9vR4yB8nF2wH6zJ5kL9qT3mV7xP2rN4cY8bW6tK9zQ5vM3nH2xF7pR4yT8k 
-  Entropy: 830.98 bits
-  ```
+**Cryptographic Key (128 chars, all types, with ambiguous)**
+```bash
+python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous
+```
+```
+Generated password: [:I^+1GPk`>6YIAE\[z%mvN25I,Q{n<NnU~Yzg.g+Vlwu?n{aSNJ[JX;:%t\tFPQSMuAMok?RAPoTNwMYzy9Z)olx_5Ef+`!(!z)[b&Vr%{>9[k#Mhtdhffol4?F1b,,
+Entropy: 833.00 bits
+```
 
 ---
 
