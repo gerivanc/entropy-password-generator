@@ -51,26 +51,26 @@ The table below details each mode, ordered by increasing entropy, with configura
 
 | Mode | Password Length | Character Set | R (Charset Size) | Entropy Formula | Entropy (bits) | Security Level | Use Case |
 |------|-----------------|---------------|------------------|-----------------|----------------|----------------|----------|
-| 11 | 15 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×15 | 95.70 | Strong | Personal accounts (email, social media) |
-| 13 | 20 characters | Lowercase + Digits (no ambiguous) | 31 | log₂(31)×20 | 99.00 | Strong | Basic application logins |
-| 14 | 20 characters | Uppercase + Digits (no ambiguous) | 31 | log₂(31)×20 | 99.00 | Strong | Device authentication |
-| 12 | 18 characters | Full (uppercase, lowercase, digits, symbols, with ambiguous) | 94 | log₂(94)×18 | 117.72 | Very Strong | Professional accounts (work email, VPN) |
+| 11 | 15 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×15 | 95.10 | Strong | Personal accounts (email, social media) |
+| 13 | 20 characters | Lowercase + Digits (no ambiguous) | 36 | log₂(31)×20 | 99.08 | Strong | Basic application logins |
+| 14 | 20 characters | Uppercase + Digits (no ambiguous) | 36 | log₂(31)×20 | 99.08 | Strong | Device authentication |
+| 12 | 18 characters | Full (uppercase, lowercase, digits, symbols, with ambiguous) | 95 | log₂(94)×18 | 117.14 | Very Strong | Professional accounts (work email, VPN) |
 | 4 | 24 characters | Uppercase + Digits (with ambiguous) | 36 | log₂(36)×24 | 124.08 | Very Strong | Legacy systems requiring uppercase |
 | 5 | 24 characters | Lowercase + Digits (with ambiguous) | 36 | log₂(36)×24 | 124.08 | Very Strong | Readable passwords for manual entry |
-| 6 | 24 characters | Digits + Special (with ambiguous) | 42 | log₂(42)×24 | 128.64 | Very Strong | API tokens with limited character sets |
-| 3 | 24 characters | Uppercase + Lowercase (with ambiguous) | 52 | log₂(52)×24 | 136.80 | Very Strong | General-purpose website logins |
-| 1 | 24 characters | Lowercase + Special (with ambiguous) | 58 | log₂(58)×24 | 140.59 | Very Strong | Secure notes or backup codes |
-| 2 | 24 characters | Uppercase + Special (with ambiguous) | 58 | log₂(58)×24 | 140.59 | Very Strong | Administrative console access |
-| 7 | 24 characters | Uppercase + Lowercase + Digits (with ambiguous) | 62 | log₂(62)×24 | 142.80 | Very Strong | Multi-user system credentials |
-| 9 | 24 characters | Uppercase + Digits + Special (with ambiguous) | 68 | log₂(68)×24 | 145.68 | Very Strong | Database access keys |
-| 10 | 24 characters | Lowercase + Digits + Special (with ambiguous) | 68 | log₂(68)×24 | 145.68 | Very Strong | Secure file encryption |
-| 8 | 24 characters | Uppercase + Lowercase + Special (with ambiguous) | 84 | log₂(84)×24 | 153.12 | Extremely Strong | High-security application logins |
-| 15 | 24 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×24 | 153.12 | Extremely Strong | Enterprise-grade passwords |
-| 16 | 32 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×32 | 204.16 | Cryptographic Grade | API keys for sensitive services |
-| 17 | 42 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×42 | 267.96 | Cryptographic Grade | Server authentication tokens |
-| 18 | 60 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×60 | 382.80 | Ultra Secure | Financial system credentials |
-| 19 | 75 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×75 | 478.50 | Ultra Secure | Master keys for password managers |
-| 20 | 128 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 90 | log₂(90)×128 | 830.98 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
+| 6 | 24 characters | Digits + Special (with ambiguous) | 43 | log₂(42)×24 | 126.85 | Very Strong | API tokens with limited character sets |
+| 3 | 24 characters | Uppercase + Lowercase (with ambiguous) | 52 | log₂(52)×24 | 136.81 | Very Strong | General-purpose website logins |
+| 1 | 24 characters | Lowercase + Special (with ambiguous) | 59 | log₂(58)×24 | 138.75 | Very Strong | Secure notes or backup codes |
+| 2 | 24 characters | Uppercase + Special (with ambiguous) | 59 | log₂(58)×24 | 138.75 | Very Strong | Administrative console access |
+| 7 | 24 characters | Uppercase + Lowercase + Digits (with ambiguous) | 62 | log₂(62)×24 | 142.90 | Very Strong | Multi-user system credentials |
+| 9 | 24 characters | Uppercase + Digits + Special (with ambiguous) | 69 | log₂(68)×24 | 144.54 | Very Strong | Database access keys |
+| 10 | 24 characters | Lowercase + Digits + Special (with ambiguous) | 69 | log₂(68)×24 | 144.54 | Very Strong | Secure file encryption |
+| 8 | 24 characters | Uppercase + Lowercase + Special (with ambiguous) | 85 | log₂(84)×24 | 151.16 | Extremely Strong | High-security application logins |
+| 15 | 24 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×24 | 152.16 | Extremely Strong | Enterprise-grade passwords |
+| 16 | 32 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×32 | 202.88 | Cryptographic Grade | API keys for sensitive services |
+| 17 | 42 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×42 | 266.27 | Cryptographic Grade | Server authentication tokens |
+| 18 | 60 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×60 | 380.39 | Ultra Secure | Financial system credentials |
+| 19 | 75 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×75 | 475.49 | Ultra Secure | Master keys for password managers |
+| 20 | 128 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×128 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
 
 **All generated passwords surpass the Proton© minimum of 75 bits and NIST recommendations.**
 
