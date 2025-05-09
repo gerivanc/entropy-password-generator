@@ -129,7 +129,7 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 | 19 | 75 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 475.49 | Ultra Secure | Master keys for password managers |
 | 20 | 128 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
 
-> **Note**: Entropy values are theoretical maximums, assuming uniform random selection. The requirement of at least one character per selected type (e.g., uppercase, lowercase) slightly reduces effective entropy for shorter passwords. This reduction is negligible, and all modes exceed Proton© and NIST standards.
+> **Note**: **Search Space Depth** defines the variety of characters in a password, influencing its resistance to brute-force attacks. Expanding it with letters, numbers, and symbols increases possible combinations, making the password harder to crack. **Entropy** reaches theoretical maximum values under uniform random selection, but requiring at least one character per type slightly reduces effective entropy in shorter passwords.. This reduction is negligible, and all modes exceed Proton© and NIST standards.
 
 ---
 
