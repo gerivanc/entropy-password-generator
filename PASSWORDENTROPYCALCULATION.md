@@ -43,9 +43,10 @@ Simplified:
 ## Project Capabilities
 
 ### Password Generation Modes
-The generator offers 20 modes for secure password generation, divided into two blocks:
-- **Block I (Modes 1–10)**: Fixed length of 24 characters, including ambiguous characters (e.g., 'I', 'O', '0'), with varying character sets to balance readability and security. Ideal for general-purpose passwords, such as website logins or application credentials.
-- **Block II (Modes 11–20)**: Varying lengths (15 to 128 characters), mostly excluding ambiguous characters for enhanced readability. These modes cater to sensitive applications, from personal accounts to cryptographic keys and enterprise-grade security.
+The generator offers 20+ modes for secure password generation, divided into three blocks:
+- **Block I (Modes 1–10):** Fixed length of 24 characters, including ambiguous characters (e.g., 'I', 'O', '0'), with varying character sets to balance readability and security. Ideal for general-purpose passwords, such as website logins or application credentials.
+- **Block II (Modes 11–20):** Varying lengths (15 to 128 characters), mostly excluding ambiguous characters for enhanced readability. These modes cater to sensitive applications, from personal accounts to cryptographic keys and enterprise-grade security.
+- **Using Custom Configuration:** Custom passwords with lengths between 15 and 128 characters, specified using the --length option followed by the desired length (15-128), including ambiguous characters. These passwords achieve entropies ranging from 97.62 to 833.00 bits, making them suitable for a wide range of applications, from personal use to high-security environments requiring robust cryptographic strength.
 
 The table below details each mode, ordered by increasing entropy, with configurations, character set sizes (\( R \)), entropy formulas, and recommended use cases:
 
