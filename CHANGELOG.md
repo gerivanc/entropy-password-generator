@@ -5,7 +5,7 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
-## [0.5.0] - 2025-05-08
+## [0.5.0] - 2025-05-10
 
 ### Added
 - Added a new section in `README.md` titled "Installation Options," detailing installation of the stable version (0.4.9) via PyPI (`pip install entropy-password-generator==0.4.9`) and the development version via Test PyPI (`pip install -i https://test.pypi.org/simple/ entropy-password-generator`), including links to the PyPI and Test PyPI project pages.
@@ -18,6 +18,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Added a new section in `README.md` titled "Support This Project" with a PayPal donation button (`https://www.paypal.com/ncp/payment/FYUGSCLQRSQDN`), encouraging support for project development.
 - Added a "Character Set Size (R)" column to the password modes summary table in `README.md`, indicating the size of the character set (e.g., 90 for full set, 36 for uppercase + digits).
 - Added a "Use Case" column to the password modes summary table in `README.md`, suggesting practical applications for each mode (e.g., personal accounts, API tokens, cryptographic keys).
+- Added `bug_report.md` in `.github/ISSUE_TEMPLATE/` to provide a standardized template for bug reports, improving the contributor experience by ensuring detailed and structured issue submissions.
 
 ### Fixed
 - Fixed linting errors in `password_generator.py` identified by Flake8:
@@ -27,6 +28,9 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Fixed output formatting in the `main()` function of `password_generator.py` by replacing literal strings with f-strings, ensuring generated passwords and entropy values are displayed correctly instead of placeholders (e.g., `{password}`, `{entropy:.2f}`).
 - Corrected entropy values in the password modes summary table and examples in `README.md` for consistency (e.g., Mode 1 adjusted from 139.92 to 138.75 bits; Mode 20 adjusted from 816.64 to 811.50 bits).
 - Added a note to the password modes summary table in `README.md`, clarifying that entropy values are theoretical maximums and that requiring at least one character per selected type slightly reduces effective entropy, but all modes remain compliant with Proton and NIST standards.
+- Fixed E501 linting error in `entropy_password_generator/__init__.py` by removing invisible whitespace before the docstring, confirmed via `hexdump`, and ensuring lines respect the 79-character limit.
+- Fixed E999 IndentationError in `entropy_password_generator/__init__.py` by correcting unexpected indent (3 spaces) on the `__all__` declaration, using manual editing and `black` reformatting.
+- Fixed ModuleNotFoundError during local imports by ensuring proper package installation with `pip install .`, enabling successful imports of `entropy_password_generator`.
 
 ### Changed
 - Updated the project description in `README.md` to mention "20+ modes" (previously 20 modes) and an entropy range of 97.62 to 833.00 bits (previously 95.70 to 816.64 bits), reflecting the addition of custom modes with ambiguous characters.
@@ -34,6 +38,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 - Reorganized the "Using Custom Configuration" section in `README.md`, moving examples to the new Block III under "Using Predefined Modes" and focusing on specific use-case scenarios.
 - Updated the "Usage" section in `README.md` to include instructions for running after PyPI/Test PyPI installation (`entropy-password-generator`) and clarify repository execution options with `--mode` and `--length`.
 - Updated the version in `password_generator.py` to `0.5.0`, reflecting the latest release.
+- Enhanced the `python-app.yml` workflow by adding a "Reformat code with black" step to automatically correct indentation issues before linting, and added a `git diff` check to ensure changes are committed.
 
 ## [0.4.9] - 2025-05-03
 
@@ -212,21 +217,4 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ### Changed
 - Adjusted `Entropy Calculation` section in `README.md` with new formula notation (`E(R) = log₂(RL)`).
-- Reformulated `Contributing` section in `README.md` for clarity ("Want to contribute? Check out our [**Contributing Guidelines**](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md)").
-- Updated titles in `password_generator.py` (`Strong Passwords Block I` and `Block II`).
-
-## [0.1.0] - 2025-04-20
-
-### Added
-- Initial project structure with `password_generator.py`, including 20 password generation modes.
-- `README.md` with project overview, usage instructions, and examples.
-- `CONTRIBUTING.md` with guidelines for contributors.
-- `LICENSE.md` with MIT License.
-
-### Changed
-- Renamed `CONTRIBUTING.markdown` to `CONTRIBUTING.md` for consistency.
-- Removed redundant file `EntroPy Password Generator.markdown`.
-
----
-
-#### Copyright © 2025 Gerivan Costa dos Santos
+- Reformulated `Contributing` section in `README.md`
