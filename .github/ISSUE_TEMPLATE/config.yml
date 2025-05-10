@@ -1,9 +1,22 @@
 # Configuration for the issue template chooser in EntroPy Password Generator.
-# Disables blank issues to ensure users use the provided issue template.
-# Includes a contact link for security vulnerability reporting.
+# Disables blank issues to ensure users select a template.
+# Includes contact links for security vulnerabilities and general support.
 
 blank_issues_enabled: false
+issue_templates:
+  - filename: bug_report.md
+    name: Bug Report
+    about: Report a bug or unexpected behavior in the EntroPy Password Generator.
+  - filename: issue_template.md
+    name: General Issue
+    about: Report feature requests, documentation improvements, or other issues.
 contact_links:
   - name: Security Vulnerability
     url: https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md
-    about: Please report security vulnerabilities privately following our security policy.
+    about: Report security vulnerabilities privately following our security policy.
+  - name: General Questions or Support
+    url: mailto:dean-grumbly-plop@duck.com
+    about: Contact the maintainer for questions or support.
+  - name: Community Discussions
+    url: https://github.com/gerivanc/entropy-password-generator/discussions
+    about: Share ideas or discuss the project in GitHub Discussions.
