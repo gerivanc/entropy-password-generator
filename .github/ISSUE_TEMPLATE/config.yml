@@ -11,8 +11,8 @@ issue_templates:
     name: General Issue
     about: Report feature requests, documentation improvements, or other issues.
 contact_links:
-  - name: Security Vulnerability
-    url: https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md
+  - name: Issue Report
+    url: https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md
     about: Report security vulnerabilities privately following our security policy.
   - name: General Questions or Support
     url: mailto:dean-grumbly-plop@duck.com
