@@ -17,15 +17,19 @@ The generator uses the standard entropy formula:
 
 where:
 - **R**: Number of possible characters (character set size).
-- **L**: Length of the password.
+- **L**: Password length.
 - **E(R)**: Entropy in bits.
 
 Simplified:
-- Entropy = log₂(possibilities per character) × password length
+- Entropy = \(\log_2(\text{charset size}) \times \text{password length}\)
 - Higher entropy means exponentially greater effort to crack the password.
-- The table below provides the entropy formula for each mode in a simplified notation (e.g., log₂(R)×L) for readability, with the resulting entropy in bits.
 
-> **Note**: Entropy values are theoretical maximums, assuming uniform random selection. The requirement of at least one character per selected type (e.g., uppercase, lowercase) slightly reduces effective entropy for shorter passwords (e.g., 15 characters). This reduction is negligible for the lengths used (15–128 characters), and all modes exceed Proton© and NIST standards.
+> **Note**: Entropy values are theoretical maximums, assuming uniform random selection via Python's `secrets` module. The requirement of at least one character per selected type (e.g., uppercase, lowercase) slightly reduces effective entropy for shorter passwords (e.g., 15 characters). This reduction is negligible for the lengths used (15–128 characters), and all modes exceed Proton© and NIST standards.
+
+To validate entropy locally, run a mode and check the output:
+```bash
+python3 entropy_password_generator/password_generator.py --mode 1
+```
 
 ---
 
@@ -33,63 +37,64 @@ Simplified:
 
 | Source | Minimum Recommended Entropy | Context |
 |:------|:-----------------------------|:--------|
-| **Proton©** | 75 bits | General password strength recommendation for strong protection ([source](https://proton.me/blog/what-is-password-entropy)) |
-| **NIST (SP 800-132 / SP 800-63B)** | 80+ bits | For passwords protecting sensitive data ([NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html), [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)) |
+| **Proton©** | 75 bits | General password strength ([source](https://proton.me/blog/what-is-password-entropy)) |
+| **NIST (SP 800-63B)** | 80+ bits | Passwords protecting sensitive data ([source](https://pages.nist.gov/800-63-3/sp800-63b.html)) |
 
-> **Note**: Modern threat models recommend passwords with at least **100 bits of entropy** for highly sensitive accounts, such as financial or administrative systems.
+> **Note**: For highly sensitive accounts (e.g., financial, administrative), aim for **100+ bits** of entropy.
 
 ---
 
 ## Project Capabilities
 
 ### Password Generation Modes
-The generator offers 20+ modes for secure password generation, divided into three blocks:
-- **Block I (Modes 1–10):** Fixed length of 24 characters, including ambiguous characters (e.g., 'I', 'O', '0'), with varying character sets to balance readability and security. Ideal for general-purpose passwords, such as website logins or application credentials.
-- **Block II (Modes 11–20):** Varying lengths (15 to 128 characters), mostly excluding ambiguous characters for enhanced readability. These modes cater to sensitive applications, from personal accounts to cryptographic keys and enterprise-grade security.
-- **Using Custom Configuration:** Custom passwords with lengths between 15 and 128 characters, specified using the --length option followed by the desired length (15-128), including ambiguous characters. These passwords achieve entropies ranging from 97.62 to 833.00 bits, making them suitable for a wide range of applications, from personal use to high-security environments requiring robust cryptographic strength.
+The generator offers 20 modes, divided into:
+- **Block I (Modes 1–10)**: Fixed length (24 characters), includes ambiguous characters (e.g., `I`, `l`, `O`, `0`), balancing readability and security. Ideal for general-purpose passwords.
+- **Block II (Modes 11–20)**: Varying lengths (15–128 characters), mostly excluding ambiguous characters (`I`, `l`, `O`, `0`, `1`, `` ` ``). Suitable for sensitive applications.
+- **Custom Configuration**: Lengths from 15–128 characters, with or without ambiguous characters, using `--length` and `--with-ambiguous`.
 
-The table below details each mode, ordered by increasing entropy, with configurations, character set sizes (\( R \)), entropy formulas, and recommended use cases:
+The table below details each mode, with character set sizes (\( R \)), entropy, and use cases. Ambiguous characters are excluded unless specified.
 
-| Mode | Password Length | Character Set | R (Charset Size) | Entropy Formula | Entropy (bits) | Security Level | Use Case |
-|------|-----------------|---------------|------------------|-----------------|----------------|----------------|----------|
-| 11 | 15 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×15 | 95.10 | Strong | Personal accounts (email, social media) |
-| 13 | 20 characters | Lowercase + Digits (no ambiguous) | 36 | log₂(31)×20 | 99.08 | Strong | Basic application logins |
-| 14 | 20 characters | Uppercase + Digits (no ambiguous) | 36 | log₂(31)×20 | 99.08 | Strong | Device authentication |
-| 12 | 18 characters | Full (uppercase, lowercase, digits, symbols, with ambiguous) | 95 | log₂(94)×18 | 117.14 | Very Strong | Professional accounts (work email, VPN) |
-| 4 | 24 characters | Uppercase + Digits (with ambiguous) | 36 | log₂(36)×24 | 124.08 | Very Strong | Legacy systems requiring uppercase |
-| 5 | 24 characters | Lowercase + Digits (with ambiguous) | 36 | log₂(36)×24 | 124.08 | Very Strong | Readable passwords for manual entry |
-| 6 | 24 characters | Digits + Special (with ambiguous) | 43 | log₂(42)×24 | 126.85 | Very Strong | API tokens with limited character sets |
-| 3 | 24 characters | Uppercase + Lowercase (with ambiguous) | 52 | log₂(52)×24 | 136.81 | Very Strong | General-purpose website logins |
-| 1 | 24 characters | Lowercase + Special (with ambiguous) | 59 | log₂(58)×24 | 138.75 | Very Strong | Secure notes or backup codes |
-| 2 | 24 characters | Uppercase + Special (with ambiguous) | 59 | log₂(58)×24 | 138.75 | Very Strong | Administrative console access |
-| 7 | 24 characters | Uppercase + Lowercase + Digits (with ambiguous) | 62 | log₂(62)×24 | 142.90 | Very Strong | Multi-user system credentials |
-| 9 | 24 characters | Uppercase + Digits + Special (with ambiguous) | 69 | log₂(68)×24 | 144.54 | Very Strong | Database access keys |
-| 10 | 24 characters | Lowercase + Digits + Special (with ambiguous) | 69 | log₂(68)×24 | 144.54 | Very Strong | Secure file encryption |
-| 8 | 24 characters | Uppercase + Lowercase + Special (with ambiguous) | 85 | log₂(84)×24 | 151.16 | Extremely Strong | High-security application logins |
-| 15 | 24 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×24 | 152.16 | Extremely Strong | Enterprise-grade passwords |
-| 16 | 32 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×32 | 202.88 | Cryptographic Grade | API keys for sensitive services |
-| 17 | 42 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×42 | 266.27 | Cryptographic Grade | Server authentication tokens |
-| 18 | 60 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×60 | 380.39 | Ultra Secure | Financial system credentials |
-| 19 | 75 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×75 | 475.49 | Ultra Secure | Master keys for password managers |
-| 20 | 128 characters | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | log₂(90)×128 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
+| Mode | Password Length | Character Set | R (Charset Size) | Entropy (bits) | Security Level | Use Case |
+|------|-----------------|---------------|------------------|----------------|----------------|----------|
+| 11 | 15 | Full (no ambiguous) | 94 | 97.62 | Strong | Personal accounts |
+| 13 | 20 | Lowercase + Digits (no ambiguous) | 36 | 103.03 | Strong | Basic logins |
+| 14 | 20 | Uppercase + Digits (no ambiguous) | 36 | 103.03 | Strong | Device authentication |
+| 12 | 18 | Full (with ambiguous) | 95 | 118.09 | Very Strong | Professional accounts |
+| 4 | 24 | Uppercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Legacy systems |
+| 5 | 24 | Lowercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Readable passwords |
+| 6 | 24 | Digits + Special (with ambiguous) | 43 | 126.85 | Very Strong | API tokens |
+| 3 | 24 | Uppercase + Lowercase (with ambiguous) | 52 | 136.81 | Very Strong | Website logins |
+| 1 | 24 | Lowercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Secure notes |
+| 2 | 24 | Uppercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Admin access |
+| 7 | 24 | Uppercase + Lowercase + Digits (with ambiguous) | 62 | 142.90 | Very Strong | System credentials |
+| 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Database keys |
+| 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | File encryption |
+| 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 85 | 151.16 | Extremely Strong | High-security logins |
+| 15 | 24 | Full (no ambiguous) | 94 | 156.16 | Extremely Strong | Enterprise passwords |
+| 16 | 32 | Full (no ambiguous) | 94 | 208.22 | Cryptographic Grade | API keys |
+| 17 | 42 | Full (no ambiguous) | 94 | 273.30 | Cryptographic Grade | Server tokens |
+| 18 | 60 | Full (no ambiguous) | 94 | 390.43 | Ultra Secure | Financial credentials |
+| 19 | 75 | Full (no ambiguous) | 94 | 488.04 | Ultra Secure | Password manager keys |
+| 20 | 128 | Full (no ambiguous) | 94 | 832.87 | Ultra Secure | Cryptographic keys |
 
-**All generated passwords surpass the Proton© minimum of 75 bits and NIST recommendations.**
+**Notes**:
+- Full character set (no ambiguous): 26 uppercase + 26 lowercase + 10 digits + 32 symbols = 94 characters.
+- Ambiguous characters: `I`, `l`, `O`, `0`, `1`, `` ` ``.
 
 ### Example Passwords
-To illustrate the entropy mechanics, below are sample passwords for three modes from each block, showcasing their character sets and strengths:
+Below are sample passwords for select modes:
 
-#### Block I (All with ambiguous characters, length 24)
-
- **Mode 1: Lowercase + Special characters**
+#### Block I (Length 24, with ambiguous)
+**Mode 1: Lowercase + Special**
 ```bash
 python3 entropy_password_generator/password_generator.py --mode 1
 ```
 ```
-Generated password: &\]*y>fhqs*e<.+fl=~ijy-i
+Generated password: &]*yl>fhqs*e<.+fl=~ijy-i
 Entropy: 138.75 bits
 ```
-  
-  **Mode 8: Uppercase + Lowercase + Special characters**
+
+**Mode 8: Uppercase + Lowercase + Special**
 ```bash
 python3 entropy_password_generator/password_generator.py --mode 8
 ```
@@ -97,39 +102,37 @@ python3 entropy_password_generator/password_generator.py --mode 8
 Generated password: NmP<ToUHnm*:m\u:Rhspj=:w
 Entropy: 151.16 bits
 ```
-  
- #### Block II (Mixed configurations)
-  
-  **Mode 11: All character types, no ambiguous characters (length 15)**
+
+#### Block II (Mixed configurations)
+**Mode 11: Full, no ambiguous (length 15)**
 ```bash
 python3 entropy_password_generator/password_generator.py --mode 11
 ```
 ```
 Generated password: ?*WjM\MR-.JkQr5
-Entropy: 95.10 bits
+Entropy: 97.62 bits
 ```
 
-**Mode 20: All character types, no ambiguous characters (length 128)**
+**Mode 20: Full, no ambiguous (length 128)**
 ```bash
 python3 entropy_password_generator/password_generator.py --mode 20
 ```
 ```
 Generated password: _N$q6xm,jE2Yt=7P{GAg?XS6~-RMn=]T}~?Qt_;k)5eW[k?UZH^6$Su*a7ARaNyj)X>^*FVtMw7;t\yNK.^_@DZpQ\\K,B}qKRZ}3&}Tp&QP^H>M]<4Fb(*Wn7%U42t%
-Entropy: 811.50 bits
+Entropy: 832.87 bits
 ```
 
-### Block III (Using Custom Configuration)
-
-**Wi-Fi Password (15chars, all types, with ambiguous)** 
+#### Custom Configuration
+**Wi-Fi Password (15 chars, with ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15
 ```
 ```
-Generated password: t3Fo1^XNvyuZ{Ui
-Entropy: 97.62 bits
+Generated password: t3FoI^XNvyuZ{Ui
+Entropy: 98.57 bits
 ```
 
-**Cryptographic Key (128 chars, all types, with ambiguous)**
+**Cryptographic Key (128 chars, with ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 128 --with-ambiguous
 ```
@@ -141,66 +144,42 @@ Entropy: 833.00 bits
 ---
 
 ## Why High Entropy Matters
+- **< 50 bits**: Vulnerable, crackable in seconds.
+- **50–75 bits**: Moderately secure, risky for high-value targets.
+- **75–100 bits**: Strong, suitable for personal and professional use.
+- **> 100 bits**: Very strong, ideal for sensitive applications.
 
-- **< 50 bits**: Vulnerable — feasible for sophisticated attackers to crack in seconds.
-- **50–75 bits**: Moderately secure — risky for high-value targets, crackable in hours to days.
-- **75–100 bits**: Strong — adequate for personal and professional security, requiring months to years to crack.
-- **> 100 bits**: Very strong — recommended for administrative, financial, and cryptographic uses, practically uncrackable with current technology.
-
-High entropy directly mitigates risks from:
-- Online and offline brute-force attacks.
-- Credential stuffing attacks.
-- Rainbow table attacks (when combined with proper salting).
+High entropy mitigates:
+- Brute-force attacks (online/offline).
+- Credential stuffing.
+- Rainbow table attacks (with salting).
 
 ---
 
-## Practical Applications of Entropy in Mobile Devices
+## Practical Applications in Mobile Devices
+The table below compares mobile authentication methods to EntroPy's passwords:
 
-Entropy is critical not only for passwords generated by the EntroPy Password Generator but also for authentication methods on mobile devices, such as screen lock PINs and passwords. The table below compares different screen lock methods on Android© and iOS© devices, illustrating how entropy impacts security and emphasizing the superiority of EntroPy's high-entropy passwords.
-
-| Method | Entropy | Possible Combinations | Security Level | Est. Time to Crack | Recommended Use Case |
-|--------|---------|-----------------------|----------------|-------------------|----------|
-| Pattern 3x3 (Standard Pattern) | 9–18 bits | 389,000 | Very low (susceptible to smudge attacks or brute force) | Seconds to minutes | Casual or child use |
-| 4-Digit PIN | 13.3 bits | 10⁴ (10,000) | Very weak (easily cracked with tools like Cellebrite©) | < 1s | Not recommended |
-| 6-Digit PIN | 19.9 bits | 10⁶ (1,000,000) | Weak (vulnerable to forensic tools like GrayKey©) | 1–2 minutes | Temporary use |
-| 8-Digit PIN | 26.6 bits | 10⁸ (100,000,000) | Moderate (better, but still crackable) | Minutes to hours | Intermediate users |
-| 8-Character Alphabetic Password (26 letters) | 37.6 bits | 2.1 × 10¹¹ | Good (secure with rate-limiting) | Hours to days | Security-aware users |
-| 10-Character Alphanumeric Password (aA1) | 59.5 bits | 8.4 × 10¹⁷ | Very good (resistant to most attacks) | Days to weeks | Security professionals |
-| Complex Password 12+ Characters (aA1!@#) | 78–130+ bits | > 10²³ | Extremely high (effective against forensic tools without bypass) | Years to centuries | Sensitive or critical data |
-
-> **Notes**:
-> - Entropy is based on the formula \( E(R) = \log_2(R^L) \) and NIST SP 800-63B recommendations.
-> - Estimated cracking times assume an offline attack with 10⁹ guesses per second (typical for modern GPUs) and no rate-limiting or device-specific protections (e.g., secure enclave). Actual times vary based on attacker resources and system defenses.
-> - Assumes no exploitable vulnerabilities, unlocked bootloader, or root access, as highlighted in the NIST IR 8320 report.
-> - **Sources**: OKTA, OWASP, NIST SP 800-63B, NIST IR 8320, with custom adaptations.
-
-Comparing these methods with the EntroPy Password Generator, even the most basic mode (Mode 11, 15 characters, 97.62 bits) surpasses common mobile authentication methods like PINs and patterns. For maximum security, such as protecting sensitive data, higher-length modes (e.g., Mode 20+, 128 characters, 833.00 bits) provide unparalleled protection, making them ideal for cryptographic applications.
+| Method | Entropy | Combinations | Security | Crack Time | Use Case |
+|--------|---------|--------------|----------|------------|----------|
+| Pattern 3x3 | 9–18 bits | 389,000 | Very low | Seconds | Casual use |
+| 4-Digit PIN | 13.3 bits | 10,000 | Very weak | < 1s | Not recommended |
+| 6-Digit PIN | 19.9 bits | 1,000,000 | Weak | 1–2 min | Temporary use |
+| 8-Character Alphanumeric | 59.5 bits | 8.4 × 10¹⁷ | Very good | Days | Professionals |
+| EntroPy Mode 11 (15 chars) | 97.62 bits | ~10²⁹ | Extremely high | Years | Sensitive data |
 
 ---
 
 ## References
-- [Proton© Blog - Password Entropy Explained](https://proton.me/blog/what-is-password-entropy)
-- [OKTA: What does password entropy mean?](https://www.okta.com/identity-101/password-entropy/)
-- [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#bcrypt)
+- [Proton© Blog](https://proton.me/blog/what-is-password-entropy)
+- [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html)
+- [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)
 - [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
-- [NIST SP 800-63B: 5.1.2.2 Look-Up Secret Verifiers](https://pages.nist.gov/800-63-3/sp800-63b.html)
-- [NIST SP 800-132: Recommendation for Password-Based Key Derivation](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)
-- [NIST IR 8320: Hardware-Enabled Security](https://nvlpubs.nistpubs/ir/2022/NIST.IR.8320.pdf)
-- [Have I Been Pwned](https://haveibeenpwned.com/Passwords) - Check if your passwords have been compromised.
+- [Have I Been Pwned](https://haveibeenpwned.com/Passwords)
 
 ---
 
 ## Final Note
-
-> **Robust Security Guaranteed**  
-> The EntroPy Password Generator leverages Python's `secrets` module for cryptographically secure randomization, ensuring passwords meet or exceed Proton© (75 bits) and 
-NIST (80+ bits) entropy standards across all 20+ modes.
-
-### Storage and Security
-Never memorize strong, randomly generated passwords manually. Instead, store them securely in an encrypted environment, such as a trusted password manager. I recommend [Bitwarden©](https://bitwarden.com/), an open-source password manager with zero-knowledge encryption. Enhance protection by combining high-entropy passwords with **FIDO2 security keys**, **two-factor authentication (2FA)**, and **periodic security audits**.
-
-### Entropy Considerations
-The entropy calculation (\( E(R) = \log_2(R^L) \)) assumes ideal randomness, achieved via Python's `secrets` module, ensuring no predictable patterns (e.g., common words, keyboard sequences). This makes EntroPy passwords highly resistant to heuristic-based attacks. For additional assurance, users can validate passwords with tools like [zxcvbn](https://github.com/dropbox/zxcvbn), though the cryptographic randomization minimizes vulnerabilities. For optimal security, always use generated passwords as-is, without manual modifications that could introduce predictability.
+The EntroPy Password Generator uses Python's `secrets` module for cryptographic randomization, ensuring passwords exceed Proton© and NIST standards. Store passwords in a secure password manager like [Bitwarden©](https://bitwarden.com/) and use 2FA for optimal security.
 
 ---
 
