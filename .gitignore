@@ -4,6 +4,13 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
 env/
 venv/
 ENV/
@@ -15,14 +22,22 @@ venv.bak/
 .idea/
 *.sublime-project
 *.sublime-workspace
+.spyderproject
+.spyproject
+.jupyter/
 
 # System files
 .DS_Store
 Thumbs.db
 
-# Miscellaneous
+# Logs and temporary files
+logs/
 *.log
 *.bak
 *.swp
 *~
 *.tmp
+release_summary.txt
+
+# Miscellaneous
+.pypirc
