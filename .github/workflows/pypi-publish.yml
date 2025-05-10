@@ -30,7 +30,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -e .  # Install the project and its dependencies from pyproject.toml
+        pip install -e .  # Instala o projeto e suas dependências do pyproject.toml
         pip install build twine
 
     - name: Validate version consistency
