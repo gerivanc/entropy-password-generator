@@ -471,10 +471,7 @@ To report a bug, suggest a feature, or ask a question:
 
 2. Click **New issue**.
 
-3. Select [**View templates**](https://github.com/gerivanc/entropy-password-generator/tree/main/.github/ISSUE_TEMPLATE).
-
-4. For **Reporting Bugs** view the available options for: [**Report Bug**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) and/or [**Report Issue**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
-For security vulnerabilities, please follow our [Security Policy](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md).
+3. View the available options and select to: **Report Bug** and/or [**Report Issue**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md). For security vulnerabilities, please follow our [Security Policy](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md).
 
 ---
 
