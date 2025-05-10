@@ -17,3 +17,6 @@ contact_links:
   - name: General Questions or Support
     url: mailto:dean-grumbly-plop@duck.com
     about: Contact the maintainer for questions or support.
+  - name: Bug Report
+    url: https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/bug_report.md
+    about: Report security bugs privately, following our security policy.
