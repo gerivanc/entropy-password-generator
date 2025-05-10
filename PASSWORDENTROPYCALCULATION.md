@@ -47,19 +47,20 @@ python3 entropy_password_generator/password_generator.py --mode 1
 ## Project Capabilities
 
 ### Password Generation Modes
-The generator offers 20 modes, divided into:
+The generator offers 20+ modes for secure password generation, divided into three blocks:
+
 - **Block I (Modes 1–10)**: Fixed length (24 characters), includes ambiguous characters (e.g., `I`, `l`, `O`, `0`), balancing readability and security. Ideal for general-purpose passwords.
 - **Block II (Modes 11–20)**: Varying lengths (15–128 characters), mostly excluding ambiguous characters (`I`, `l`, `O`, `0`, `1`, `` ` ``). Suitable for sensitive applications.
-- **Custom Configuration**: Lengths from 15–128 characters, with or without ambiguous characters, using `--length` and `--with-ambiguous`.
+- **Block III (Using Custom Configuration): Lengths from 15–128 characters, with or without ambiguous characters, using `--length` and `--with-ambiguous`.
 
 The table below details each mode, with character set sizes (\( R \)), entropy, and use cases. Ambiguous characters are excluded unless specified.
 
 | Mode | Password Length | Character Set | R (Charset Size) | Entropy (bits) | Security Level | Use Case |
 |------|-----------------|---------------|------------------|----------------|----------------|----------|
-| 11 | 15 | Full (no ambiguous) | 94 | 97.62 | Strong | Personal accounts |
-| 13 | 20 | Lowercase + Digits (no ambiguous) | 36 | 103.03 | Strong | Basic logins |
-| 14 | 20 | Uppercase + Digits (no ambiguous) | 36 | 103.03 | Strong | Device authentication |
-| 12 | 18 | Full (with ambiguous) | 95 | 118.09 | Very Strong | Professional accounts |
+| 11 | 15 | Full (no ambiguous) | 94 | 95.10 | Strong | Personal accounts |
+| 13 | 20 | Lowercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Basic logins |
+| 14 | 20 | Uppercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Device authentication |
+| 12 | 18 | Full (with ambiguous) | 95 | 117.14 | Very Strong | Professional accounts |
 | 4 | 24 | Uppercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Legacy systems |
 | 5 | 24 | Lowercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Readable passwords |
 | 6 | 24 | Digits + Special (with ambiguous) | 43 | 126.85 | Very Strong | API tokens |
@@ -70,12 +71,12 @@ The table below details each mode, with character set sizes (\( R \)), entropy, 
 | 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Database keys |
 | 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | File encryption |
 | 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 85 | 151.16 | Extremely Strong | High-security logins |
-| 15 | 24 | Full (no ambiguous) | 94 | 156.16 | Extremely Strong | Enterprise passwords |
-| 16 | 32 | Full (no ambiguous) | 94 | 208.22 | Cryptographic Grade | API keys |
-| 17 | 42 | Full (no ambiguous) | 94 | 273.30 | Cryptographic Grade | Server tokens |
-| 18 | 60 | Full (no ambiguous) | 94 | 390.43 | Ultra Secure | Financial credentials |
-| 19 | 75 | Full (no ambiguous) | 94 | 488.04 | Ultra Secure | Password manager keys |
-| 20 | 128 | Full (no ambiguous) | 94 | 832.87 | Ultra Secure | Cryptographic keys |
+| 15 | 24 | Full (no ambiguous) | 94 | 152.16 | Extremely Strong | Enterprise passwords |
+| 16 | 32 | Full (no ambiguous) | 94 | 202.88 | Cryptographic Grade | API keys |
+| 17 | 42 | Full (no ambiguous) | 94 | 266.27 | Cryptographic Grade | Server tokens |
+| 18 | 60 | Full (no ambiguous) | 94 | 380.39 | Ultra Secure | Financial credentials |
+| 19 | 75 | Full (no ambiguous) | 94 | 475.49 | Ultra Secure | Password manager keys |
+| 20 | 128 | Full (no ambiguous) | 94 | 811.50  | Ultra Secure | Cryptographic keys |
 
 **Notes**:
 - Full character set (no ambiguous): 26 uppercase + 26 lowercase + 10 digits + 32 symbols = 94 characters.
@@ -110,7 +111,7 @@ python3 entropy_password_generator/password_generator.py --mode 11
 ```
 ```
 Generated password: ?*WjM\MR-.JkQr5
-Entropy: 97.62 bits
+Entropy: 95.10 bits
 ```
 
 **Mode 20: Full, no ambiguous (length 128)**
@@ -122,7 +123,7 @@ Generated password: _N$q6xm,jE2Yt=7P{GAg?XS6~-RMn=]T}~?Qt_;k)5eW[k?UZH^6$Su*a7AR
 Entropy: 832.87 bits
 ```
 
-#### Custom Configuration
+#### Block III (Custom Configuration)
 **Wi-Fi Password (15 chars, with ambiguous)**
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15
