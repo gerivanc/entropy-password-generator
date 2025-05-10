@@ -2,16 +2,18 @@ name: EntroPy Password Generator CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: read
+  issues: write  # For failure notifications
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     strategy:
       matrix:
         python-version: ["3.8", "3.10", "3.12"]
@@ -19,41 +21,71 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Debug - Show commit and file content
-      run: |
-        echo "Current commit:"
-        git log -1
-        echo "Content of password_generator.py:"
-        cat entropy_password_generator/password_generator.py
-
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
 
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
+        pip install flake8 black isort pytest
 
     - name: Lint with flake8
       run: |
-        flake8 entropy_password_generator/password_generator.py --max-line-length=79 --ignore=E203,E305,W294 --count --show-source --statistics
+        flake8 entropy_password_generator/ --max-line-length=79 --ignore=E203,E305,W294 --count --show-source --statistics
 
-    - name: Install package locally
+    - name: Check formatting with black
       run: |
-        pip install .
+        black --check entropy_password_generator/
 
-    - name: Run script with different modes
+    - name: Check imports with isort
+      run: |
+        isort --check-only entropy_password_generator/
+
+    - name: Install package
+      run: |
+        pip install . && pip show entropy-password-generator
+
+    - name: Run tests
+      run: |
+        pytest tests/ --verbose
+
+    - name: Run CLI with different modes
       run: |
         entropy-password-generator --mode 1
+        entropy-password-generator --mode 8
         entropy-password-generator --mode 12
         entropy-password-generator --mode 15
+        entropy-password-generator --mode 20
         entropy-password-generator --length 128
         entropy-password-generator --length 15 --no-special
 
-    - name: Validate script output
+    - name: Validate CLI output
       run: |
-        entropy-password-generator --mode 1 | grep -q "Password:" && echo "Mode 1 output valid" || echo "Mode 1 output invalid"
-        entropy-password-generator --mode 12 | grep -q "Password:" && echo "Mode 12 output valid" || echo "Mode 12 output invalid"
-        entropy-password-generator --mode 15 | grep -q "Password:" && echo "Mode 15 output valid" || echo "Mode 15 output invalid"
+        output=$(entropy-password-generator --mode 1)
+        echo "$output" | grep -q "Password:" && [[ $(echo "$output" | grep -o "Password:.*" | wc -c) -ge 24 ]] && echo "Mode 1 output valid" || { echo "Mode 1 output invalid"; exit 1; }
+        output=$(entropy-password-generator --mode 12)
+        echo "$output" | grep -q "Password:" && [[ $(echo "$output" | grep -o "Password:.*" | wc -c) -ge 18 ]] && echo "Mode 12 output valid" || { echo "Mode 12 output invalid"; exit 1; }
+        output=$(entropy-password-generator --mode 15)
+        echo "$output" | grep -q "Password:" && [[ $(echo "$output" | grep -o "Password:.*" | wc -c) -ge 24 ]] && echo "Mode 15 output valid" || { echo "Mode 15 output invalid"; exit 1; }
+
+    - name: Notify on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: '⚠️ CI workflow failed for Python ${{ matrix.python-version }}. Please check the workflow logs for details.'
+          })
