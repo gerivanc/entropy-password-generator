@@ -464,7 +464,16 @@ pip install flake8 black isort pytest
 ---
 
 ## Reporting Issues
-Help us improve **EntroPy Password Generator** by reporting bugs or suggesting enhancements using our [issue template](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
+Help us improve EntroPy Password Generator by reporting bugs or suggesting enhancements to project. 
+To report a bug, suggest a feature, or ask a question:
+1. Go to the [Issues tab](https://github.com/gerivanc/entropy-password-generator/issues).
+
+2. Click **New issue**.
+
+3. Select **View templates**.
+
+4. For **Reporting Bugs** view the available options for: [**Report Bug**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) and/or [**Report Issue**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
+For security vulnerabilities, please follow our [Security Policy](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md).
 
 ---
 
@@ -474,13 +483,13 @@ If you encounter a bug in the **EntroPy Password Generator**, please report it u
 
 ---
 
-## Contributing
-Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
+## Security - Reporting a Vulnerability 
+If you discover a security vulnerability in EntroPy Password Generator, please report it immediately to ensure the safety of all users. See the [Security](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) for more details.
 
 ---
 
-## Security - Reporting a Vulnerability 
-If you discover a security vulnerability in EntroPy Password Generator, please report it immediately to ensure the safety of all users. See the [Security](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) for more details.
+## Contributing
+Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
 
 ---
 
