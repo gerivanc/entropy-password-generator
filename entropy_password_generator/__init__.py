@@ -17,7 +17,9 @@ Example:
     >>> password, entropy = generate_password(
     ...     length=24, use_special=True
     ... )
-    >>> print(f"Password: {password}, Entropy: {entropy:.2f} bits")
+    >>> print(
+    ...     f"Password: {password}, Entropy: {entropy:.2f} bits"
+    ... )
 
 Author: Gerivan Costa dos Santos
 License: MIT License
