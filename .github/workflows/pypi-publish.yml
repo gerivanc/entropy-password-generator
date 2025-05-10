@@ -20,7 +20,7 @@ jobs:
         python-version: '3.12'
 
     - name: Cache pip
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
@@ -69,20 +69,33 @@ jobs:
         pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
         python -c "import entropy_password_generator; print(f'Verified Test PyPI package version: {entropy_password_generator.__version__}')"
 
-    - name: Generate changelog summary
-      run: |
-        echo "Changelog for version ${{ steps.version.outputs.version }}:" > release_summary.txt
-        sed -n '/## \[${{ steps.version.outputs.version }}\]/,/## \[/p' CHANGELOG.md | head -n -1 >> release_summary.txt
-        cat release_summary.txt
-
-    - name: Test package from Test PyPI
-      run: |
-        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
-        python -c "import entropy_password_generator; print(entropy_password_generator.__version__)"
-
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
         twine upload dist/*
+
+    - name: Verify PyPI publication
+      run: |
+        sleep 10
+        pip install entropy-password-generator==${{ steps.version.outputs.version }}
+        python -c "import entropy_password_generator; print(f'Verified PyPI package version: {entropy_password_generator.__version__}')"
+
+    - name: Generate changelog summary
+      run: |
+        echo "Changelog for version ${{ steps.version.outputs.version }}:" > release_summary.txt
+        sed -n '/## \[${{ steps.version.outputs.version }}\]/,/## \[/p' CHANGELOG.md | head -n -1 >> release_summary.txt
+        cat release_summary.txt
+
+    - name: Notify on failure
+      if: failure()
+      uses: actions/github-script@v6
+      with:
+        script: |
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.payload.release.id,
+            body: '⚠️ PyPI publication workflow failed. Please check the workflow logs for details.'
+          })
