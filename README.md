@@ -464,13 +464,14 @@ pip install flake8 black isort pytest
 ---
 
 ## Reporting Issues
+
 Help us improve EntroPy Password Generator by reporting bugs or suggesting enhancements to project. 
 To report a bug, suggest a feature, or ask a question:
 1. Go to the [Issues tab](https://github.com/gerivanc/entropy-password-generator/issues).
 
 2. Click **New issue**.
 
-3. Select **View templates**.
+3. Select [**View templates**](https://github.com/gerivanc/entropy-password-generator/tree/main/.github/ISSUE_TEMPLATE).
 
 4. For **Reporting Bugs** view the available options for: [**Report Bug**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/bug_report.md) and/or [**Report Issue**](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
 For security vulnerabilities, please follow our [Security Policy](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md).
