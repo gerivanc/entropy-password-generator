@@ -17,6 +17,3 @@ contact_links:
   - name: General Questions or Support
     url: mailto:dean-grumbly-plop@duck.com
     about: Contact the maintainer for questions or support.
-  - name: Community Discussions
-    url: https://github.com/gerivanc/entropy-password-generator/discussions
-    about: Share ideas or discuss the project in GitHub Discussions.
