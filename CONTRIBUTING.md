@@ -1,37 +1,76 @@
 # Contributing to EntroPy Password Generator
 
-Thank you for your interest in contributing to the **EntroPy Password Generator**! This project aims to provide a secure and customizable password generation tool, and we welcome contributions from the community to make it even better. Whether you're fixing bugs, adding features, or improving documentation, your help is greatly appreciated.
+Thank you for your interest in contributing to the **EntroPy Password Generator**! This project provides a secure and customizable password generation tool, compliant with Proton© and NIST standards, and we welcome contributions to enhance its functionality, documentation, and accessibility. Whether you're fixing bugs, adding features, improving documentation, or contributing in other ways, your efforts are greatly appreciated.
 
-## How to Contribute
+## Ways to Contribute
 
-### 1. Reporting Issues
-If you find a bug, have a feature request, or notice documentation that needs improvement, please open an issue on the [GitHub Issues page](https://github.com/gerivanc/entropy-password-generator/issues).
-- **Search first**: Check existing issues to avoid duplicates.
-- **Provide details**: Include a clear title, description, steps to reproduce (if applicable), and any relevant screenshots or logs.
-- **Use templates**: If available, use the issue templates provided in the repository.
+You can contribute to the EntroPy Password Generator in several ways:
+- **Code**: Fix bugs, add new features, or optimize existing functionality in `password_generator.py`.
+- **Documentation**: Improve `README.md`, `SECURITY.md`, `RELEASE.md`, or add inline comments and docstrings.
+- **Issues**: Report bugs, suggest features, or propose documentation enhancements via GitHub Issues.
+- **Translations**: Translate documentation or CLI messages to other languages.
+- **Media**: Create or update screenshots, logos, or other visual assets for the project.
+- **Testing**: Validate functionality across different Python versions or platforms.
 
-### 2. Submitting Pull Requests
-We encourage contributions via pull requests (PRs). To submit a PR:
+## Getting Started
+
+### 1. Setting Up Your Environment
+To contribute, set up a local development environment:
+1. **Install Python**: Ensure you have Python 3.8 or higher installed, as specified in `pyproject.toml`.
+2. **Clone the repository**:
+   ```bash
+   git clone https://github.com/gerivanc/entropy-password-generator.git
+   cd entropy-password-generator
+   ```
+3. **Create a virtual environment**:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   ```
+4. **Install development tools** (optional, but recommended):
+   ```bash
+   pip install flake8 black isort
+   ```
+   These tools help ensure code quality:
+   - `flake8`: Linting to enforce PEP 8.
+   - `black`: Automatic code formatting.
+   - `isort`: Sorting imports.
+
+### 2. Reporting Issues
+If you find a bug, have a feature request, or notice documentation that needs improvement:
+- **Search existing issues**: Check the [GitHub Issues page](https://github.com/gerivanc/entropy-password-generator/issues) to avoid duplicates.
+- **Use templates**: Follow the issue templates in `.github/ISSUE_TEMPLATE/` for bug reports or feature requests.
+- **Provide details**: Include a clear title, description, steps to reproduce (if applicable), expected behavior, and screenshots or logs.
+- **Security issues**: For vulnerabilities, follow the process in [SECURITY.md](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) instead of opening a public issue.
+
+### 3. Submitting Pull Requests
+To contribute code, documentation, or other changes, submit a pull request (PR):
 1. **Fork the repository**:
-   - Click the "Fork" button at the top of the [repository page](https://github.com/gerivanc/entropy-password-generator).
+   - Click the "Fork" button on the [repository page](https://github.com/gerivanc/entropy-password-generator).
    - Clone your fork:
      ```bash
-     git clone https://github.com/gerivanc/entropy-password-generator.git
+     git clone https://github.com/YOUR-USERNAME/entropy-password-generator.git
      cd entropy-password-generator
      ```
 2. **Create a branch**:
-   - Use a descriptive branch name:
+   - Use a descriptive name (e.g., `feature/add-new-mode`, `fix/bug-entropy-calc`):
      ```bash
      git checkout -b feature/your-feature-name
      ```
 3. **Make changes**:
    - Follow the coding standards below.
-   - Test your changes locally (e.g., `python3 entropy_password_generator/password_generator.py --mode 1` or `python3 entropy_password_generator/password_generator.py --length 20 --no-special`). Ensure compatibility with the `MODES` dictionary in `password_generator.py` for mode-based generation.
-   - Update documentation if necessary (e.g., `README.md` or inline comments).
-4. **Commit changes**:
-   - Write clear, concise commit messages:
+   - Test changes locally (see "Testing" section).
+   - Update documentation (e.g., `README.md`, docstrings) if necessary.
+   - Run linting and formatting tools:
      ```bash
-     git commit -m "Add feature: describe your change"
+     flake8 entropy_password_generator/
+     black entropy_password_generator/
+     isort entropy_password_generator/
+     ```
+4. **Commit changes**:
+   - Use clear, concise commit messages following the [Conventional Commits](https://www.conventionalcommits.org/) format (e.g., `feat: add new password mode`, `fix: correct entropy calculation`):
+     ```bash
+     git commit -m "feat: describe your change"
      ```
 5. **Push to your fork**:
    ```bash
@@ -39,43 +78,70 @@ We encourage contributions via pull requests (PRs). To submit a PR:
    ```
 6. **Open a pull request**:
    - Go to the [repository](https://github.com/gerivanc/entropy-password-generator) and click "New pull request".
-   - Select your branch and describe your changes in the PR description.
-   - Reference any related issues (e.g., "Fixes #123").
+   - Select your branch and provide a detailed description of your changes.
+   - Reference related issues (e.g., "Fixes #123").
+   - Ensure your PR passes the GitHub Actions CI checks (if configured).
 
-### 3. Coding Standards
-To maintain consistency, please adhere to the following guidelines:
-- **Language**: Use Python 3.6+ and follow PEP 8 style guidelines.
-- **Comments and Docstrings**: Write clear comments and docstrings in English for all functions and complex logic.
-- **Security**: Ensure changes maintain the use of the `secrets` module for cryptographic randomness.
-- **Testing**: Test your changes locally to ensure they don’t break existing functionality. After cloning the repository, run:
-  ```bash
-  python3 entropy_password_generator/password_generator.py --mode 1
-  ```
-  or
-  ```bash
-  python3 entropy_password_generator/password_generator.py --length 15
-  ```
-  Alternatively, if you have installed the package from Test PyPI (`pip install -i https://test.pypi.org/simple/ entropy-password-generator`), you can test using:
-  ```bash
-  entropy-password-generator --mode 1
-  ```
-  **Note**: It is recommended to use the direct path (`python3 entropy_password_generator/password_generator.py`) or the CLI command (`entropy-password-generator`) instead of `python -m` to avoid the `RuntimeWarning` that may occur due to module import behavior.
-- **File Structure**: Keep changes within the existing structure (e.g., update `password_generator.py` for core changes).
+### 4. Coding Standards
+To maintain consistency and security, adhere to these guidelines:
+- **Python Version**: Use Python 3.8 or higher, as specified in `pyproject.toml`.
+- **Style**: Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) for code style. Use `flake8` for linting and `black` for formatting.
+- **Docstrings**: Write clear, English docstrings in [Google style](https://google.github.io/styleguide/pyguide.html) for all functions and modules.
+- **Security**: Use the `secrets` module for cryptographic randomness. Avoid insecure libraries like `random`. If introducing new dependencies, justify their necessity and security.
+- **File Structure**: Keep changes within the existing structure (e.g., core logic in `entropy_password_generator/password_generator.py`).
+- **Licensing**: By contributing, you agree that your contributions are licensed under the [MIT License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md).
 
-### 4. Code of Conduct
+### 5. Testing
+Ensure your changes do not break existing functionality:
+- **Manual Testing**:
+  - Run the CLI with different modes and configurations:
+    ```bash
+    python3 entropy_password_generator/password_generator.py --mode 1
+    python3 entropy_password_generator/password_generator.py --length 15 --no-special
+    ```
+  - If the package is installed (e.g., from Test PyPI):
+    ```bash
+    entropy-password-generator --mode 1
+    ```
+  - Note: Use the direct path (`python3 entropy_password_generator/password_generator.py`) or CLI command (`entropy-password-generator`) to avoid `RuntimeWarning` issues with `python -m`.
+- **Cross-Version Testing**:
+  - Test with Python 3.8, 3.10, and 3.12 to ensure compatibility. Use tools like `tox` or a GitHub Actions matrix if available.
+- **Automated Tests**:
+  - Currently, the project does not include automated tests. If adding tests, use `pytest` and place them in a `tests/` directory. Example:
+    ```bash
+    pip install pytest
+    pytest tests/
+    ```
+  - Contributions that add test coverage are highly encouraged.
+- **Validation**:
+  - Verify that new modes or configurations align with the `MODES` dictionary in `password_generator.py`.
+  - Check that entropy calculations remain accurate and compliant with Proton© (75+ bits) and NIST standards.
+
+### 6. Pull Request Review Process
+After submitting a PR:
+- **Review Time**: The maintainer will review your PR within 7 business days. Complex changes may take longer.
+- **Criteria**: PRs are evaluated based on code quality, adherence to standards, security, and alignment with project goals.
+- **Feedback**: You may be asked to make revisions. Address feedback promptly to expedite merging.
+- **Approval**: PRs require approval from the maintainer (Gerivan Costa dos Santos) before merging.
+- **CI Checks**: Ensure all GitHub Actions checks (if configured) pass. Fix any failures reported in the workflow.
+
+### 7. Code of Conduct
 We are committed to fostering an inclusive and respectful community. Please:
-- Be kind and respectful in all interactions.
-- Avoid offensive language or behavior.
-- Report any inappropriate behavior to the project maintainer at dean-grumbly-plop@duck.com.
+- Be kind, respectful, and professional in all interactions.
+- Avoid offensive language, harassment, or discriminatory behavior.
+- Report inappropriate behavior to the maintainer at [dean-grumbly-plop@duck.com](mailto:dean-grumbly-plop@duck.com).
+Violations may result in exclusion from the project.
 
-### 5. Getting Help
-If you have questions or need assistance:
-- Check the [README](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md) for usage details.
-- Open an issue with your question.
-- Contact the maintainer at dean-grumbly-plop@duck.com.
+### 8. Getting Help
+For questions or assistance:
+- Read the [README.md](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md) for project details.
+- Check the [SECURITY.md](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) for vulnerability reporting.
+- Open an issue on the [GitHub Issues page](https://github.com/gerivanc/entropy-password-generator/issues).
+- Join discussions in the [GitHub Discussions](https://github.com/gerivanc/entropy-password-generator/discussions) (if enabled).
+- Contact the maintainer at [dean-grumbly-plop@duck.com](mailto:dean-grumbly-plop@duck.com).
 
-## Acknowledgments
-Thank you for contributing to the **EntroPy Password Generator**! Your efforts help make this project a valuable tool for secure password generation.
+### 9. Acknowledgments
+Thank you for contributing to the **EntroPy Password Generator**! Your efforts help make this tool more secure, accessible, and valuable for users worldwide. Significant contributors may be acknowledged in the project’s documentation or release notes (with your consent).
 
 ---
 
