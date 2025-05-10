@@ -17,7 +17,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = []
+dependencies = ["toml"]
 
 [project.urls]
 Homepage = "https://github.com/gerivanc/entropy-password-generator"
