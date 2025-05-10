@@ -12,7 +12,7 @@ and entropy calculation, supporting 20 predefined modes for generating strong
 passwords compliant with Proton© and NIST standards. It includes a command-line
 interface (CLI) and a programmable API via the `generate_password` function.
 
-Example部分Example:
+Example:
     >>> from entropy_password_generator import generate_password
     >>> password, entropy = generate_password(
     ...     length=24, use_special=True
