@@ -452,6 +452,17 @@ For a detailed analysis, including entropy for each mode and comparisons with mo
 
 ---
 
+## Development
+
+To contribute to the **EntroPy Password Generator**, follow the guidelines in [CONTRIBUTING.md](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md). Set up a development environment with:
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install flake8 black isort pytest
+```
+
+---
+
 ## Reporting Issues
 Help us improve **EntroPy Password Generator** by reporting bugs or suggesting enhancements using our [issue template](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
 
