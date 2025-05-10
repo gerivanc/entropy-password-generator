@@ -457,6 +457,12 @@ Help us improve **EntroPy Password Generator** by reporting bugs or suggesting e
 
 ---
 
+## Reporting Bugs
+
+If you encounter a bug in the **EntroPy Password Generator**, please report it using our dedicated [Bug Report template](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/bug_report.md). This template ensures that your report includes essential details, such as steps to reproduce, environment information, and logs, enabling us to address issues efficiently. For other types of contributions or inquiries, refer to our [CONTRIBUTING.md](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md).
+
+---
+
 ## Contributing
 Want to contribute? Check out our [Contributing Guidelines](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) to get started!
 
