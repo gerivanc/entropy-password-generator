@@ -31,4 +31,3 @@ PyPI: https://pypi.org/project/entropy-password-generator/
 __author__ = "Gerivan Costa dos Santos"
 __license__ = "MIT License"
 __copyright__ = "Copyright © 2025 Gerivan Costa dos Santos"
-
