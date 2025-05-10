@@ -79,7 +79,7 @@ jobs:
         echo "$output" | grep -q "Password:" && [[ $(echo "$output" | grep -o "Password:.*" | wc -c) -ge 24 ]] && echo "Mode 15 output valid" || { echo "Mode 15 output invalid"; exit 1; }
 
     - name: Notify on failure
-      if: failure()
+      if: failure() && github.event_name == 'pull_request'
       uses: actions/github-script@v6
       with:
         script: |
@@ -87,5 +87,5 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             issue_number: context.issue.number,
-            body: '⚠️ CI workflow failed for Python ${{ matrix.python-version }}. Please check the workflow logs for details.'
+            body: '⚠️ CI workflow failed for Python ${{ matrix.python-version }}. Please check the workflow logs for details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
           })
