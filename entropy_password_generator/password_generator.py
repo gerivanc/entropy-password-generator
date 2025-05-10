@@ -307,10 +307,10 @@ def generate_password(
 
     # Determine minimum required characters
     min_required = (
-        (1 if use_uppercase else 0)
-        + (1 if use_lowercase else 0)
-        + (1 if use_digits else 0)
-        + (1 if use_special else 0)
+        (1 if use_uppercase else 0) +
+        (1 if use_lowercase else 0) +
+        (1 if use_digits else 0) +
+        (1 if use_special else 0)
     )
 
     # Ensure length is sufficient for required characters
