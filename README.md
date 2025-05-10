@@ -103,7 +103,7 @@ The generator offers 20+ modes for secure password generation, divided into thre
 
 - **Block I (Modes 1–10):** Fixed length of 24 characters, including ambiguous characters (e.g., 'I', 'O', '0'), with varying character sets to balance readability and security. Ideal for general-purpose passwords, such as website logins or application credentials.
 - **Block II (Modes 11–20):** Varying lengths (15 to 128 characters), mostly excluding ambiguous characters for enhanced readability. These modes cater to sensitive applications, from personal accounts to cryptographic keys and enterprise-grade security.
-- **Using Custom Configuration:** Custom passwords with lengths between 15 and 128 characters, specified using the --length option followed by the desired length (15-128), including ambiguous characters. 
+- **Block III (Using Custom Configuration):** Custom passwords with lengths between 15 and 128 characters, specified using the --length option followed by the desired length (15-128), including ambiguous characters. 
 These passwords achieve entropies ranging from 97.62 to 833.00 bits, making them suitable for a wide range of applications, from personal use to high-security environments requiring robust cryptographic strength.
 
 ### Password Modes Summary
@@ -125,12 +125,12 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 | 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Database access keys |
 | 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Secure file encryption |
 | 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 85 | 151.16 | Extremely Strong | High-security application logins |
-| 15 | 24 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 152.16 | Extremely Strong | Enterprise-grade passwords |
-| 16 | 32 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 202.88 | Cryptographic Grade | API keys for sensitive services |
-| 17 | 42 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 266.27 | Cryptographic Grade | Server authentication tokens |
-| 18 | 60 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 380.39 | Ultra Secure | Financial system credentials |
-| 19 | 75 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 475.49 | Ultra Secure | Master keys for password managers |
-| 20 | 128 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 95 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
+| 15 | 24 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 152.16 | Extremely Strong | Enterprise-grade passwords |
+| 16 | 32 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 202.88 | Cryptographic Grade | API keys for sensitive services |
+| 17 | 42 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 266.27 | Cryptographic Grade | Server authentication tokens |
+| 18 | 60 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 380.39 | Ultra Secure | Financial system credentials |
+| 19 | 75 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 475.49 | Ultra Secure | Master keys for password managers |
+| 20 | 128 | Full (uppercase, lowercase, digits, symbols, no ambiguous) | 94 | 811.50 | Ultra Secure (Theoretical Maximum) | Cryptographic keys, blockchain wallets |
 
 > **Note**: **Search Space Depth** defines the variety of characters in a password, influencing its resistance to brute-force attacks. Expanding it with letters, numbers, and symbols increases possible combinations, making the password harder to crack. **Entropy** reaches theoretical maximum values under uniform random selection, but requiring at least one character per type slightly reduces effective entropy in shorter passwords. This reduction is negligible, and all modes exceed Proton© and NIST standards.
 
