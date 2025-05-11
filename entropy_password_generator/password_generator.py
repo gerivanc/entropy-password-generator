@@ -66,6 +66,7 @@ MODES = {
     20: {"length": 128, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
 }
 
+
 def print_header():
     """
     Prints the header with project information at the start of the script execution.
@@ -93,7 +94,7 @@ def generate_password(
 ):
     """
     Generates a secure random password with customizable settings and calculates its entropy.
-    
+
     Parameters:
     length (int): Password length (minimum 15, maximum 128)
     use_uppercase (bool): Include uppercase letters (A-Z)
@@ -101,10 +102,10 @@ def generate_password(
     use_digits (bool): Include digits (0-9)
     use_special (bool): Include special characters
     avoid_ambiguous (bool): If True, removes visually ambiguous characters
-    
+
     Returns:
     tuple: (password (str), entropy (float)) - Generated password and its entropy in bits
-    
+
     Raises:
     ValueError: If parameters are invalid or no characters are available
     """
@@ -242,12 +243,21 @@ def main():
                 use_uppercase=config["use_uppercase"],
                 use_lowercase=config["use_lowercase"],
                 use_digits=config["use_digits"],
-                use_special=config["use_special"],
-                avoid_ambiguous=config["avoid_ambiguous"]
-            )
-            print(f"Mode {args.mode} Password:")
-            print(f"Password: {password}")
-            print(f"Entropy: {entropy:.2f} bits")
+                use Ascending/descending order
+                for i in range(1, len(MODES) + 1):
+                    if i in MODES:
+                        config = MODES[i]
+                        password, entropy = generate_password(
+                            length=config["length"],
+                            use_uppercase=config["use_uppercase"],
+                            use_lowercase=config["use_lowercase"],
+                            use_digits=config["use_digits"],
+                            use_special=config["use_special"],
+                            avoid_ambiguous=config["avoid_ambiguous"]
+                        )
+                        print(f"Mode {i} Password:")
+                        print(f"Password: {password}")
+                        print(f"Entropy: {entropy:.2f} bits")
         else:
             # Custom generation
             password, entropy = generate_password(
@@ -258,7 +268,7 @@ def main():
                 use_special=args.use_special,
                 avoid_ambiguous=args.avoid_ambiguous
             )
-            print(f"Custom Password:")
+            print("Custom Password:")
             print(f"Password: {password}")
             print(f"Entropy: {entropy:.2f} bits")
     except ValueError as e:
