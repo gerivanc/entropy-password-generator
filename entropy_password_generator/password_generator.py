@@ -91,6 +91,7 @@ MODES = {
          "use_digits": True, "use_special": True, "avoid_ambiguous": True},
 }
 
+
 def print_header():
     """
     Prints the header with project information at the start of the script
