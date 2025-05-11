@@ -243,21 +243,12 @@ def main():
                 use_uppercase=config["use_uppercase"],
                 use_lowercase=config["use_lowercase"],
                 use_digits=config["use_digits"],
-                use Ascending/descending order
-                for i in range(1, len(MODES) + 1):
-                    if i in MODES:
-                        config = MODES[i]
-                        password, entropy = generate_password(
-                            length=config["length"],
-                            use_uppercase=config["use_uppercase"],
-                            use_lowercase=config["use_lowercase"],
-                            use_digits=config["use_digits"],
-                            use_special=config["use_special"],
-                            avoid_ambiguous=config["avoid_ambiguous"]
-                        )
-                        print(f"Mode {i} Password:")
-                        print(f"Password: {password}")
-                        print(f"Entropy: {entropy:.2f} bits")
+                use_special=config["use_special"],
+                avoid_ambiguous=config["avoid_ambiguous"]
+            )
+            print(f"Mode {args.mode} Password:")
+            print(f"Password: {password}")
+            print(f"Entropy: {entropy:.2f} bits")
         else:
             # Custom generation
             password, entropy = generate_password(
