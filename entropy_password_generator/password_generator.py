@@ -1,14 +1,17 @@
 """
-EntroPy Password Generator - A secure and customizable password generator written in Python.
+EntroPy Password Generator - A secure and customizable password generator
+written in Python.
 
-This script provides a command-line interface for generating strong, random passwords with customizable character sets
-and calculates their entropy to assess strength. It includes 20 predefined modes for password generation, ensuring high
-security standards.
+This script provides a command-line interface for generating strong, random
+passwords with customizable character sets and calculates their entropy to
+assess strength. It includes 20 predefined modes for password generation,
+ensuring high security standards.
 
 =========================
 Features:
 - Generates passwords with lengths between 15 and 128 characters.
-- Supports uppercase letters, lowercase letters, digits, and special characters.
+- Supports uppercase letters, lowercase letters, digits, and special
+  characters.
 - Option to exclude ambiguous characters for better readability.
 - Calculates password entropy to assess strength.
 - Command-line interface for flexible usage.
@@ -18,8 +21,10 @@ Copyright © 2025 Gerivan Costa dos Santos
 EntroPy Password Generator
 Author: gerivanc
 GitHub: https://github.com/gerivanc
-MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
-Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
+MIT License:
+https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
+Changelog:
+https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
 Version: 0.5.0
 """
 
@@ -43,41 +48,63 @@ AMBIG_SPECIAL = '|`'     # Vertical bar and backtick
 # Define configurations for all 20 modes
 MODES = {
     # Block I: All with ambiguous characters, length 24
-    1: {"length": 24, "use_uppercase": False, "use_lowercase": True, "use_digits": False, "use_special": True, "avoid_ambiguous": False},
-    2: {"length": 24, "use_uppercase": True, "use_lowercase": False, "use_digits": False, "use_special": True, "avoid_ambiguous": False},
-    3: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": False, "use_special": False, "avoid_ambiguous": False},
-    4: {"length": 24, "use_uppercase": True, "use_lowercase": False, "use_digits": True, "use_special": False, "avoid_ambiguous": False},
-    5: {"length": 24, "use_uppercase": False, "use_lowercase": True, "use_digits": True, "use_special": False, "avoid_ambiguous": False},
-    6: {"length": 24, "use_uppercase": False, "use_lowercase": False, "use_digits": True, "use_special": True, "avoid_ambiguous": False},
-    7: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": False, "avoid_ambiguous": False},
-    8: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": False, "use_special": True, "avoid_ambiguous": False},
-    9: {"length": 24, "use_uppercase": True, "use_lowercase": False, "use_digits": True, "use_special": True, "avoid_ambiguous": False},
-    10: {"length": 24, "use_uppercase": False, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": False},
+    1: {"length": 24, "use_uppercase": False, "use_lowercase": True,
+        "use_digits": False, "use_special": True, "avoid_ambiguous": False},
+    2: {"length": 24, "use_uppercase": True, "use_lowercase": False,
+        "use_digits": False, "use_special": True, "avoid_ambiguous": False},
+    3: {"length": 24, "use_uppercase": True, "use_lowercase": True,
+        "use_digits": False, "use_special": False, "avoid_ambiguous": False},
+    4: {"length": 24, "use_uppercase": True, "use_lowercase": False,
+        "use_digits": True, "use_special": False, "avoid_ambiguous": False},
+    5: {"length": 24, "use_uppercase": False, "use_lowercase": True,
+        "use_digits": True, "use_special": False, "avoid_ambiguous": False},
+    6: {"length": 24, "use_uppercase": False, "use_lowercase": False,
+        "use_digits": True, "use_special": True, "avoid_ambiguous": False},
+    7: {"length": 24, "use_uppercase": True, "use_lowercase": True,
+        "use_digits": True, "use_special": False, "avoid_ambiguous": False},
+    8: {"length": 24, "use_uppercase": True, "use_lowercase": True,
+        "use_digits": False, "use_special": True, "avoid_ambiguous": False},
+    9: {"length": 24, "use_uppercase": True, "use_lowercase": False,
+        "use_digits": True, "use_special": True, "avoid_ambiguous": False},
+    10: {"length": 24, "use_uppercase": False, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": False},
     # Block II: Mixed configurations
-    11: {"length": 15, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    12: {"length": 18, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": False},
-    13: {"length": 20, "use_uppercase": False, "use_lowercase": True, "use_digits": True, "use_special": False, "avoid_ambiguous": True},
-    14: {"length": 20, "use_uppercase": True, "use_lowercase": False, "use_digits": True, "use_special": False, "avoid_ambiguous": True},
-    15: {"length": 24, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    16: {"length": 32, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    17: {"length": 42, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    18: {"length": 60, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    19: {"length": 75, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
-    20: {"length": 128, "use_uppercase": True, "use_lowercase": True, "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    11: {"length": 15, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    12: {"length": 18, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": False},
+    13: {"length": 20, "use_uppercase": False, "use_lowercase": True,
+         "use_digits": True, "use_special": False, "avoid_ambiguous": True},
+    14: {"length": 20, "use_uppercase": True, "use_lowercase": False,
+         "use_digits": True, "use_special": False, "avoid_ambiguous": True},
+    15: {"length": 24, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    16: {"length": 32, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    17: {"length": 42, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    18: {"length": 60, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    19: {"length": 75, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
+    20: {"length": 128, "use_uppercase": True, "use_lowercase": True,
+         "use_digits": True, "use_special": True, "avoid_ambiguous": True},
 }
-
 
 def print_header():
     """
-    Prints the header with project information at the start of the script execution.
+    Prints the header with project information at the start of the script
+    execution.
     """
     header = (
         "Copyright © 2025 Gerivan Costa dos Santos\n"
         "EntroPy Password Generator\n"
         "Author: gerivanc\n"
         "GitHub: https://github.com/gerivanc\n"
-        "MIT License: https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md\n"
-        "Changelog: https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md\n"
+        "MIT License: https://github.com/gerivanc/entropy-password-"
+        "generator/blob/main/LICENSE.md\n"
+        "Changelog: https://github.com/gerivanc/entropy-password-"
+        "generator/blob/main/CHANGELOG.md\n"
         "Version: 0.5.0\n"
         "----------------------------------------\n"
     )
@@ -93,7 +120,8 @@ def generate_password(
     avoid_ambiguous=True
 ):
     """
-    Generates a secure random password with customizable settings and calculates its entropy.
+    Generates a secure random password with customizable settings and
+    calculates its entropy.
 
     Parameters:
     length (int): Password length (minimum 15, maximum 128)
@@ -104,14 +132,16 @@ def generate_password(
     avoid_ambiguous (bool): If True, removes visually ambiguous characters
 
     Returns:
-    tuple: (password (str), entropy (float)) - Generated password and its entropy in bits
+    tuple: (password (str), entropy (float)) - Generated password and its
+           entropy in bits
 
     Raises:
     ValueError: If parameters are invalid or no characters are available
     """
     # Validate length
     if not isinstance(length, int) or length < 15 or length > 128:
-        raise ValueError("Password length must be an integer between 15 and 128 characters.")
+        raise ValueError("Password length must be an integer between 15 and "
+                         "128 characters.")
 
     # Ensure at least one character type is selected
     if not (use_uppercase or use_lowercase or use_digits or use_special):
@@ -126,19 +156,25 @@ def generate_password(
     # Adjust to avoid ambiguous characters
     if avoid_ambiguous:
         if use_uppercase:
-            uppercase_local = ''.join(c for c in uppercase_local if c not in AMBIG_UPPERCASE)
+            uppercase_local = ''.join(c for c in uppercase_local
+                                      if c not in AMBIG_UPPERCASE)
         if use_lowercase:
-            lowercase_local = ''.join(c for c in lowercase_local if c not in AMBIG_LOWERCASE)
+            lowercase_local = ''.join(c for c in lowercase_local
+                                      if c not in AMBIG_LOWERCASE)
         if use_digits:
-            digits_local = ''.join(c for c in digits_local if c not in AMBIG_DIGITS)
+            digits_local = ''.join(c for c in digits_local
+                                   if c not in AMBIG_DIGITS)
         if use_special:
-            special_local = ''.join(c for c in special_local if c not in AMBIG_SPECIAL)
+            special_local = ''.join(c for c in special_local
+                                    if c not in AMBIG_SPECIAL)
 
     # Combine available characters
-    all_chars = uppercase_local + lowercase_local + digits_local + special_local
+    all_chars = uppercase_local + lowercase_local
+    all_chars += digits_local + special_local
 
     if not all_chars:
-        raise ValueError("No characters available to generate the password after configuration.")
+        raise ValueError("No characters available to generate the password "
+                         "after configuration.")
 
     # Determine minimum required characters
     min_required = (1 if use_uppercase else 0) + \
@@ -148,7 +184,9 @@ def generate_password(
 
     # Ensure length is sufficient for required characters
     if length < min_required:
-        raise ValueError(f"Password length must be at least {min_required} to include all selected character types.")
+        raise ValueError("Password length must be at least "
+                         f"{min_required} to include all selected "
+                         "character types.")
 
     # Ensure at least one character of each selected type
     password = []
@@ -178,16 +216,28 @@ def generate_password(
     if entropy < 75:
         suggestions = []
         if length < 24:
-            suggestions.append("increase the password length (e.g., use --length 24 or higher)")
+            suggestions.append("increase the password length (e.g., use "
+                               "--length 24 or higher)")
         if sum([use_uppercase, use_lowercase, use_digits, use_special]) < 3:
-            suggestions.append("include more character types (e.g., use uppercase, lowercase, digits, and special characters)")
-        suggestion_text = " and ".join(suggestions) if suggestions else "use a stronger configuration"
+            suggestions.append("include more character types (e.g., use "
+                               "uppercase, lowercase, digits, and special "
+                               "characters)")
+        if suggestions:
+            suggestion_text = " and ".join(suggestions)
+        else:
+            suggestion_text = "use a stronger configuration"
         print("----------------------------------------")
-        print(f"Warning: Password entropy ({entropy:.2f} bits) is below the recommended 75 bits (Proton© standard).")
+        print("Warning: Password entropy ({entropy:.2f} bits) is below the "
+              "recommended 75 bits (Proton© standard).")
         print(f"To improve security, {suggestion_text}.")
         print("----------------------------------------")
 
     return ''.join(password), entropy
+
+
+print("----------------------------------------")
+
+print("Custom Password:")
 
 
 def main():
@@ -196,15 +246,18 @@ def main():
     Allows customization of password generation via terminal arguments.
     """
     parser = argparse.ArgumentParser(
-        description="EntroPy Password Generator: A secure and customizable password generator."
+        description="EntroPy Password Generator: A secure and customizable "
+                    "password generator."
     )
     parser.add_argument(
         "--mode", type=int, choices=range(1, 21),
-        help="Password generation mode (1 to 20, corresponding to predefined configurations)"
+        help="Password generation mode (1 to 20, corresponding to predefined "
+             "configurations)"
     )
     parser.add_argument(
         "--length", type=int, default=72,
-        help="Password length (15 to 128 characters, default: 72). Ignored if --mode is specified."
+        help="Password length (15 to 128 characters, default: 72). Ignored "
+             "if --mode is specified."
     )
     parser.add_argument(
         "--no-uppercase", action="store_false", dest="use_uppercase",
@@ -235,8 +288,8 @@ def main():
         if args.mode:
             # Mode-based generation
             if args.mode not in MODES:
-                raise ValueError(f"Invalid mode: {args.mode}. Must be between 1 and 20.")
-            
+                raise ValueError(f"Invalid mode: {args.mode}. Must be between "
+                                 "1 and 20.")
             config = MODES[args.mode]
             password, entropy = generate_password(
                 length=config["length"],
@@ -262,8 +315,8 @@ def main():
             print("Custom Password:")
             print(f"Password: {password}")
             print(f"Entropy: {entropy:.2f} bits")
-    except ValueError as e:
-        print(f"Error: {e}")
+    except ValueError:
+        print("Error: Invalid input detected.")
 
 
 if __name__ == "__main__":
