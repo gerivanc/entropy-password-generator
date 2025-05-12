@@ -3,7 +3,9 @@
 [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 [![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-blue)](https://semver.org/spec/v2.0.0.html)
 
-All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
+All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [ CLEAR Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
+
+## [0.5.2] - 2025-05-12
 
 ## [0.5.1] - 2025-05-11
 
@@ -179,7 +181,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
-- Added `PASSWORDENTROPYCALCULATION.md` document with detaileddespite the detailed entropy calculation explanation, benchmarks, and security recommendations.
+- Added `PASSWORDENTROPYCALCULATION.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of `password_generator.py`.
 - Added header with project information (Copyright, Author, GitHub, License, Changelog) in the output of generated passwords.
 
