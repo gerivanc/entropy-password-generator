@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
-written in Python](https://drive.google.com/uc?export=download&id=1KubFo_zUFuJDc9HfMx5rwtVRMvlY45t0)
+written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.0)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.1)
 
 <div align="center">
 
