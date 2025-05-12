@@ -1,9 +1,9 @@
-# EntroPy Password Generator v0.5.0
+# EntroPy Password Generator v0.5.1
 
-**Release Date**: May 10, 2025
+**Release Date**: May 11, 2025
 
 ## Overview
-The **EntroPy Password Generator** v0.5.0 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release enhances the CLI experience, improves project documentation, and prepares for the upcoming PyPI release (v0.5.0). It includes 20 secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
+The **EntroPy Password Generator** v0.5.1 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release enhances the CLI experience, improves project documentation, and prepares for the upcoming PyPI release (v0.5.1). It includes 20 secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
 
 ## What's New
 - **Improved CLI**: Added support for `--mode` to select specific password generation modes (1-20).
