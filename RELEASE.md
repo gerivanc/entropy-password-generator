@@ -16,7 +16,7 @@ The **EntroPy Password Generator** v0.5.1 is now available on [Test PyPI](https:
 To install the latest stable version of the EntroPy Password Generator (version 0.4.9) from PyPI, run the following command:
 
 ```bash
-pip install entropy-password-generator==0.5.0
+pip install entropy-password-generator==0.5.1
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
