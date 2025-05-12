@@ -1,4 +1,4 @@
-# 🐛 EntroPy Password Generator - Bug Report
+# EntroPy Password Generator - Bug Report
 
 Thank you for reporting a bug in the **EntroPy Password Generator**! Please provide detailed information to help us diagnose and fix the issue. See [CONTRIBUTING.md](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md) for guidelines.
 
