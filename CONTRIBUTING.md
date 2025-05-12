@@ -1,4 +1,4 @@
-# 🛠️ Contributing to EntroPy Password Generator
+# Contributing to EntroPy Password Generator
 
 Thank you for your interest in contributing to the **EntroPy Password Generator**! This project provides a secure and customizable password generation tool, compliant with Proton© and NIST standards, and we welcome contributions to enhance its functionality, documentation, and accessibility. Whether you're fixing bugs, adding features, improving documentation, or contributing in other ways, your efforts are greatly appreciated.
 
