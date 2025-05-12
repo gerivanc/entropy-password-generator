@@ -445,11 +445,11 @@ The generator calculates password entropy using the formula: \( E(R) = \log_2(R^
 - \( L \): Password length.
 - \( E(R) \): Entropy in bits (higher is stronger).
 
-All 20 modes produce passwords with entropies from 95.70 to 830.98 bits, surpassing Proton© (75 bits) and NIST (80+ bits) standards. For example:
+**All 20 modes produce passwords with entropies from 95.70 to 830.98 bits**, surpassing Proton© (75 bits) and NIST (80+ bits) standards. For example:
 - Mode 11 (15 chars, full no ambiguous, \( R=90 \)): \( \log_2(90) \times 15 \approx 95.70 \) bits.
 - Mode 20 (128 chars, full no ambiguous, \( R=90 \)): \( \log_2(90) \times 128 \approx 830.98 \) bits.
 
-Using custom configuration, modes produce passwords with entropies from 97.62 to 833.00 bits, surpassing Proton© (75 bits) and NIST (80+ bits) standards. For example:
+**Using custom configuration, modes produce passwords with entropies from 97.62 to 833.00 bits**, surpassing Proton© (75 bits) and NIST (80+ bits) standards. For example:
 - Using `--length 15 --with-ambiguous` (15 chars, all types, with ambiguous, ( R=90 )): ( \log_2(90) \times 15 \approx 97.62 ) bits.
 - Using `--length 128 --with-ambiguous` (128 chars, all types, with ambiguous, ( R=90 )): ( \log_2(90) \times 128 \approx 833.00 ) bits.
 
