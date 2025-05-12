@@ -1,6 +1,6 @@
-# Security Policy
+# 🔒 Security Policy
 
-## Supported Versions
+## ✅ Supported Versions
 
 The following versions of the EntroPy Password Generator are currently supported with security updates. Unsupported versions will not receive patches for vulnerabilities. To check your installed version, run `entropy-password-generator --version`.
 
@@ -10,11 +10,11 @@ The following versions of the EntroPy Password Generator are currently supported
 | 0.4.x   | :white_check_mark: | December 31, 2025      |
 | < 0.4   | :x:                | -                      |
 
-## Test PyPI Usage
+## 🧪 Test PyPI Usage
 
 The Test PyPI release of EntroPy Password Generator is intended for testing and development purposes only. It may contain experimental features or unpatched vulnerabilities and should not be used in production environments. For production use, install the stable version from the official Python Package Index (PyPI) at [https://pypi.org/project/entropy-password-generator/](https://pypi.org/project/entropy-password-generator/).
 
-## Security Best Practices
+## 🛡️ Security Best Practices
 
 To ensure the secure use of EntroPy Password Generator:
 - Use Python 3.8 or higher, keeping it updated to the latest patch version.
@@ -22,7 +22,7 @@ To ensure the secure use of EntroPy Password Generator:
 - Verify package integrity during installation by checking the package's hash or signature (available on the [PyPI project page](https://pypi.org/project/entropy-password-generator/)).
 - Store generated passwords securely using a trusted password manager, such as [Bitwarden](https://bitwarden.com/).
 
-## Reporting a Vulnerability
+## 🚨 Reporting a Vulnerability
 
 If you discover a security vulnerability in the EntroPy Password Generator, please report it promptly to protect the community. We consider vulnerabilities such as cryptographic weaknesses, insecure random number generation, or code execution flaws within scope. Follow these steps:
 
@@ -39,7 +39,7 @@ If you discover a security vulnerability in the EntroPy Password Generator, plea
 5. **Confidentiality**: Do not disclose the vulnerability publicly until we have resolved it and provided clearance. Responsible reporters may be acknowledged publicly (with consent) in release notes or a project "Hall of Fame."
 6. **Contact for Queries**: For questions about the process, email [dean-grumbly-plop@duck.com](mailto:dean-grumbly-plop@duck.com).
 
-## Additional Resources
+## 📚 Additional Resources
 
 - [README.md](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md) for project overview and installation.
 - [RELEASE.md](https://github.com/gerivanc/entropy-password-generator/blob/main/RELEASE.md) for version-specific details.
