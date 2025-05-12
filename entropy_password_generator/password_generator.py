@@ -25,6 +25,8 @@ MIT License:
 https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md
 Changelog:
 https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
+Issue Report:
+https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md
 Version: 0.5.0
 """
 
@@ -106,6 +108,8 @@ def print_header():
         "generator/blob/main/LICENSE.md\n"
         "Changelog: https://github.com/gerivanc/entropy-password-"
         "generator/blob/main/CHANGELOG.md\n"
+        "Issue Report: https://github.com/gerivanc/entropy-password-"
+        "generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md\n"
         "Version: 0.5.0\n"
         "----------------------------------------\n"
     )
@@ -236,11 +240,6 @@ def generate_password(
     return ''.join(password), entropy
 
 
-print("----------------------------------------")
-
-print("Custom Password:")
-
-
 def main():
     """
     Command-line interface for the EntroPy Password Generator.
@@ -301,7 +300,10 @@ def main():
                 avoid_ambiguous=config["avoid_ambiguous"]
             )
             print(f"Mode {args.mode} Password:")
+            print()
             print(f"Password: {password}")
+            print()
+            print(f"Length: {len(password)} characters")
             print(f"Entropy: {entropy:.2f} bits")
         else:
             # Custom generation
@@ -314,10 +316,13 @@ def main():
                 avoid_ambiguous=args.avoid_ambiguous
             )
             print("Custom Password:")
+            print()
             print(f"Password: {password}")
+            print()
+            print(f"Length: {len(password)} characters")
             print(f"Entropy: {entropy:.2f} bits")
-    except ValueError:
-        print("Error: Invalid input detected.")
+    except ValueError as e:
+        print(f"Error: {str(e)}")
 
 
 if __name__ == "__main__":
