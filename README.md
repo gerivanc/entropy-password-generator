@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.1)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.2)
 
 <div align="center">
 
@@ -9,6 +9,7 @@ written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9
   <img src="https://img.shields.io/badge/Made%20with-Python-blue" alt="Made with Python">
   <img src="https://img.shields.io/badge/Entropy%20Compliant-Proton%20%26%20NIST-green" alt="Entropy Compliant">
   <img src="https://img.shields.io/maintenance/yes/2025?label=Maintained" alt="Maintained">
+  <img src="https://img.shields.io/github/actions/workflow/status/gerivanc/entropy-password-generator/python-app.yml" alt="GitHub Actions Status">
   <a href="https://test.pypi.org/project/entropy-password-generator/"><img src="https://img.shields.io/badge/Project-Test%20PyPI-blue?logo=pypi" alt="Test PyPI Project"></a>
   <a href="https://pypi.org/project/entropy-password-generator/"><img src="https://img.shields.io/badge/Project-PyPI-blue?logo=pypi" alt="PyPI Project"></a>
 
@@ -59,10 +60,10 @@ The **EntroPy Password Generator** can be installed from the Python Package Inde
 
 #### Installation from PyPI (Stable Version)
 
-To install the latest stable version of the EntroPy Password Generator (version 0.5.1) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.5.2) from PyPI, run the following command:
 
 ```bash
-pip install entropy-password-generator==0.5.1
+pip install entropy-password-generator==0.5.2
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
@@ -270,6 +271,8 @@ Generated password: =7~@]pv@%>al=@ibp?+}j0d#
 Entropy: 144.54 bits
 ```
 
+---
+
 #### Block II (Mixed configurations)
 **Mode 11: All character types, no ambiguous characters (length 15)**
 ```bash
@@ -361,6 +364,8 @@ Generated password: _N$q6xm,jE2Yt=7P{GAg?XS6~-RMn=]T}~?Qt_;k)5eW[k?UZH^6$Su*a7AR
 Entropy: 811.50 bits
 ```
 
+---
+
 ### Block III (Using Custom Configuration)
 Combine CLI options to create passwords tailored to specific needs. Here you can set the password length between 15-128 characters. Below are examples for common scenarios, ensuring a balance between security and usability:
 
@@ -411,6 +416,8 @@ Entropy: 833.00 bits
 ```
 
 Explore these options to create passwords tailored to your specific requirements, ensuring optimal security.
+
+---
 
 ### Suggestions for Password Types
 The table below suggests six of the strongest password **`modes`** for daily use, covering a range of online services:
