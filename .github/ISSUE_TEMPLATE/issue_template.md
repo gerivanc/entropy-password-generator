@@ -1,4 +1,4 @@
-# 🔐 EntroPy Password Generator - Issue Report
+# EntroPy Password Generator - Issue Report
 
 Thank you for contributing to the **EntroPy Password Generator**! Please fill out the sections below to help us understand and address your issue or suggestion. For guidelines, see our [CONTRIBUTING.md](https://github.com/gerivanc/entropy-password-generator/blob/main/CONTRIBUTING.md). For ideas or general questions, consider using [GitHub Discussions](https://github.com/gerivanc/entropy-password-generator/discussions).
 
