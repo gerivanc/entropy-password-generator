@@ -51,7 +51,7 @@ The generator offers 20+ modes for secure password generation, divided into thre
 
 - **Block I (Modes 1–10)**: Fixed length (24 characters), includes ambiguous characters (e.g., `I`, `l`, `O`, `0`), balancing readability and security. Ideal for general-purpose passwords.
 - **Block II (Modes 11–20)**: Varying lengths (15–128 characters), mostly excluding ambiguous characters (`I`, `l`, `O`, `0`, `1`, `` ` ``). Suitable for sensitive applications.
-- **Block III (Using Custom Configuration): Lengths from 15–128 characters, with or without ambiguous characters, using `--length` and `--with-ambiguous`.
+- **Block III (Using Custom Configuration)**: Lengths from 15–128 characters, with or without ambiguous characters, using `--length` and `--with-ambiguous`.
 
 The table below details each mode, with character set sizes (\( R \)), entropy, and use cases. Ambiguous characters are excluded unless specified.
 
@@ -81,6 +81,8 @@ The table below details each mode, with character set sizes (\( R \)), entropy, 
 **Notes**:
 - Full character set (no ambiguous): 26 uppercase + 26 lowercase + 10 digits + 32 symbols = 94 characters.
 - Ambiguous characters: `I`, `l`, `O`, `0`, `1`, `` ` ``.
+
+---
 
 ### Example Passwords
 Below are sample passwords for select modes:
