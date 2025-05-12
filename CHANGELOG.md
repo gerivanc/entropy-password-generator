@@ -5,6 +5,12 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.5.1] - 2025-05-11
+
+### Changed
+- Updated the `main()` function in `password_generator.py` to add blank lines (`print()`) before and after the `Password` field in the output, creating visual spacing between `Custom Password` (or `Mode X Password`), `Password`, and `Length` fields for all modes (1 to 20 via `--mode`) and custom configurations (15 to 128 characters via `--length`), enhancing readability and highlighting the generated password.
+- Updated the "Screenshots" section in `README.md` to include new images hosted on Google Drive, reflecting the updated password output layout with added spacing for Mode 15 (`python3 entropy_password_generator/password_generator.py --mode 15`) and a custom configuration with `--length 85` (`python3 entropy_password_generator/password_generator.py --length 85`).
+
 ## [0.5.0] - 2025-05-10
 
 ### Added
@@ -173,7 +179,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Added
 - Deep update to the code structure.
 - Added version number (0.4.0) to the authorship comment and output header.
-- Added `PASSWORDENTROPYCALCULATION.md` document with detailed entropy calculation explanation, benchmarks, and security recommendations.
+- Added `PASSWORDENTROPYCALCULATION.md` document with detaileddespite the detailed entropy calculation explanation, benchmarks, and security recommendations.
 - Added authorship comment with project information at the beginning of `password_generator.py`.
 - Added header with project information (Copyright, Author, GitHub, License, Changelog) in the output of generated passwords.
 
@@ -218,3 +224,7 @@ All notable changes to the EntroPy Password Generator project are documented in 
 ### Changed
 - Adjusted `Entropy Calculation` section in `README.md` with new formula notation (`E(R) = log₂(RL)`).
 - Reformulated `Contributing` section in `README.md`
+
+---
+
+#### Copyright © 2025 Gerivan Costa dos Santos
