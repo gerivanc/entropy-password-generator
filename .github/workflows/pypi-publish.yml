@@ -1,14 +1,15 @@
-# This workflow uploads the EntroPy Password Generator package to PyPI when a release is created.
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python#publishing-to-package-registries
-
-name: Publish EntroPy Password Generator to PyPI
+name: Publish to Test PyPI
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - 'v*.*.*'  # Publishes when a version tag (e.g., v0.5.3) is created
+
+permissions:
+  contents: read
 
 jobs:
-  publish:
+  publish-test-pypi:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,82 +20,27 @@ jobs:
       with:
         python-version: '3.12'
 
-    - name: Cache pip
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -e .  # Install the project and its dependencies from pyproject.toml
-        pip install build twine
-
-    - name: Validate version consistency
-      id: version
-      run: |
-        python -c "
-        import toml
-        with open('pyproject.toml', 'r') as f:
-            pyproject_version = toml.load(f)['project']['version']
-        with open('entropy_password_generator/__init__.py', 'r') as f:
-            init_content = f.read()
-            init_version = next(line.split('=')[1].strip().strip('\"') for line in init_content.splitlines() if line.startswith('__version__'))
-        if pyproject_version != init_version:
-            raise ValueError(f'Version mismatch: pyproject.toml ({pyproject_version}) != __init__.py ({init_version})')
-        print('Version consistency validated:', pyproject_version)
-        print('::set-output name=version::' + pyproject_version)
-        "
-
-    - name: Clean previous build artifacts
-      run: |
-        rm -rf dist/*
+        pip install hatchling build twine
 
     - name: Build package
       run: |
         python -m build
 
     - name: Debug Test PyPI Token
-      env:
-        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
       run: |
         if [ -z "$TWINE_PASSWORD" ]; then
-          echo "Error: TWINE_PASSWORD is not set or empty"
+          echo "ERROR: TWINE_PASSWORD is not set or empty"
           exit 1
-        else
-          echo "TWINE_PASSWORD is set (length: ${#TWINE_PASSWORD})"
         fi
+      env:
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
 
     - name: Publish to Test PyPI
+      run: |
+        twine upload --repository testpypi dist/*
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
-      run: |
-        twine upload --repository testpypi dist/* --verbose
-
-    - name: Verify Test PyPI publication
-      run: |
-        sleep 10
-        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
-        python -c "import entropy_password_generator; print(f'Verified Test PyPI package version: {entropy_password_generator.__version__}')"
-
-    - name: Generate changelog summary
-      run: |
-        echo "Changelog for version ${{ steps.version.outputs.version }}:" > release_summary.txt
-        sed -n '/## \[${{ steps.version.outputs.version }}\]/,/## \[/p' CHANGELOG.md | head -n -1 >> release_summary.txt
-        cat release_summary.txt
-
-    - name: Test package from Test PyPI
-      run: |
-        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator==${{ steps.version.outputs.version }}
-        python -c "import entropy_password_generator; print(entropy_password_generator.__version__)"
-
-    - name: Publish to PyPI
-      env:
-        TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-      run: |
-        twine upload dist/*
