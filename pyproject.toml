@@ -17,11 +17,11 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = ["toml"]
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/gerivanc/entropy-password-generator"
-Repository = "https://github.com/gerivanc/entropy-password-generator.git"
+Repository = "https://github.com/gerivanc/entropy-password-generator"
 Issues = "https://github.com/gerivanc/entropy-password-generator/issues"
 Changelog = "https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md"
 
