@@ -21,7 +21,7 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/gerivanc/entropy-password-generator"
-Repository = "https://github.com/gerivanc/entropy-password-generator"
+Repository = "https://github.com/gerivanc/entropy-password-generator.git"
 Issues = "https://github.com/gerivanc/entropy-password-generator/issues"
 Changelog = "https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md"
 
