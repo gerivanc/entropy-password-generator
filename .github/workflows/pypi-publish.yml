@@ -57,12 +57,23 @@ jobs:
       run: |
         python -m build
 
+    - name: Debug Test PyPI Token
+      env:
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
+      run: |
+        if [ -z "$TWINE_PASSWORD" ]; then
+          echo "Error: TWINE_PASSWORD is not set or empty"
+          exit 1
+        else
+          echo "TWINE_PASSWORD is set (length: ${#TWINE_PASSWORD})"
+        fi
+
     - name: Publish to Test PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
       run: |
-        twine upload --repository testpypi dist/*
+        twine upload --repository testpypi dist/* --verbose
 
     - name: Verify Test PyPI publication
       run: |
