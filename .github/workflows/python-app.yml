@@ -34,15 +34,19 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8
+        pip install flake8 hatchling build
 
     - name: Lint with flake8
       run: |
         flake8 entropy_password_generator/password_generator.py --max-line-length=153 --ignore=D,E203,E303,E305,W294 --count --show-source --statistics
 
-    - name: Install package from Test PyPI
+    - name: Build package
       run: |
-        pip install --index-url https://test.pypi.org/simple/ entropy-password-generator
+        python -m build
+
+    - name: Install package locally
+      run: |
+        pip install dist/entropy_password_generator-*.whl
 
     - name: Run script with different modes
       run: |
