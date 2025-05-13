@@ -1,13 +1,13 @@
-# EntroPy Password Generator v0.5.2
+# EntroPy Password Generator v0.5.3
 
-**Release Date**: May 12, 2025
+**Release Date**: May 13, 2025
 
 ## 📋 Overview
-The **EntroPy Password Generator** v0.5.2 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.5.1, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.5.2. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
+The **EntroPy Password Generator** v0.5.3 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.5.3, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.5.3. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
 
 ## ✨ What's New
 - **GitHub Actions Badge**: Added a badge to `README.md` to display the status of GitHub Actions workflows (e.g., `python-app.yml`), enhancing visibility into the project's CI/CD pipeline health.
-- **Version Update**: Updated version references in `README.md` from `0.5.1` to `0.5.2`, ensuring consistency across documentation and package metadata.
+- **Version Update**: Updated version references in `README.md` from `0.5.0` to `0.5.3`, ensuring consistency across documentation and package metadata.
 - **Retained Improvements from v0.5.1**:
   - Enhanced CLI output with blank lines before and after the `Password` field for better readability across all modes and custom configurations.
   - Updated "Screenshots" section in `README.md` with new images hosted on Google Drive, showcasing the improved password output layout for Mode 15 and a custom configuration with `--length 85`.
@@ -17,7 +17,7 @@ The **EntroPy Password Generator** v0.5.2 is now available on [Test PyPI](https:
 To install the latest stable version of the EntroPy Password Generator (version 0.5.2) from PyPI, run the following command:
 
 ```bash
-pip install entropy-password-generator==0.5.2
+pip install entropy-password-generator==0.5.3
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
