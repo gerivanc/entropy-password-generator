@@ -94,7 +94,7 @@ To test the latest development version of the EntroPy Password Generator, instal
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install -i https://test.pypi.org/simple/entropy-password-generator
+pip install -i https://test.pypi.org/simple/ entropy-password-generator
 ```
 
 **The ways to execute passwords after installation are the same as those shown for the version contained in PyPI (Stable Version).**
