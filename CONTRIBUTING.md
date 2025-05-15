@@ -53,7 +53,7 @@ To contribute code, documentation, or other changes, submit a pull request (PR):
    - Click the "Fork" button on the [repository page](https://github.com/gerivanc/entropy-password-generator).
    - Clone your fork:
      ```bash
-     git clone https://github.com/YOUR-USERNAME/entropy-password-generator.git
+     git clone https://github.com/gerivanc/entropy-password-generator.git
      cd entropy-password-generator
      ```
 2. **Create a branch**:
