@@ -15,7 +15,7 @@ Describe the bug clearly. For example:
 
 ## 🔄 Steps to Reproduce
 List the steps to reproduce the bug:
-1. Install: `pip install entropy-password-generator==0.5.3`.
+1. Install: `pip install entropy-password-generator==0.5.4`.
 2. Run: `entropy-password-generator --mode 1`.
 3. Observe: `[Error message]`.
 
@@ -42,7 +42,7 @@ To check versions:
 
 - **Operating System**: [e.g., Ubuntu 24.04]
 - **Python Version**: [e.g., 3.10]
-- **Project Version**: [e.g., 0.5.3]
+- **Project Version**: [e.g., 0.5.4]
 - **Installation Method**: [e.g., PyPI]
 
 ---
