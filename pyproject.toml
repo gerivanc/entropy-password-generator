@@ -1,6 +1,6 @@
 [project]
 name = "entropy-password-generator"
-version = "0.5.3"
+version = "0.5.4"
 description = "A secure password generator with high entropy, compliant with Proton and NIST standards"
 authors = [{name = "Gerivan Costa dos Santos", email = "dean-grumbly-plop@duck.com"}]
 license = {text = "MIT"}
@@ -31,3 +31,7 @@ entropy-password-generator = "entropy_password_generator.password_generator:main
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+# Adicionado para garantir que o diretório entropy_password_generator seja incluído no wheel
+[tool.hatch.build.targets.wheel]
+packages = ["entropy_password_generator"]
