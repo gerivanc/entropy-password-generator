@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.3)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.4)
 
 <div align="center">
 
@@ -61,12 +61,12 @@ The **EntroPy Password Generator** can be installed from the Python Package Inde
 
 ### Installation from PyPI (Stable Version)
 
-To install the latest stable version of the EntroPy Password Generator (version 0.5.3) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.5.4) from PyPI, run the following command:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install entropy-password-generator==0.5.3
+pip install entropy-password-generator==0.5.4
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
