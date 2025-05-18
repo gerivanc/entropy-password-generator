@@ -32,6 +32,5 @@ entropy-password-generator = "entropy_password_generator.password_generator:main
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-# Adicionado para garantir que o diretório entropy_password_generator seja incluído no wheel
 [tool.hatch.build.targets.wheel]
 packages = ["entropy_password_generator"]
