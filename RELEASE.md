@@ -36,7 +36,7 @@ To install the latest stable version of the EntroPy Password Generator (version 
 
 ```bash
 source testenv/bin/activate
-pip install entropy-password-generator==0.5.5
+pip install entropy-password-generator
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
@@ -61,7 +61,7 @@ To test the latest development version of the EntroPy Password Generator, instal
 ```bash
 python3 -m venv venv-testpypi
 source venv-testpypi/bin/activate
-pip install -i https://test.pypi.org/simple/ entropy-password-generator==0.5.5
+pip install -i https://test.pypi.org/simple/ entropy-password-generator
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
