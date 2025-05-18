@@ -1,6 +1,6 @@
 # EntroPy Password Generator v0.5.6
 
-**Release Date**: May 17, 2025
+**Release Date**: May 18, 2025
 
 ---
 
