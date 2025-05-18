@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.4)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.5)
 
 <div align="center">
 
@@ -59,47 +59,54 @@ To proceed here, the execution of the previous step is mandatory (cloning the re
 
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
-### Installation from PyPI (Stable Version)
-
-To install the latest stable version of the EntroPy Password Generator (version 0.5.4) from PyPI, run the following command:
+### 🔧Installation from PyPI (Stable Version)
+To install the latest stable version of the EntroPy Password Generator (version 0.5.5) from PyPI, run the following command:
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install entropy-password-generator==0.5.4
+source testenv/bin/activate
+pip install entropy-password-generator==0.5.5
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
 
 ```bash
-cd entropy-password-generator
+entropy-password-generator --mode 11
 ```
 
-Then use your preferred password execution modes: `--mode` from 1 to 20 and/or `--length` from 15 to 128 characters:
+or
 
 ```bash
-python3 entropy_password_generator/password_generator.py --mode 15
-```
-
-```bash
-python3 entropy_password_generator/password_generator.py --length 85
+entropy-password-generator --length 15
 ```
 
 Visit the [PyPI project page](https://pypi.org/project/entropy-password-generator/) for additional details about the stable release.
 
-### Installation from Test PyPI (Development Version)
+---
 
+### 🔧Installation from Test PyPI (Development Version)
 To test the latest development version of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
 
 ```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -i https://test.pypi.org/simple/ entropy-password-generator
+python3 -m venv venv-testpypi
+source venv-testpypi/bin/activate
+pip install -i https://test.pypi.org/simple/ entropy-password-generator==0.5.5
 ```
 
-**The ways to execute passwords after installation are the same as those shown for the version contained in PyPI (Stable Version).**
+This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
 
-Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) or check the [release history](https://test.pypi.org/project/entropy-password-generator/#history) for more details about development versions.
+```bash
+entropy-password-generator --mode 20
+```
+
+or
+
+```bash
+entropy-password-generator --length 128 --with-ambiguous
+```
+
+Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details about the stable release.
+
+**The ways to execute passwords after installation are the same as those shown for the version contained in PyPI (Stable Version).**
 
 > **Note**: Running the script with `python -m` may trigger a `RuntimeWarning` due to module loading issues. To avoid this, use the direct path: `python3 entropy_password_generator/password_generator.py`, or install as a package as shown above.
 
