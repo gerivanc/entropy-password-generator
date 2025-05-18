@@ -106,9 +106,10 @@ entropy-password-generator --length 128 --with-ambiguous
 
 Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details about the stable release.
 
-**The ways to execute passwords after installation are the same as those shown for the version contained in PyPI (Stable Version).**
-
-> **Note**: Running the script with `python -m` may trigger a `RuntimeWarning` due to module loading issues. To avoid this, use the direct path: `python3 entropy_password_generator/password_generator.py`, or install as a package as shown above.
+> **Note:** the execution of the `--mode` and `--length` scripts, as demonstrated in the previous options such as: `entropy-password-generator --mode 20` and `entropy-password-generator --length 15`, are specific for use in the active virtual environment. Do not use > > them after cloning the repository via CLI directly without the active virtual environment, if you use them you will receive an error message such as: `entropy-password-generator: command not found`.
+> 
+> To use the `--mode` and `--length` scripts used via CLI directly after cloning the repository without activating the virtual environment,
+> use the scripts such as: `python3 entropy_password_generator/password_generator.py --mode 15` (mode 1 to 20) and custom mode `python3 entropy_password_generator/password_generator.py --length 70` (using custom 15 to 128 characters).  
 
 ---
 
