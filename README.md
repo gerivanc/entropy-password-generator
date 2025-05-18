@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.5)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.6)
 
 <div align="center">
 
@@ -60,7 +60,7 @@ To proceed here, the execution of the previous step is mandatory (cloning the re
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.5.5) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.5.6) from PyPI, run the following command:
 
 ```bash
 source testenv/bin/activate
@@ -183,11 +183,11 @@ python3 entropy_password_generator/password_generator.py --length <number>
 
 ### Screenshots
 Below is an example of the CLI output for **Mode 15** `--mode 15`:
-![Mode 15 Output](https://drive.google.com/uc?export=download&id=11wAOPtU4NzmuvnfKZfXBZCOwJ2nwi_6I)
+![Mode 15 Output](https://drive.google.com/uc?export=download&id=1DVDdYTkqvF2HBeM70H8CsmWzfzHOpx26)
 *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 15`. Demonstration image of the output result of the function.
 
 Below is an example of the CLI output for  **--length** `--length 85 --with-ambiguous`:
-![--length 85 Output](https://drive.google.com/uc?export=download&id=1I4fQ1-vcJ0gnUFtLhmHgrl-MuAQrMf4z)
+![--length 85 Output](https://drive.google.com/uc?export=download&id=1Ip1qPnrzlSqAQIStxULru9TR17oHuF1-)
 *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 85 --with-ambiguous`. Demonstration image of the output result of the function.
 
 ---
