@@ -16,7 +16,7 @@ Provide a clear and detailed description of the problem or suggestion. For examp
 
 ## 🔄 Steps to Reproduce
 List the steps to reproduce the issue. For example:
-1. Install the package: `pip install entropy-password-generator==0.5.4`.
+1. Install the package: `pip install entropy-password-generator==0.5.5`.
 2. Run: `entropy-password-generator --mode 1`.
 3. Observe the error: `[Error message]`.
 
@@ -43,7 +43,7 @@ Provide details about your environment. To check versions, use:
 
 - **Operating System**: [e.g., Ubuntu 24.04, Windows 11, macOS Sonoma]
 - **Python Version**: [e.g., 3.8, 3.10, 3.12]
-- **Project Version**: [e.g., 0.5.4 from PyPI]
+- **Project Version**: [e.g., 0.5.5 from PyPI]
 - **Installation Method**: [e.g., PyPI, Test PyPI, cloned repository]
 - **Additional Context**: [e.g., dependencies, terminal output, system configurations]
 
