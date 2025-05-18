@@ -7,8 +7,12 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ## [0.5.5] - 2025-05-17
 
+### Fixed
+- Resolved `ModuleNotFoundError: No module named 'entropy_password_generator'` by adding explicit package inclusion in `pyproject.toml` (`[tool.hatch.build.targets.wheel]`), ensuring the `entropy_password_generator` module is included in the wheel for TestPyPI and PyPI installations.
 
-
+### Changed
+- Updated version references from `0.5.3` to `0.5.5` in `pyproject.toml`, `__init__.py`, and documentation files.
+- Enhanced `RELEASE.md` with detailed installation instructions for cloning the repository, setting up virtual environments, and testing with PyPI (Stable Version) and TestPyPI (Development Version).
 
 ## [0.5.3] - 2025-05-13
 
