@@ -141,7 +141,6 @@ For questions or assistance:
 - Read the [README.md](https://github.com/gerivanc/entropy-password-generator/blob/main/README.md) for project details.
 - Check the [SECURITY.md](https://github.com/gerivanc/entropy-password-generator/blob/main/SECURITY.md) for vulnerability reporting.
 - Open an issue on the [GitHub Issues page](https://github.com/gerivanc/entropy-password-generator/issues).
-- Join discussions in the [GitHub Discussions](https://github.com/gerivanc/entropy-password-generator/discussions) (if enabled).
 - Contact the maintainer at [dean-grumbly-plop@duck.com](mailto:dean-grumbly-plop@duck.com).
 
 ### 🙌 9. Acknowledgments
