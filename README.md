@@ -1,7 +1,7 @@
 ![EntroPy Password Generator - A secure and customizable password generator
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.6)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.5.7)
 
 <div align="center">
 
@@ -17,7 +17,7 @@ written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9
 
 <br>
 
-**EntroPy Password Generator** is a secure and customizable password generator developed in Python. It generates strong passwords with configurable character sets and calculates their entropy to evaluate robustness. The project provides 20+ modes for secure password generation, ranging from 15 to 128 characters, with entropies between 97.62 bits and 833.00 bits, exceeding the [Proton©](https://proton.me/blog/what-is-password-entropy) recommended minimum of 75 bits and the cryptographic strength best practices outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) and [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).
+**EntroPy Password Generator** is a secure and customizable password generator developed in Python, enabling users to generate strong passwords on both Linux and Windows systems. It creates robust passwords with configurable character sets and calculates their entropy to evaluate strength. The project provides 20+ modes for secure password generation, ranging from 15 to 128 characters, with entropies between 97.62 bits and 833.00 bits, exceeding the [Proton©](https://proton.me/blog/what-is-password-entropy) recommended minimum of 75 bits and the cryptographic strength best practices outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) and [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).
 
 ---
 
@@ -60,7 +60,7 @@ To proceed here, the execution of the previous step is mandatory (cloning the re
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.5.6) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.5.7) from PyPI, run the following command:
 
 ```bash
 source testenv/bin/activate
@@ -104,12 +104,17 @@ or
 entropy-password-generator --length 128 --with-ambiguous
 ```
 
-Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details about the stable release.
+Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details about the development version.
 
 > **Note:** the execution of the `--mode` and `--length` scripts, as demonstrated in the previous options such as: `entropy-password-generator --mode 20` and `entropy-password-generator --length 15`, are specific for use in the active virtual environment. Do not use > > them after cloning the repository via CLI directly without the active virtual environment, if you use them you will receive an error message such as: `entropy-password-generator: command not found`.
 > 
 > To use the `--mode` and `--length` scripts used via CLI directly after cloning the repository without activating the virtual environment,
 > use the scripts such as: `python3 entropy_password_generator/password_generator.py --mode 15` (mode 1 to 20) and custom mode `python3 entropy_password_generator/password_generator.py --length 70` (using custom 15 to 128 characters).  
+
+---
+
+## Getting Started on Windows
+For Windows users, a dedicated guide is available to help you install and use the **EntroPy Password Generator** via **PowerShell**. This step-by-step tutorial covers installation, configuration, and password generation with clear examples tailored for the Windows environment, including detailed instructions for setting up Git and running the generator. Check out the [**GETTING_STARTED_WINDOWS.md**](https://github.com/gerivanc/entropy-password-generator/blob/main/GETTING_STARTED_WINDOWS.md) for comprehensive guidance.
 
 ---
 
