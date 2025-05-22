@@ -5,7 +5,11 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [ CLEAR Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
-## [0.5.6] - 2025-05-18
+## [0.5.7] - 2025-05-22
+### Added
+
+- Created `GETTING_STARTED_WINDOWS.md`, a comprehensive guide tailored for Windows users. This file provides step-by-step instructions for cloning the **EntroPy Password Generator** repository and generating passwords using the Windows PowerShell command-line interface (CLI). The guide emphasizes accessibility for novice users, including detailed steps for installing Git and running the generator without a virtual environment, enhancing usability for Windows-based environments.
+
 
 ### Update in README.md
 
