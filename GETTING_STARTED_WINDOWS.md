@@ -1,4 +1,4 @@
-# 🚀 Getting Started with EntroPy Password Generator on Windows PowerShell
+# Getting Started with EntroPy Password Generator on Windows PowerShell
 
 Welcome to the **EntroPy Password Generator**, a secure and customizable tool for generating robust passwords! This guide provides step-by-step instructions for installing and using the **EntroPy Password Generator** via the Windows PowerShell command-line interface (CLI). Whether you're securing personal accounts or generating cryptographic keys, this guide will help you get started quickly and efficiently.
 
