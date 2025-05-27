@@ -1,10 +1,10 @@
-# EntroPy Password Generator v0.5.7
+# EntroPy Password Generator v0.5.8
 
-**Release Date:** May 22th, 2025
+**Release Date:** May 27th, 2025
 
 Released on 	2025/05/02 	
 
-Last updated 	2025/05/22 
+Last updated 	2025/05/27 
 
 Publisher 	[gerivanc](https://github.com/gerivanc/)
 
@@ -17,14 +17,14 @@ Reporting Issues	[Report a](https://github.com/gerivanc/entropy-password-generat
 ---
 
 ## 📋 Overview
-The **EntroPy Password Generator** v0.5.7 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.5.7, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.5.7. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
+The **EntroPy Password Generator** v0.5.8 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.5.8, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.5.8. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
 
 ---
 
 ## ✨ What's New
 - **GitHub Actions Badge**: Added a badge to `README.md` to display the status of GitHub Actions workflows (e.g., `python-app.yml`), enhancing visibility into the project's CI/CD pipeline health.
-- **Version Update**: Updated version references in `README.md` from `0.5.0` to `0.5.7`, ensuring consistency across documentation and package metadata.
-- **Retained Improvements from v0.5.7**:
+- **Version Update**: Updated version references in `README.md` from `0.5.0` to `0.5.8`, ensuring consistency across documentation and package metadata.
+- **Retained Improvements from v0.5.8**:
   - Enhanced CLI output with blank lines before and after the `Password` field for better readability across all modes and custom configurations.
   - Updated "Screenshots" section in `README.md` with new images hosted on Google Drive, showcasing the improved password output layout for Mode 15 and a custom configuration with `--length 85`.
 
@@ -43,12 +43,14 @@ cd entropy-password-generator
 
 ---
 
-## 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.5.7) from PyPI, run the following command:
+###🔧Installation from PyPI (Stable Version)
+To install the latest stable version of the EntroPy Password Generator (version 0.5.8) from PyPI, run the following command:
 
 ```bash
-source testenv/bin/activate
+python3 -m venv venv-stablepypi
+source venv-stablepypi/bin/activate
 pip install entropy-password-generator
+pip list
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
@@ -63,17 +65,20 @@ or
 entropy-password-generator --length 15
 ```
 
+To deactivate the virtual environment enter: **`deactivate `**
+
 Visit the [PyPI project page](https://pypi.org/project/entropy-password-generator/) for additional details about the stable release.
 
 ---
 
-## 🔧Installation from Test PyPI (Development Version)
+### 🔧Installation from Test PyPI (Development Version)
 To test the latest development version of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
 
 ```bash
 python3 -m venv venv-testpypi
 source venv-testpypi/bin/activate
-pip install -i https://test.pypi.org/simple/ entropy-password-generator
+pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator
+pip list
 ```
 
 This command will install the package globally or in your active Python environment. After installation, you can run the generator using:
@@ -87,6 +92,8 @@ or
 ```bash
 entropy-password-generator --length 128 --with-ambiguous
 ```
+
+To deactivate the virtual environment enter: **`deactivate `**
 
 Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details about the development version.
 
