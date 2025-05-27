@@ -29,7 +29,12 @@ To contribute, set up a local development environment:
 3. **Create a virtual environment**:
    ```bash
    python3 -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   source .venv/bin/activate
+   ```
+   **On Windows**:
+   ```bash
+   python -m venv entropy_venv
+   .\entropy_venv\Scripts\Activate.ps1
    ```
 4. **Install development tools** (optional, but recommended):
    ```bash
