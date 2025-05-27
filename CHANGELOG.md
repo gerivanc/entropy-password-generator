@@ -3,24 +3,29 @@
 [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 [![Semantic Versioning](https://img.shields.io/badge/Semantic%20Versioning-2.0.0-blue)](https://semver.org/spec/v2.0.0.html)
 
-All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [ CLEAR Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
+All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
-## [0.5.7] - 2025-05-22
+## [0.5.8] - 2025-05-27
 ### Added
+- Added detailed installation instructions in README.md for both stable and development versions of the **EntroPy Password Generator**:
+  - **PyPI (Stable Version)**: Instructions for installing version 0.5.8 from PyPI in a virtual environment, including commands to create and activate a virtual environment, install the package, and run the generator with examples (`entropy-password-generator --mode 11` and `entropy-password-generator --length 15`).
+  - **Test PyPI (Development Version)**: Instructions for installing the latest development version from Test PyPI in a virtual environment, including commands to create and activate a virtual environment, install the package with a trusted host, and run the generator with examples (`entropy-password-generator --mode 20` and `entropy-password-generator --length 128 --with-ambiguous`).
+  - Included links to the [PyPI project page](https://pypi.org/project/entropy-password-generator/) and [Test PyPI project page](https://test.pypi.org/project/entropy-password-generator/) for additional details.
+  - Provided guidance on deactivating virtual environments using the `deactivate` command.
+- Recommended using virtual environments (e.g., on Kali Linux or Parrot) to avoid system conflicts during installation.
 
+### Updated
+- Enhanced README.md with a new section, "Installation Options for use in virtual environments on Test PyPI and PyPI (Stable Version)," to provide clear, step-by-step guidance for users installing the package in virtual environments.
+
+## [0.5.7] - 2025-05-27
+### Added
 - Created `GETTING_STARTED_WINDOWS.md`, a comprehensive guide tailored for Windows users. This file provides step-by-step instructions for cloning the **EntroPy Password Generator** repository and generating passwords using the Windows PowerShell command-line interface (CLI). The guide emphasizes accessibility for novice users, including detailed steps for installing Git and running the generator without a virtual environment, enhancing usability for Windows-based environments.
 
-
-### Update in README.md
-
-Added a clarification note regarding the use of script modes in the virtual environment. The execution of the `--mode` and `--length` scripts is specific to an active virtual environment and does not apply when cloning the repository via CLI directly. Users attempting to run these scripts without activating the virtual environment will encounter an error (`entropy-password-generator: command not found`). For direct CLI usage post-cloning, alternative commands using `python3 entropy_password_generator/password_generator.py` should be followed, ensuring proper execution without dependency on a virtual environment.
+### Updated
+- Added a clarification note in README.md regarding the use of script modes in the virtual environment. The execution of the `--mode` and `--length` scripts is specific to an active virtual environment and does not apply when cloning the repository via CLI directly. Users attempting to run these scripts without activating the virtual environment will encounter an error (`entropy-password-generator: command not found`). For direct CLI usage post-cloning, alternative commands using `python3 entropy_password_generator/password_generator.py` should be followed, ensuring proper execution without dependency on a virtual environment.
 
 ### Fixed
-
-> **Note:** the execution of the `--mode` and `--length` scripts, as demonstrated in the previous options such as: `entropy-password-generator --mode 20` and `entropy-password-generator --length 15`, are specific for use in the active virtual environment. Do > not use them after cloning the repository via CLI directly without the active virtual environment, if you use them you will receive an error message such as: `entropy-password-generator: command not found`.
-> 
-> To use the `--mode` and `--length` scripts used via CLI directly after cloning the repository without activating the virtual environment,
-> use the scripts such as: `python3 entropy_password_generator/password_generator.py --mode 15` (mode 1 to 20) and custom mode `python3 entropy_password_generator/password_generator.py --length 70` (using custom 15 to 128 characters).
+- Clarified in README.md that the `--mode` and `--length` scripts (e.g., `entropy-password-generator --mode 20` and `entropy-password-generator --length 15`) are specific to an active virtual environment. Added instructions for direct CLI usage after cloning the repository without a virtual environment, using commands like `python3 entropy_password_generator/password_generator.py --mode 15` (modes 1 to 20) and `python3 entropy_password_generator/password_generator.py --length 70` (custom length 15 to 128 characters), to prevent errors such as `entropy-password-generator: command not found`.
 
 ## [0.5.5] - 2025-05-17
 
