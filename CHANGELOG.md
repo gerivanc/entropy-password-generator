@@ -5,6 +5,36 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.5.9] - 2025-05-30
+
+### Changed
+- Updated project version from 0.5.8 to 0.5.9 in the README.md title.
+- Revised the **Installation** section to include updated example commands for PyPI and Test PyPI installations:
+  - PyPI examples changed to demonstrate `--length 15 --with-ambiguous` and `--mode 20`.
+  - Test PyPI examples changed to demonstrate `--length 42 --with-ambiguous` and `--mode 11`.
+- Reorganized the **Usage** section for improved clarity, explicitly highlighting the `--with-ambiguous` option for custom configurations.
+- Updated **Block III (Custom Configuration)** examples:
+  - Wi-Fi Password example now explicitly includes `--with-ambiguous` for consistency.
+  - Updated generated password examples for Wi-Fi Password and Cloud Storage Services, maintaining consistent entropy values.
+- Updated **Screenshots** section to showcase:
+  - CLI output for `--mode 11` instead of `--mode 15`.
+  - CLI output for `--length 15 --with-ambiguous` instead of `--length 85 --with-ambiguous`.
+
+### Fixed
+- No functional bugs were fixed in this release, as changes were limited to documentation improvements.
+
+### Added
+- No new features were added in this release.
+
+### Deprecated
+- No features were deprecated in this release.
+
+### Removed
+- No features or content were removed in this release.
+
+### Security
+- No security vulnerabilities were addressed in this release.
+
 ## [0.5.8] - 2025-05-27
 ### Added
 - Added detailed installation instructions in README.md for both stable and development versions of the **EntroPy Password Generator**:
