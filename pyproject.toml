@@ -1,6 +1,6 @@
 [project]
 name = "entropy-password-generator"
-version = "0.5.8"
+version = "0.5.9"
 description = "A secure password generator with high entropy, compliant with Proton and NIST standards"
 authors = [{name = "Gerivan Costa dos Santos", email = "dean-grumbly-plop@duck.com"}]
 license = {text = "MIT"}
