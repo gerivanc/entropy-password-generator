@@ -39,7 +39,7 @@ cd entropy-password-generator
 
 ---
 
-###🔧Installation from PyPI (Stable Version)
+### 🔧Installation from PyPI (Stable Version)
 To install the latest stable version of the EntroPy Password Generator (version 0.5.9) from PyPI, run the following command:
 
 ```bash
