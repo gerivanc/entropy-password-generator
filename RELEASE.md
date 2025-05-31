@@ -106,7 +106,7 @@ For Windows users, a dedicated guide is available to help you install and use th
 
 ---
 
-##📬 Feedback
+## 📬Feedback
 Help us improve by reporting issues using our [issue template](https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md).
 
 Thank you for supporting **EntroPy Password Generator**! 🚀🔑
