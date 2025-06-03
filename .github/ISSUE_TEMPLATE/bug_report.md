@@ -42,7 +42,7 @@ To check versions:
 
 - **Operating System**: [e.g., Ubuntu 24.04]
 - **Python Version**: [e.g., 3.10]
-- **Project Version**: [e.g., 0.5.9]
+- **Project Version**: [e.g., 0.6.0]
 - **Installation Method**: [e.g., PyPI]
 
 ---
