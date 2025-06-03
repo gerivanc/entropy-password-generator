@@ -6,9 +6,9 @@ The following versions of the EntroPy Password Generator are currently supported
 
 | Version | Supported          | End-of-Life Date       |
 |---------|--------------------|------------------------|
-| 0.5.x   | :white_check_mark: | TBD (Est. May 2026)    |
-| 0.4.x   | :white_check_mark: | December 31, 2025      |
-| < 0.4   | :x:                | -                      |
+| 0.6.x   | :white_check_mark: | TBD (Est. June 2026)    |
+| 0.5.x   | :white_check_mark: | January 31, 2026      |
+| < 0.5   | :x:                | -                      |
 
 ## 🧪 Test PyPI Usage
 
