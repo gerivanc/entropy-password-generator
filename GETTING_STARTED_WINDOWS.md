@@ -26,7 +26,7 @@ There are two primary ways to install **EntroPy Password Generator** on Windows:
 
 ### Option 1: Install from PyPI (Stable Version)
 
-This is the easiest method to get started with the latest stable release (v0.5.9).
+This is the easiest method to get started with the latest stable release. Visit the [PyPI project page](https://pypi.org/project/entropy-password-generator/) for additional details on the latest development release.
 
 1. **Open PowerShell**:
    - Press `Win + S`, type `PowerShell`, and select **Windows PowerShell**.
