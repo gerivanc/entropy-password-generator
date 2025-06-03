@@ -1,10 +1,10 @@
-# EntroPy Password Generator v0.5.9
+# EntroPy Password Generator v0.6.0
 
-**Release Date:** May 30th, 2025
+**Release Date:** June 03th, 2025
 
 Released on 	2025/05/02 	
 
-Last updated 	2025/05/30 
+Last updated 	2025/06/03 
 
 Publisher 	[gerivanc](https://github.com/gerivanc/)
 
@@ -17,12 +17,12 @@ Reporting Issues	[Report a](https://github.com/gerivanc/entropy-password-generat
 ---
 
 ## 📋 Overview
-The **EntroPy Password Generator** v0.5.9 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.5.9, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.5.9. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
+The **EntroPy Password Generator** v0.6.0 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.6.0, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.6.0. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
 
 ---
 
 ## ✨ What's New
-Updated version references in `README.md` from `0.5.8` to `0.5.9` for consistency across documentation and package metadata; Revised the **Installation** section in `README.md` with updated example commands for PyPI (`--length 15 --with-ambiguous` and `--mode 20`) and Test PyPI (`--length 42 --with-ambiguous` and `--mode 11`); Reorganized the **Usage** section in `README.md` for clarity, highlighting the `--with-ambiguous` option for custom configurations; Updated **Block III (Custom Configuration)** examples in `README.md`, with the Wi-Fi Password example now explicitly including `--with-ambiguous` and refreshed password examples for Wi-Fi Password and Cloud Storage Services, maintaining consistent entropy values; Updated **Screenshots** section in `README.md` to showcase CLI output for `--mode 11` and `--length 15 --with-ambiguous`.
+Updated version references in `README.md` from `0.5.9` to `0.6.0`. Updates to all layout structures and section titles. 
 
 ---
 
@@ -40,7 +40,7 @@ cd entropy-password-generator
 ---
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.5.9) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.6.0) from PyPI, run the following command:
 
 ```bash
 python3 -m venv venv-stablepypi
@@ -71,7 +71,7 @@ Visit the [PyPI project page](https://pypi.org/project/entropy-password-generato
 ---
 
 ### 🔧Installation from Test PyPI (Development Version)
-To test the latest development (version 0.5.9) of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
+To test the latest development (version 0.6.0) of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
 
 ```bash
 python3 -m venv venv-testpypi
