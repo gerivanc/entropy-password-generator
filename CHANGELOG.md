@@ -5,6 +5,24 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+## [0.6.1] - 2025-06-09
+
+### Added
+- Improvements to the README.md and RELEASE.md file sections, for the sections:
+🔧Installation from PyPI (Stable Version) and 🔧Installation from Test PyPI (Development Version)
+- Improvements to the code of the 'password_generator.py' project to explain the output of passwords, indicating which Block the function passed to generate passwords belongs to in Blocks I, II and III.
+
+- Implemented block indication in the password generation output within the `main()` function:
+  - For modes 1 to 10, displays "Block I (All with ambiguous characters, length 24)".
+  - For modes 11 to 20, displays "Block II (Mixed configurations)".
+  - For custom configurations using `--length`, displays "Block III (Using Custom Configuration)".
+- Added a new variable `block` in the `main()` function to determine the appropriate block based on the mode.
+- Maintained the display of password length (`Length: {len(password)} characters`) in the output for consistency with provided examples.
+
+### Fixed
+
+- Fixed the `pip install --upgrade pip` command for installation in the corresponding README.md and RELEASE.md file sections for PyPI (Stable Version) and Test PyPI (Development Version).
+
 ## [0.6.0] - 2025-06-03
 
 ### Changed
