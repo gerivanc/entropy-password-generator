@@ -2,7 +2,7 @@
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
 
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.0)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.1)
 
 <div align="center">
 
@@ -61,12 +61,13 @@ To avoid conflicts with the system, install it in a virtual environment, such as
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.6.0) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.6.1) from PyPI, run the following command:
 
 ```bash
 python3 -m venv venv-stablepypi
 source venv-stablepypi/bin/activate
 pip install entropy-password-generator
+pip install --upgrade pip
 pip list
 ```
 
@@ -100,6 +101,7 @@ To test the latest development version of the EntroPy Password Generator, instal
 python3 -m venv venv-testpypi
 source venv-testpypi/bin/activate
 pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator
+pip install --upgrade pip
 pip list
 ```
 
@@ -216,16 +218,16 @@ python3 entropy_password_generator/password_generator.py --length <number>
 
 ---
 
-## Screenshots
+## 📸 Screenshots
 Below is an example of the CLI output for **Mode 11** `--mode 11`:
 
-![Mode 11 Output](https://drive.google.com/uc?export=download&id=18-jlukfEV_Jk7tc4YcAgGAQLOMXAgNGy)
+![Mode 11 Output](https://drive.google.com/uc?export=download&id=1gGQPk0FNqZCDxAi6PTTBIqwmD7fpKvJJ)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 11`. Demonstration image of the output result of the function.
 
 Below is an example of the CLI output for  **--length** `--length 15 --with-ambiguous`:
 
-![--length 15 Output](https://drive.google.com/uc?export=download&id=1jeaALZFb6XM55uuSf9cjd9ccYyfLOiyd)
+![--length 15 Output](https://drive.google.com/uc?export=download&id=1VQG5tiu7i3fTy7UoHElTyPaKJtWD4NgK)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
 
@@ -425,7 +427,7 @@ Entropy: 811.50 bits
 ## 🎨 Block III (Using Custom Configuration)
 Combine CLI options to create passwords tailored to specific needs. Here you can set the password length between 15-128 characters. Below are examples for common scenarios, ensuring a balance between security and usability:
 
-**Wi-Fi Password (15chars, all types, with ambiguous)** 
+**Wi-Fi Password (15 chars, all types, with ambiguous)** 
 ```bash
 python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous
 ```
