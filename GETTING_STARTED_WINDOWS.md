@@ -73,7 +73,6 @@ This method is ideal for users who want to explore the source code or contribute
 2. **Clone the Repository**:
    In PowerShell, navigate to a directory where you want to store the project (e.g., `C:\Projects`):
    ```powershell
-   cd C:\Projects
    git clone https://github.com/gerivanc/entropy-password-generator.git
    cd entropy-password-generator
    ```
