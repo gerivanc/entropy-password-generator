@@ -27,7 +27,7 @@ Changelog:
 https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
 Issue Report:
 https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md
-Version: 0.6.0
+Version: 0.6.1
 """
 
 import secrets
@@ -110,7 +110,7 @@ def print_header():
         "generator/blob/main/CHANGELOG.md\n"
         "Issue Report: https://github.com/gerivanc/entropy-password-"
         "generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md\n"
-        "Version: 0.6.0\n"
+        "Version: 0.6.1\n"
         "----------------------------------------\n"
     )
     print(header)
@@ -299,7 +299,10 @@ def main():
                 use_special=config["use_special"],
                 avoid_ambiguous=config["avoid_ambiguous"]
             )
-            print(f"Mode {args.mode} Password:")
+            block = ("Block I (All with ambiguous characters, length 24)"
+                     if args.mode <= 10 else
+                     "Block II (Mixed configurations)")
+            print(f"Mode {args.mode} Password ({block}):")
             print()
             print(f"Password: {password}")
             print()
@@ -315,7 +318,7 @@ def main():
                 use_special=args.use_special,
                 avoid_ambiguous=args.avoid_ambiguous
             )
-            print("Custom Password:")
+            print("Custom Password (Block III - Using Custom Configuration):")
             print()
             print(f"Password: {password}")
             print()
