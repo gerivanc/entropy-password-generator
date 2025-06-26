@@ -2,7 +2,7 @@
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
 
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.1)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.2)
 
 <div align="center">
 
@@ -61,14 +61,35 @@ To avoid conflicts with the system, install it in a virtual environment, such as
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.6.1) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.6.2) from PyPI, run the following command:
 
 ```bash
+#!/bin/bash
+
+# Exit immediately if any command fails
+set -e
+
+echo "🔧 Creating virtual environment: venv-stablepypi..."
 python3 -m venv venv-stablepypi
+
+echo "✅ Virtual environment created successfully."
+
+echo "⚙️ Activating virtual environment..."
 source venv-stablepypi/bin/activate
-pip install entropy-password-generator
+
+echo "🔄 Ensuring pip is available in the environment..."
+python -m ensurepip --upgrade
+
+echo "⬆️ Upgrading pip to the latest version..."
 pip install --upgrade pip
+
+echo "📦 Installing the entropy-password-generator package from PyPI..."
+pip install entropy-password-generator
+
+echo "📋 Listing installed packages:"
 pip list
+
+echo "🚀 Installation completed successfully!"
 ```
 
 This command installs the package globally or in your active Python environment. After installation, you can run the generator using the following commands:
@@ -98,11 +119,32 @@ Visit the [PyPI project page](https://pypi.org/project/entropy-password-generato
 To test the latest development version of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
 
 ```bash
+#!/bin/bash
+
+# Exit immediately if any command fails
+set -e
+
+echo "🔧 Creating virtual environment: venv-testpypi..."
 python3 -m venv venv-testpypi
+
+echo "✅ Virtual environment created successfully."
+
+echo "⚙️ Activating virtual environment..."
 source venv-testpypi/bin/activate
-pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator
+
+echo "🔄 Ensuring pip is available in the environment..."
+python -m ensurepip --upgrade
+
+echo "⬆️ Upgrading pip to the latest version..."
 pip install --upgrade pip
+
+echo "📦 Installing the entropy-password-generator package from Test PyPI..."
+pip install -i https://test.pypi.org/simple/ --trusted-host test.pypi.org entropy-password-generator
+
+echo "📋 Listing installed packages:"
 pip list
+
+echo "🚀 Installation completed successfully!"
 ```
 
 This command installs the package globally or in your active Python environment. After installation, you can run the generator using the following commands:
@@ -221,13 +263,13 @@ python3 entropy_password_generator/password_generator.py --length <number>
 ## 📸 Screenshots
 Below is an example of the CLI output for **Mode 11** `--mode 11`:
 
-![Mode 11 Output](https://drive.google.com/uc?export=download&id=1gGQPk0FNqZCDxAi6PTTBIqwmD7fpKvJJ)
+![Mode 11 Output](https://drive.google.com/uc?export=download&id=1rcT-3IUXuTj-va-s3tIZCSvCmpumrpLg)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 11`. Demonstration image of the output result of the function.
 
 Below is an example of the CLI output for  **--length** `--length 15 --with-ambiguous`:
 
-![--length 15 Output](https://drive.google.com/uc?export=download&id=1VQG5tiu7i3fTy7UoHElTyPaKJtWD4NgK)
+![--length 15 Output](https://drive.google.com/uc?export=download&id=1Ow2kic6aEaE_M1ETIMwqodZ8YN_7C65q)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
 
