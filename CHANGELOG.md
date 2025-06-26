@@ -5,6 +5,18 @@
 
 All notable changes to the EntroPy Password Generator project are documented in this file. This project adheres to the [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) standard, which ensures a structured and human-readable format for tracking changes. By following this approach, we provide clear visibility into the project's evolution, making it easier for users and contributors to understand what has been added, changed, or fixed in each release. Additionally, the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (SemVer), which uses a versioning scheme of MAJOR.MINOR.PATCH. This practice enhances predictability and compatibility by clearly indicating the impact of updates: major versions for breaking changes, minor versions for new features, and patch versions for bug fixes. Together, these standards improve the project's maintainability, transparency, and usability for developers and security enthusiasts.
 
+
+## [0.6.2] - 2025-06-26
+
+### Added
+- 🔧 Installation from PyPI (Stable Version): created a clean and reliable setup script using `venv`, `ensurepip`, and `pip` to install stable packages from the official PyPI index.
+- 🔧 Installation from Test PyPI (Development Version): added an alternate install script targeting the Test PyPI index, useful for testing packages before official release.
+
+### Fixed
+- ✅ Improved installation flow by reordering commands to ensure `pip` is available before attempting package installation.
+- ✅ Added user guidance message to clarify how to activate the virtual environment post-installation when run in a non-interactive shell.
+
+
 ## [0.6.1] - 2025-06-09
 
 ### Added
