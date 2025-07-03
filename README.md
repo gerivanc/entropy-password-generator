@@ -2,7 +2,7 @@
 written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9RS0sQlW7p6vG-9Hk4K0)
 ---
 
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.2)
+# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.3)
 
 <div align="center">
 
@@ -19,6 +19,32 @@ written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9
 <br>
 
 **EntroPy Password Generator** is a secure and customizable password generator developed in Python, enabling users to generate strong passwords on both Linux and Windows systems. It creates robust passwords with configurable character sets and calculates their entropy to evaluate strength. The project provides 20+ modes for secure password generation, ranging from 15 to 128 characters, with entropies between 97.62 bits and 833.00 bits, exceeding the [Proton©](https://proton.me/blog/what-is-password-entropy) recommended minimum of 75 bits and the cryptographic strength best practices outlined in [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html) and [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).
+
+---
+
+## 📚 Table of Contents
+- [📜 Disclaimer](#-disclaimer)
+- [✨ Features](#-features)
+- [📋 Requirements](#-requirements)
+- [💾 Installation](#-installation)
+- [🖥️ Getting Started on Windows](#️-getting-started-on-windows)
+- [🔒 Password Modes](#-password-modes)
+- [🛠 Command Line Interface](#-command-line-interface)
+- [📸 Screenshots](#-screenshots)
+- [⚙️ Using Predefined Modes](#️-using-predefined-modes)
+- [💡 Suggestions for Password Types](#-suggestions-for-password-types)
+- [📊 Password Entropy Calculation](#-password-entropy-calculation)
+- [🛠️ Development](#️-development)
+- [📢 Reporting Issues](#-reporting-issues)
+- [🐞 Reporting Bugs](#-reporting-bugs)
+- [🛡️ Security - Reporting a Vulnerability](#️-security---reporting-a-vulnerability)
+- [🤝 Contributing](#-contributing)
+- [📝 Release Notes](#-release-notes)
+- [📅 Changelog](#-changelog)
+- [❤️ Support This Project](#️-support-this-project)
+- [📧 Contact](#-contact)
+- [👥 Visitors](#-visitors)
+- [📄 License](#-license)
 
 ---
 
@@ -61,7 +87,7 @@ To avoid conflicts with the system, install it in a virtual environment, such as
 The **EntroPy Password Generator** can be installed from the Python Package Index (PyPI) for the stable release or from the Test Python Package Index (Test PyPI) to test the latest development version. Follow the instructions below based on your needs.
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.6.2) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.6.3) from PyPI, run the following command:
 
 ```bash
 #!/bin/bash
@@ -176,7 +202,9 @@ Visit the [Test PyPI project page](https://test.pypi.org/project/entropy-passwor
 ---
 
 # 🖥️ Getting Started on Windows
-For Windows users, a dedicated guide is available to help you install and use the **EntroPy Password Generator** via **PowerShell**. This step-by-step tutorial covers installation, configuration, and password generation with clear examples tailored for the Windows environment, including detailed instructions for setting up Git and running the generator. Check out the [**GETTING_STARTED_WINDOWS.md**](https://github.com/gerivanc/entropy-password-generator/blob/main/GETTING_STARTED_WINDOWS.md) for comprehensive guidance.
+For Windows users, a dedicated guide is available to help you install and use the **EntroPy Password Generator** via **PowerShell**. 
+This step-by-step tutorial covers installation, configuration, and password generation with clear examples tailored for the Windows environment, including detailed instructions for setting up Git and running the generator. 
+Check out the [**GETTING_STARTED_WINDOWS.md**](https://github.com/gerivanc/entropy-password-generator/blob/main/GETTING_STARTED_WINDOWS.md) for comprehensive guidance.
 
 ---
 
@@ -218,7 +246,7 @@ The table below summarizes the 20 password generation modes, ordered by increasi
 
 ---
 
-# ⌨️ CLI Options
+# 🛠 Command Line Interface
 - `--mode <number>`: Select a predefined password generation mode (1 to 20). Overrides other configuration options.
 - `--length <length>`: Set password length (15 to 128, default: 72). Ignored if `--mode` is specified.
 - `--no-uppercase`: Exclude uppercase letters. Ignored if `--mode` is specified.
@@ -263,13 +291,13 @@ python3 entropy_password_generator/password_generator.py --length <number>
 ## 📸 Screenshots
 Below is an example of the CLI output for **Mode 11** `--mode 11`:
 
-![Mode 11 Output](https://drive.google.com/uc?export=download&id=1rcT-3IUXuTj-va-s3tIZCSvCmpumrpLg)
+![Mode 11 Output](https://drive.google.com/uc?export=download&id=1aQu3E0KX2oPRLJHv6sPvYRn1iD-ksfpH)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --mode 11`. Demonstration image of the output result of the function.
 
 Below is an example of the CLI output for  **--length** `--length 15 --with-ambiguous`:
 
-![--length 15 Output](https://drive.google.com/uc?export=download&id=1Ow2kic6aEaE_M1ETIMwqodZ8YN_7C65q)
+![--length 15 Output](https://drive.google.com/uc?export=download&id=1hO8-e4lQDcNGMn8LqX9vqqF2-OMHBxO9)
 
 > *Note*: Screenshot using the command: `python3 entropy_password_generator/password_generator.py --length 15 --with-ambiguous`. Demonstration image of the output result of the function.
 
