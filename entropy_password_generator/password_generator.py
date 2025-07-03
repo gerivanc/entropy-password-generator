@@ -27,7 +27,7 @@ Changelog:
 https://github.com/gerivanc/entropy-password-generator/blob/main/CHANGELOG.md
 Issue Report:
 https://github.com/gerivanc/entropy-password-generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md
-Version: 0.6.2
+Version: 0.6.3
 """
 
 import secrets
@@ -110,7 +110,7 @@ def print_header():
         "generator/blob/main/CHANGELOG.md\n"
         "Issue Report: https://github.com/gerivanc/entropy-password-"
         "generator/blob/main/.github/ISSUE_TEMPLATE/issue_template.md\n"
-        "Version: 0.6.2\n"
+        "Version: 0.6.3\n"
         "----------------------------------------\n"
     )
     print(header)
