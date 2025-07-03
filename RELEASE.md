@@ -1,10 +1,10 @@
-# EntroPy Password Generator v0.6.2
+# EntroPy Password Generator v0.6.3
 
-**Release Date:** June 26th, 2025
+**Release Date:** July 03th, 2025
 
 Released on 	2025/05/02 	
 
-Last updated 	2025/06/26 
+Last updated 	2025/07/03 
 
 Publisher 	[gerivanc](https://github.com/gerivanc/)
 
@@ -17,12 +17,14 @@ Reporting Issues	[Report a](https://github.com/gerivanc/entropy-password-generat
 ---
 
 ## 📋 Overview
-The **EntroPy Password Generator** v0.6.2 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.6.2, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.6.2. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
+The **EntroPy Password Generator** v0.6.3 is now available on [Test PyPI](https://test.pypi.org/project/entropy-password-generator/) and [PyPI](https://pypi.org/project/entropy-password-generator/)! This release builds on the improvements from v0.6.3, adding a GitHub Actions badge to the project documentation to reflect the status of CI/CD workflows and updating the version references to v0.6.3. It continues to provide 20+ secure password generation modes, with entropies from 97.62 to 833.00 bits, exceeding Proton© and NIST standards.
 
 ---
 
 ## ✨ What's New
-Updated version references in `README.md` from `0.6.1` to `0.6.2`. Updates to all layout structures and section titles. 
+- Updated version references in `README.md` from `0.6.2` to `0.6.3`. Updates to all layout structures and section titles. 
+- Adjusted layout styling and emoji use for better readability and visual identity.
+- Corrected anchor links in the Table of Contents that were not functioning due to emoji or formatting conflicts. 
 
 ---
 
@@ -40,7 +42,7 @@ cd entropy-password-generator
 ---
 
 ### 🔧Installation from PyPI (Stable Version)
-To install the latest stable version of the EntroPy Password Generator (version 0.6.2) from PyPI, run the following command:
+To install the latest stable version of the EntroPy Password Generator (version 0.6.3) from PyPI, run the following command:
 
 ```bash
 #!/bin/bash
@@ -93,7 +95,7 @@ Visit the [PyPI project page](https://pypi.org/project/entropy-password-generato
 ---
 
 ### 🔧Installation from Test PyPI (Development Version)
-To test the latest development (version 0.6.2) of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
+To test the latest development (version 0.6.3) of the EntroPy Password Generator, install it from the Test Python Package Index (Test PyPI):
 
 ```bash
 #!/bin/bash
