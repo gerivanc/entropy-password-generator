@@ -6,13 +6,13 @@ The following versions of the EntroPy Password Generator are currently supported
 
 | Version | Supported          | End-of-Life Date       |
 |---------|--------------------|------------------------|
-| 0.6.x   | :white_check_mark: | TBD (Est. June 2026)    |
+| 0.6.x   | :white_check_mark: | TBD (Est. July 2026)    |
 | 0.5.x   | :white_check_mark: | January 31, 2026      |
 | < 0.5   | :x:                | -                      |
 
 ## 🧪 Test PyPI Usage
 
-The Test PyPI release of EntroPy Password Generator is intended for testing and development purposes only. It may contain experimental features or unpatched vulnerabilities and should not be used in production environments. For production use, install the stable version from the official Python Package Index (PyPI) at [https://pypi.org/project/entropy-password-generator/](https://pypi.org/project/entropy-password-generator/).
+The Test PyPI release of EntroPy Password Generator is intended for testing and development purposes only. It may contain experimental features or unpatched vulnerabilities and should not be used in production environments. For production use, install the stable version from the official [Python Package Index (PyPI)](https://pypi.org/project/entropy-password-generator/).
 
 ## 🛡️ Security Best Practices
 
