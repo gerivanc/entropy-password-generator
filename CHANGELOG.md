@@ -7,6 +7,23 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ---
 
+## [0.6.4] - 2025-08-07
+
+### Added
+- Specific installation instructions for Kali Linux in `README.md` and `RELEASE.md`, including simplified manual steps for virtual environments on PyPI and Test PyPI.
+- Recommendation for two-factor authentication (2FA) and use of Ente Auth in the `Disclaimer` section of `README.md`.
+- Added emojis to the main section titles in `PASSWORDENTROPYCALCULATION.md` for improved visual appeal and readability.
+
+### Fixed
+- Fixed anchor links in the Table of Contents of `README.md` that were not working due to conflicts with emojis or formatting.
+
+### Changed
+- Updated project version from `0.6.3` to `0.6.4` in the `README.md` title and throughout relevant files.
+- Removed the "👥 Visitors" section and visitor counter from `README.md`.
+- Reorganized the installation section in `README.md` and `RELEASE.md` to include clear subsections for Kali Linux and Parrot OS.
+- Updated example commands in the installation scripts of `RELEASE.md` (from `--mode 17`, `--length 75` to `--mode 20`, `--length 15 --with-ambiguous` for PyPI, and from `--mode 20`, `--length 128 --with-ambiguous` to `--mode 11`, `--length 42 --with-ambiguous` for Test PyPI).
+- Adjusted layout styling and emoji usage in `README.md` for improved readability and visual identity.
+
 ## [0.6.3] - 2025-07-03
 
 ### Changed
