@@ -8,7 +8,7 @@ Welcome to the **EntroPy Password Generator**, a secure and customizable tool fo
 
 Before diving in, ensure your Windows environment is ready:
 
-- **Operating System**: Windows 10 or later (PowerShell 5.1 or higher is included by default).
+- **Operating System**: Windows 10 or later (PowerShell 7.5 or higher is included by default).
 - **Python**: Version 3.8 or higher installed. Download it from [python.org](https://www.python.org/downloads/) if needed.
 - **pip**: Python's package manager, typically included with Python. Verify by running:
   ```powershell
@@ -66,7 +66,7 @@ This method is ideal for users who want to explore the source code or contribute
      ```powershell
      git --version
      ```
-     If installed correctly, you’ll see output like `git version 2.x.x`. If you get an error (e.g., `git : The term 'git' is not recognized`), ensure Git was added to your system PATH. You can fix this by reinstalling Git and selecting the “Add Git to PATH” option, or manually adding the Git executable path (e.g., `C:\Program Files\Git\bin`) to your system’s environment variables:
+     If installed correctly, you’ll see output like `git version 2.50.1`. If you get an error (e.g., `git : The term 'git' is not recognized`), ensure Git was added to your system PATH. You can fix this by reinstalling Git and selecting the “Add Git to PATH” option, or manually adding the Git executable path (e.g., `C:\Program Files\Git\bin`) to your system’s environment variables:
      - Press `Win + R`, type `sysdm.cpl`, and go to **Advanced > Environment Variables**.
      - Under **System Variables**, find `Path`, edit it, and add the Git bin directory (e.g., `C:\Program Files\Git\bin`).
 
