@@ -3,13 +3,13 @@
 
 ---
 
-## Overview
+## 🔍 Overview 
 
 The **EntroPy Password Generator** creates passwords with high entropy to maximize resistance against brute-force attacks. Entropy measures password strength, indicating the computational effort required to guess a password. All 20 generation modes produce passwords exceeding the Proton© (75 bits) and NIST (80+ bits) recommendations, ensuring robust security for applications ranging from personal accounts to cryptographic keys.
 
 ---
 
-## How Entropy is Calculated
+## 📊 How Entropy is Calculated 
 
 The generator uses the standard entropy formula:
 
@@ -33,7 +33,7 @@ python3 entropy_password_generator/password_generator.py --mode 1
 
 ---
 
-## Security Benchmarks
+## 🔒 Security Benchmarks 
 
 | Source | Minimum Recommended Entropy | Context |
 |:------|:-----------------------------|:--------|
@@ -44,7 +44,7 @@ python3 entropy_password_generator/password_generator.py --mode 1
 
 ---
 
-## Project Capabilities
+## 🚀 Project Capabilities 
 
 ### Password Generation Modes
 The generator offers 20+ modes for secure password generation, divided into three blocks:
@@ -84,7 +84,7 @@ The table below details each mode, with character set sizes (\( R \)), entropy, 
 
 ---
 
-### Example Passwords
+### 💻 Example Passwords 
 Below are sample passwords for select modes:
 
 #### Block I (Length 24, with ambiguous)
@@ -146,7 +146,7 @@ Entropy: 833.00 bits
 
 ---
 
-## Why High Entropy Matters
+## 🛡️ Why High Entropy Matters 
 - **< 50 bits**: Vulnerable, crackable in seconds.
 - **50–75 bits**: Moderately secure, risky for high-value targets.
 - **75–100 bits**: Strong, suitable for personal and professional use.
@@ -159,7 +159,7 @@ High entropy mitigates:
 
 ---
 
-## Practical Applications in Mobile Devices
+## 📱 Practical Applications in Mobile Devices 
 The table below compares mobile authentication methods to EntroPy's passwords:
 
 | Method | Entropy | Combinations | Security | Crack Time | Use Case |
@@ -172,7 +172,7 @@ The table below compares mobile authentication methods to EntroPy's passwords:
 
 ---
 
-## References
+## 📚 References 
 - [Proton© Blog](https://proton.me/blog/what-is-password-entropy)
 - [NIST SP 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html)
 - [NIST SP 800-132](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf)
@@ -181,7 +181,7 @@ The table below compares mobile authentication methods to EntroPy's passwords:
 
 ---
 
-## Final Note
+## 📝 Final Note 
 The EntroPy Password Generator uses Python's `secrets` module for cryptographic randomization, ensuring passwords exceed Proton© and NIST standards. Store passwords in a secure password manager like [Bitwarden©](https://bitwarden.com/) and use 2FA for optimal security.
 
 ---
