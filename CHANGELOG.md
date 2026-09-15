@@ -7,6 +7,17 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ---
 
+## [0.6.5] - 2026-09-14
+
+### Fixed
+- Fixed a missing f-string prefix in the low-entropy warning message in `password_generator.py`, which caused `Warning: Password entropy ({entropy:.2f} bits)...` to print the literal placeholder instead of the calculated entropy value.
+- Corrected the entropy value for Mode 8 (`Uppercase + Lowercase + Special`, with ambiguous, 24 chars) in `README.md` and `PASSWORDENTROPYCALCULATION.md`, from `151.16` to the correct `152.16` bits (matching Mode 15, which shares the same charset size and length).
+
+### Changed
+- Corrected the `R (Charset Size)` column in the password mode tables of `README.md` and `PASSWORDENTROPYCALCULATION.md` to match the actual `SPECIAL_CHARS` set (29 symbols) defined in `password_generator.py`, replacing outdated values (e.g., `94`/`95` → `81`/`91` for the full character set).
+- Updated the "Password Entropy Calculation" section of `README.md`: replaced the incorrect `R=90` references and mismatched entropy figures (`95.70`, `830.98` bits) for Modes 11 and 20 with the correct values (`R=81`, `95.10`, `811.50` bits), and corrected `R=90` to `R=91` in the custom-configuration examples.
+- Completed the list of ambiguous characters removed by `--avoid-ambiguous` (previously missing `L`, `o`, and `|`) and corrected the special character count in the `Features` section of `README.md` (28 → 29, including the previously omitted backtick) to match the code.
+
 ## [0.6.4] - 2025-08-07
 
 ### Added
@@ -363,4 +374,4 @@ All notable changes to the EntroPy Password Generator project are documented in 
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
