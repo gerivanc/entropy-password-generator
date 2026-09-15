@@ -57,30 +57,31 @@ The table below details each mode, with character set sizes (\( R \)), entropy, 
 
 | Mode | Password Length | Character Set | R (Charset Size) | Entropy (bits) | Security Level | Use Case |
 |------|-----------------|---------------|------------------|----------------|----------------|----------|
-| 11 | 15 | Full (no ambiguous) | 94 | 95.10 | Strong | Personal accounts |
-| 13 | 20 | Lowercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Basic logins |
-| 14 | 20 | Uppercase + Digits (no ambiguous) | 36 | 99.08 | Strong | Device authentication |
-| 12 | 18 | Full (with ambiguous) | 95 | 117.14 | Very Strong | Professional accounts |
+| 11 | 15 | Full (no ambiguous) | 81 | 95.10 | Strong | Personal accounts |
+| 13 | 20 | Lowercase + Digits (no ambiguous) | 31 | 99.08 | Strong | Basic logins |
+| 14 | 20 | Uppercase + Digits (no ambiguous) | 31 | 99.08 | Strong | Device authentication |
+| 12 | 18 | Full (with ambiguous) | 91 | 117.14 | Very Strong | Professional accounts |
 | 4 | 24 | Uppercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Legacy systems |
 | 5 | 24 | Lowercase + Digits (with ambiguous) | 36 | 124.08 | Very Strong | Readable passwords |
-| 6 | 24 | Digits + Special (with ambiguous) | 43 | 126.85 | Very Strong | API tokens |
+| 6 | 24 | Digits + Special (with ambiguous) | 39 | 126.85 | Very Strong | API tokens |
 | 3 | 24 | Uppercase + Lowercase (with ambiguous) | 52 | 136.81 | Very Strong | Website logins |
-| 1 | 24 | Lowercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Secure notes |
-| 2 | 24 | Uppercase + Special (with ambiguous) | 59 | 138.75 | Very Strong | Admin access |
+| 1 | 24 | Lowercase + Special (with ambiguous) | 55 | 138.75 | Very Strong | Secure notes |
+| 2 | 24 | Uppercase + Special (with ambiguous) | 55 | 138.75 | Very Strong | Admin access |
 | 7 | 24 | Uppercase + Lowercase + Digits (with ambiguous) | 62 | 142.90 | Very Strong | System credentials |
-| 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | Database keys |
-| 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 69 | 144.54 | Very Strong | File encryption |
-| 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 85 | 151.16 | Extremely Strong | High-security logins |
-| 15 | 24 | Full (no ambiguous) | 94 | 152.16 | Extremely Strong | Enterprise passwords |
-| 16 | 32 | Full (no ambiguous) | 94 | 202.88 | Cryptographic Grade | API keys |
-| 17 | 42 | Full (no ambiguous) | 94 | 266.27 | Cryptographic Grade | Server tokens |
-| 18 | 60 | Full (no ambiguous) | 94 | 380.39 | Ultra Secure | Financial credentials |
-| 19 | 75 | Full (no ambiguous) | 94 | 475.49 | Ultra Secure | Password manager keys |
-| 20 | 128 | Full (no ambiguous) | 94 | 811.50  | Ultra Secure | Cryptographic keys |
+| 9 | 24 | Uppercase + Digits + Special (with ambiguous) | 65 | 144.54 | Very Strong | Database keys |
+| 10 | 24 | Lowercase + Digits + Special (with ambiguous) | 65 | 144.54 | Very Strong | File encryption |
+| 8 | 24 | Uppercase + Lowercase + Special (with ambiguous) | 81 | 152.16 | Extremely Strong | High-security logins |
+| 15 | 24 | Full (no ambiguous) | 81 | 152.16 | Extremely Strong | Enterprise passwords |
+| 16 | 32 | Full (no ambiguous) | 81 | 202.88 | Cryptographic Grade | API keys |
+| 17 | 42 | Full (no ambiguous) | 81 | 266.27 | Cryptographic Grade | Server tokens |
+| 18 | 60 | Full (no ambiguous) | 81 | 380.39 | Ultra Secure | Financial credentials |
+| 19 | 75 | Full (no ambiguous) | 81 | 475.49 | Ultra Secure | Password manager keys |
+| 20 | 128 | Full (no ambiguous) | 81 | 811.50  | Ultra Secure | Cryptographic keys |
 
 **Notes**:
-- Full character set (no ambiguous): 26 uppercase + 26 lowercase + 10 digits + 32 symbols = 94 characters.
-- Ambiguous characters: `I`, `l`, `O`, `0`, `1`, `` ` ``.
+- Full character set (with ambiguous): 26 uppercase + 26 lowercase + 10 digits + 29 symbols = 91 characters.
+- Full character set (no ambiguous): 23 uppercase + 23 lowercase + 8 digits + 27 symbols = 81 characters.
+- Ambiguous characters removed: `I`, `L`, `O` (uppercase), `i`, `l`, `o` (lowercase), `0`, `1` (digits), `` | ``, `` ` `` (special).
 
 ---
 
@@ -103,7 +104,7 @@ python3 entropy_password_generator/password_generator.py --mode 8
 ```
 ```
 Generated password: NmP<ToUHnm*:m\u:Rhspj=:w
-Entropy: 151.16 bits
+Entropy: 152.16 bits
 ```
 
 #### Block II (Mixed configurations)
@@ -186,4 +187,4 @@ The EntroPy Password Generator uses Python's `secrets` module for cryptographic 
 
 ---
 
-#### Copyright © 2025 Gerivan Costa dos Santos
+#### Copyright © 2025-2026 Gerivan Costa dos Santos
