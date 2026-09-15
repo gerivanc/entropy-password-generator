@@ -17,8 +17,8 @@ Features:
 - Command-line interface for flexible usage.
 ----------------------------------------
 
-Copyright © 2025 Gerivan Costa dos Santos
-EntroPy Password Generator
+Copyright © 2025-2026 Gerivan Costa dos Santos
+© 2025 EntroPy Password Generator
 Author: gerivanc
 GitHub: https://github.com/gerivanc
 MIT License:
@@ -100,8 +100,8 @@ def print_header():
     execution.
     """
     header = (
-        "Copyright © 2025 Gerivan Costa dos Santos\n"
-        "EntroPy Password Generator\n"
+        "Copyright © 2025-2026 Gerivan Costa dos Santos\n"
+        "© 2025 EntroPy Password Generator\n"
         "Author: gerivanc\n"
         "GitHub: https://github.com/gerivanc\n"
         "MIT License: https://github.com/gerivanc/entropy-password-"
@@ -232,7 +232,7 @@ def generate_password(
         else:
             suggestion_text = "use a stronger configuration"
         print("----------------------------------------")
-        print("Warning: Password entropy ({entropy:.2f} bits) is below the "
+        print(f"Warning: Password entropy ({entropy:.2f} bits) is below the "
               "recommended 75 bits (Proton© standard).")
         print(f"To improve security, {suggestion_text}.")
         print("----------------------------------------")
