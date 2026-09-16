@@ -3,7 +3,7 @@ written in Python](https://drive.google.com/uc?export=download&id=19T8p_jzaaWGx9
 
 ---
 
-# EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.5)
+# 🔒 EntroPy Password Generator - A secure and customizable password generator written in Python (v0.6.5)
 
 <div align="center">
   <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-FFC107?style=flat&logo=mit&logoColor=white" />
@@ -673,15 +673,15 @@ See the [Changelog](https://github.com/gerivanc/entropy-password-generator/blob/
 
 ---
 
-# 📧 Contact
-For questions or feedback, please contact: dean-grumbly-plop@duck.com.
-
----
-
 # 📄 License
 This project is licensed under the MIT License. See the [License](https://github.com/gerivanc/entropy-password-generator/blob/main/LICENSE.md) for details.
 
 ---
 
+# 📧 Contact
+For questions or feedback, please contact: [ask@gerivan.me](mailto:ask@gerivan.me)
+
+---
+
 #### Copyright © 2025-2026 Gerivan Costa dos Santos
-#### © 2025 EntroPy Password Generator - A secure and customizable password generator written in Python
+#### © 2025 🔒 EntroPy Password Generator - A secure and customizable password generator written in Python
