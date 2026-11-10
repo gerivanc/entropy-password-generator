@@ -326,6 +326,7 @@ def main():
             print(f"Entropy: {entropy:.2f} bits")
     except ValueError as e:
         print(f"Error: {str(e)}")
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
